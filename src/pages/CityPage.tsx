@@ -8,10 +8,7 @@ const CityPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <PageHeader
-        title={`Glasmästare ${formattedCity}`}
-        description={`Professionell glasservice i ${formattedCity} - Jour dygnet runt`}
-      />
+      {/* Removed PageHeader as content is now in hero section */}
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
@@ -24,7 +21,8 @@ const CityPage = () => {
             />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <div className="text-center text-white">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Dygnet Runt Glasservice</h2>
+                <h1 className="text-3xl md:text-4xl font-bold mb-2">Glasmästare {formattedCity}</h1>
+                <p className="text-xl mb-4">Professionell glasservice i {formattedCity} - Jour dygnet runt</p>
                 <a href="tel:010-555 11 93" className="glass-button bg-yellow-400 text-black hover:bg-yellow-500">
                   Ring 010-555 11 93
                 </a>
