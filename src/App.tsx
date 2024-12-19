@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -18,15 +19,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen">
+        <div className="min-h-screen flex flex-col">
           <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/om-oss" element={<About />} />
-            <Route path="/kontakt" element={<Contact />} />
-            <Route path="/omraden" element={<Areas />} />
-            <Route path="/omraden/:city" element={<CityPage />} />
-          </Routes>
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/om-oss" element={<About />} />
+              <Route path="/kontakt" element={<Contact />} />
+              <Route path="/omraden" element={<Areas />} />
+              <Route path="/omraden/:city" element={<CityPage />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
       </BrowserRouter>
     </TooltipProvider>
