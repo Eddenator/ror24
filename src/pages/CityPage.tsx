@@ -10,7 +10,7 @@ const CityPage = () => {
       {/* Hero Section with Full-width Image */}
       <div className="relative w-full h-[600px] mt-[-80px]">
         <img 
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+          src="https://images.unsplash.com/photo-1496307653780-42ee777d4833"
           alt={`Glasmästare i ${formattedCity}`}
           className="w-full h-full object-cover"
         />
@@ -31,8 +31,8 @@ const CityPage = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center p-6 rounded-lg bg-gray-50">
               <Star className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">91 % av kunderna</h3>
-              <p className="text-gray-600">rekommenderar oss</p>
+              <h3 className="text-xl font-semibold mb-2">91% rekommenderar oss</h3>
+              <p className="text-gray-600">I undersökelse rekommenderar 91 % av kunderna oss</p>
             </div>
             <div className="text-center p-6 rounded-lg bg-gray-50">
               <ThumbsUp className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
@@ -41,8 +41,8 @@ const CityPage = () => {
             </div>
             <div className="text-center p-6 rounded-lg bg-gray-50">
               <Award className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Certifierade</h3>
-              <p className="text-gray-600">partners</p>
+              <h3 className="text-xl font-semibold mb-2">Certifierade partners</h3>
+              <p className="text-gray-600">Vårt nätverk är auktoriserade glasmästare</p>
             </div>
           </div>
 
