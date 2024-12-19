@@ -7,8 +7,6 @@ const CityPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Removed PageHeader as content is now in hero section */}
-
       {/* Hero Section with Full-width Image */}
       <div className="relative w-full h-[600px] mt-[-80px]">
         <img 
@@ -49,17 +47,19 @@ const CityPage = () => {
           </div>
 
           <div className="prose max-w-none mb-12">
-            <h2>Professionell Glasmästare i {formattedCity}</h2>
-            <p>
-              Som ledande glasmästare i {formattedCity} erbjuder vi omfattande glastjänster för både privatpersoner och företag. 
-              Med över 20 års erfarenhet i branschen kan vi hantera alla typer av glasarbeten, från akuta reparationer till 
-              planerade installationer.
-            </p>
-            <p>
-              Vårt team av certifierade glasmästare är tillgängliga dygnet runt för att säkerställa att du får den hjälp du 
-              behöver, när du behöver den. Vi använder endast material av högsta kvalitet och följer de senaste 
-              branschstandarderna för att garantera bästa möjliga resultat.
-            </p>
+            <h2 className="text-3xl font-bold mb-6 text-center">Professionell Glasmästare i {formattedCity}</h2>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              <p>
+                Som ledande glasmästare i {formattedCity} erbjuder vi omfattande glastjänster för både privatpersoner och företag. 
+                Med över 20 års erfarenhet i branschen kan vi hantera alla typer av glasarbeten, från akuta reparationer till 
+                planerade installationer.
+              </p>
+              <p>
+                Vårt team av certifierade glasmästare är tillgängliga dygnet runt för att säkerställa att du får den hjälp du 
+                behöver, när du behöver den. Vi använder endast material av högsta kvalitet och följer de senaste 
+                branschstandarderna för att garantera bästa möjliga resultat.
+              </p>
+            </div>
           </div>
 
           {/* Services Grid */}
@@ -107,7 +107,6 @@ const CityPage = () => {
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
