@@ -10,7 +10,7 @@ const CityPage = () => {
       {/* Hero Section with Full-width Image */}
       <div className="relative w-full h-[600px] mt-[-80px]">
         <img 
-          src="/photo-1496307653780-42ee777d4833" 
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
           alt={`Glasmästare i ${formattedCity}`}
           className="w-full h-full object-cover"
         />
