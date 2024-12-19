@@ -64,6 +64,28 @@ export const cityContent: CityContentMap = {
       'Energieffektiva fönsterlösningar',
       'Säkerhetsglas för hem och företag',
     ]
+  },
+  gävle: {
+    heroImage: "https://images.unsplash.com/photo-1523217582562-09d0def993a6",
+    description: "Som etablerad glasmästare i Gävle erbjuder vi professionella glastjänster till hela Gävleborgs län. Vår verkstad i centrala Gävle är strategiskt placerad för att effektivt kunna serva både stadskärnan och omkringliggande områden.\n\nMed Gävles unika blandning av historisk bebyggelse och moderna kontorsbyggnader har vi utvecklat särskild expertis inom både restaurering av äldre fönster och installation av moderna glaslösningar. Vi har gedigen erfarenhet av att arbeta med allt från de vackra sekelskifteshusen längs Nygatan till de moderna företagslokalerna i Gävle Strand.\n\nVi förstår de särskilda utmaningar som det norrländska klimatet ställer på glasinstallationer och har specialiserat oss på energieffektiva lösningar som är anpassade för regionens väderförhållanden. Vårt team har omfattande erfarenhet av att hantera de påfrestningar som snö och kyla kan ha på olika typer av glasinstallationer.\n\nGenom åren har vi byggt upp ett starkt nätverk av lokala leverantörer och samarbetspartners i Gävleområdet. Detta gör att vi kan erbjuda snabba leveranser och kostnadseffektiva lösningar för alla typer av glasarbeten.\n\nVår djupa förankring i det lokala näringslivet och vår förståelse för Gävles arkitektoniska särart gör oss till en pålitlig partner för både privatpersoner och företag i regionen.",
+    experience: "Med över 15 års erfarenhet av glasmästeri i Gävle har vi specialiserat oss på både historiska byggnader och moderna fastigheter i regionen.",
+    services: [
+      'Akut glasreparation i Gävle',
+      'Specialanpassade lösningar för norrländskt klimat',
+      'Restaurering av historiska fönster',
+      'Energieffektiva glaslösningar',
+    ]
+  },
+  sundsvall: {
+    heroImage: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad",
+    description: "Som Sundsvalls ledande glasmästare erbjuder vi omfattande glastjänster i hela Medelpad. Från vår centralt belägna verkstad i Sundsvall servar vi både privatpersoner och företag i regionen.\n\nVi har särskild expertis när det gäller de unika utmaningar som Sundsvalls arkitektur presenterar, från de pampiga stenhusen i Stenstan till de moderna kontorskomplexen vid hamnen. Vårt team har gedigen erfarenhet av att arbeta med både historiska byggnader och moderna fastigheter.\n\nMed vår djupa förståelse för det norrländska klimatets påverkan på glasinstallationer har vi utvecklat specialanpassade tekniker och lösningar. Vi använder material och metoder som är särskilt lämpade för regionens väderförhållanden.\n\nGenom åren har vi byggt upp ett omfattande nätverk av leverantörer och samarbetspartners i Sundsvallsregionen. Detta gör att vi kan erbjuda snabba leveranser och skräddarsydda lösningar för varje projekt.\n\nVår långa erfarenhet av att arbeta i Sundsvall har gett oss unik insikt i lokala byggnadstraditioner och regelverk. Vi är stolta över att ha bidragit till att bevara och förbättra många av stadens vackra byggnader.",
+    experience: "Med över två decenniers erfarenhet av glasmästeri i Sundsvall har vi byggt upp omfattande kunskap om regionens unika arkitektur och klimatutmaningar.",
+    services: [
+      'Akut glasreparation i Sundsvallsområdet',
+      'Specialanpassade lösningar för norrländskt klimat',
+      'Restaurering av historiska fönster i Stenstan',
+      'Energieffektiva glaslösningar',
+    ]
   }
 };
 
