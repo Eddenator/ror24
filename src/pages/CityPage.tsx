@@ -53,8 +53,9 @@ const CityPage = () => {
           <div className="prose max-w-none mb-12">
             <h2 className="text-3xl font-bold mb-6 text-center">Professionell Glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              <p>{content.description}</p>
-              <p>{content.experience}</p>
+              {content.description.split('\n\n').map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
