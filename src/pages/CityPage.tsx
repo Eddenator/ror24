@@ -1,16 +1,20 @@
 import { useParams } from 'react-router-dom';
 import { Clock, Phone, MapPin, CheckCircle, Shield, Star, Award, ThumbsUp } from 'lucide-react';
+import { cityContent, defaultCityContent } from '../data/cityContent';
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
   const formattedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : '';
+  
+  // Get city-specific content or fall back to default
+  const content = city ? cityContent[city.toLowerCase()] || defaultCityContent : defaultCityContent;
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Full-width Image */}
       <div className="relative w-full h-[600px] mt-[-80px]">
         <img 
-          src="https://images.unsplash.com/photo-1496307653780-42ee777d4833"
+          src={content.heroImage}
           alt={`Glasmästare i ${formattedCity}`}
           className="w-full h-full object-cover"
         />
@@ -49,16 +53,8 @@ const CityPage = () => {
           <div className="prose max-w-none mb-12">
             <h2 className="text-3xl font-bold mb-6 text-center">Professionell Glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              <p>
-                Som ledande glasmästare i {formattedCity} erbjuder vi omfattande glastjänster för både privatpersoner och företag. 
-                Med över 20 års erfarenhet i branschen kan vi hantera alla typer av glasarbeten, från akuta reparationer till 
-                planerade installationer.
-              </p>
-              <p>
-                Vårt team av certifierade glasmästare är tillgängliga dygnet runt för att säkerställa att du får den hjälp du 
-                behöver, när du behöver den. Vi använder endast material av högsta kvalitet och följer de senaste 
-                branschstandarderna för att garantera bästa möjliga resultat.
-              </p>
+              <p>{content.description}</p>
+              <p>{content.experience}</p>
             </div>
           </div>
 
@@ -68,16 +64,7 @@ const CityPage = () => {
               Våra Tjänster i {formattedCity}
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              {[
-                'Akut glasreparation',
-                'Fönsterbyte',
-                'Glasmontering',
-                'Isolerglas',
-                'Säkerhetsglas',
-                'Energiglas',
-                'Glasräcken',
-                'Duschväggar'
-              ].map((service, index) => (
+              {content.services.map((service, index) => (
                 <div key={index} className="flex items-center space-x-3 p-3 bg-white rounded-lg">
                   <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
                   <span>{service}</span>
