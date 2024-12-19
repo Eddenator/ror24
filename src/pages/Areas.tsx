@@ -35,7 +35,19 @@ const citiesByCounty = {
     "Uttran", "Utö", "Vaxholm", "Vega", "Vendelsö", "Vårby", "Väddö",
     "Vällingby", "Värmdö", "Västerhaninge", "Vätö", "Yxlan",
     "Åkersberga", "Årsta", "Älta", "Älvsjö", "Ösmo", "Österhaninge",
-    "Österskär"
+    "Österskär", "Akalla", "Aspudden", "Axelsberg", "Barkarby", "Beckomberga", 
+    "Blackeberg", "Bredäng", "Bromsten", "Duvbo", "Enskede Gård",
+    "Fittja", "Flemingsberg", "Fruängen", "Gamla Enskede", "Gröndal",
+    "Gubbängen", "Hagsätra", "Hammarby", "Hammarbyhöjden", "Hässelby Gård",
+    "Hässelby Strand", "Hässelby Villastad", "Hökarängen", "Högdalen",
+    "Johanneshov", "Kärrtorp", "Kallhäll", "Kista", "Kungsholmen",
+    "Liljeholmen", "Långbro", "Långsjö", "Mariehäll", "Midsommarkransen",
+    "Mälarhöjden", "Nockeby", "Norra Ängby", "Näsbypark", "Orhem",
+    "Råcksta", "Rågsved", "Råsunda", "Rinkeby", "Rotebro", "Skarpnäcksgården",
+    "Skärholmen", "Sköndal", "Sollentuna", "Solna", "Spånga", "Stureby",
+    "Sundbyberg", "Sätra", "Södermalm", "Södertörn", "Tallkrogen",
+    "Tensta", "Traneberg", "Ulvsunda", "Vasastan", "Vaxholm", "Vällingby",
+    "Västertorp", "Årsta", "Östberga"
   ],
   "Västra Götalands län": [
     "Göteborg", "Borås", "Uddevalla", "Skövde", "Trollhättan",
@@ -53,7 +65,13 @@ const citiesByCounty = {
     "Bleket", "Dyrön", "Fagerfjäll", "Hakenäset", "Hjälteby",
     "Höviksnäs", "Klädesholmen", "Klövedal", "Kyrkesund",
     "Kållekärr", "Myggenäs", "Rönnäng", "Skärhamn", "Tjörnarp",
-    "Vallhamn", "Åstol"
+    "Vallhamn", "Åstol", "Angered", "Askim", "Backa", "Bergsjön", "Billdal", "Biskopsgården",
+    "Björlanda", "Brännö", "Eriksberg", "Frölunda", "Gårdsten", "Gamlestaden",
+    "Gunnared", "Hammarkullen", "Hjällbo", "Hovås", "Härlanda", "Högsbo",
+    "Johanneberg", "Kortedala", "Kungsbacka", "Kviberg", "Kärra", "Lindholmen",
+    "Linnéstaden", "Lundby", "Lärjedalen", "Majorna", "Masthugget",
+    "Olskroken", "Rannebergen", "Sävedalen", "Torslanda", "Tuve", "Tynnered",
+    "Utby", "Västra Frölunda", "Örgryte", "Öckerö"
   ],
   "Skåne län": [
     "Malmö", "Helsingborg", "Lund", "Kristianstad", "Landskrona",
@@ -65,12 +83,21 @@ const citiesByCounty = {
     "Klagstorp", "Smygehamn", "Annelöv", "Asmundstorp", "Glumslöv",
     "Häljarp", "Härslöv", "Sankt Ibb", "Saxtorp", "Arild",
     "Farhult", "Jonstorp", "Lerberget", "Mjöhult", "Mölle",
-    "Nyhamnsläge", "Skäret", "Strandbaden", "Viken"
+    "Nyhamnsläge", "Skäret", "Strandbaden", "Viken", "Arlöv", "Bjärred", "Bjuv", "Bromölla", "Burlöv", "Dalby", "Dösjebro",
+    "Ekeby", "Eslöv", "Furulund", "Genarp", "Hjärup", "Hofterup", "Hörby",
+    "Höör", "Kävlinge", "Landskrona", "Löddeköpinge", "Lund", "Malmö",
+    "Marieholm", "Oxie", "Perstorp", "Rydsgård", "Sjöbo", "Skurup",
+    "Staffanstorp", "Svalöv", "Svedala", "Södra Sandby", "Tollarp",
+    "Tomelilla", "Trelleborg", "Tygelsjö", "Tågarp", "Veberöd", "Vellinge",
+    "Vittsjö", "Vollsjö", "Ystad", "Åhus", "Åkarp", "Ängelholm", "Örkelljunga"
   ],
   "Uppsala län": [
     "Uppsala", "Enköping", "Almunge", "Björklinge", "Bälinge",
     "Järlåsa", "Knutby", "Länna", "Skyttorp", "Storvreta",
-    "Vattholma", "Vränge"
+    "Vattholma", "Vränge", "Alunda", "Björklinge", "Bälinge", "Enköping", "Gunsta", "Gåvsta",
+    "Järlåsa", "Knivsta", "Lövstalöt", "Morgongåva", "Oxsätra", "Skyttorp",
+    "Storvreta", "Sävja", "Tierp", "Uppsala", "Vattholma", "Vänge",
+    "Örbyhus", "Österbybruk"
   ],
   "Östergötlands län": [
     "Linköping", "Norrköping", "Motala", "Finspång", "Mjölby"
