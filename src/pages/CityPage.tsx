@@ -23,6 +23,7 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
+  // Use the original city name for display, not the normalized version
   const formattedCity = city.charAt(0).toUpperCase() + city.slice(1);
   const formattedDescription = content.description.replace(/%city%/g, formattedCity);
 

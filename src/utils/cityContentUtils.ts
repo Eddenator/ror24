@@ -12,12 +12,15 @@ export const normalizeCity = (city: string): string => {
     .replace(/å/g, 'a')
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
-    .replace(/[^a-z0-9]/g, '');
+    .replace(/é/g, 'e')
+    .replace(/[^a-z0-9]/g, '')
+    .trim();
 };
 
 export const createCitiesObject = (cities: string[]) => {
   return cities.reduce((acc, city) => {
     const key = normalizeCity(city);
+    if (!key) return acc; // Skip empty keys
     return {
       ...acc,
       [key]: createCityContent(city)
