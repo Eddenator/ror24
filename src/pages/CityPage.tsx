@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { cityContent, defaultCityContent } from '../data/cityContent';
 import CityHero from '../components/city/CityHero';
 import TrustSignals from '../components/city/TrustSignals';
@@ -8,12 +8,14 @@ import DocumentHead from '@/components/DocumentHead';
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
-  const formattedCity = city ? city.charAt(0).toUpperCase() + city.slice(1) : '';
   
-  // Get city-specific content or fall back to default
-  const content = city ? cityContent[city.toLowerCase()] || defaultCityContent : defaultCityContent;
+  // If city doesn't exist in cityContent, redirect to 404
+  if (!city || !cityContent[city.toLowerCase()]) {
+    return <Navigate to="/404" replace />;
+  }
 
-  // Replace %city% with the actual city name in the description using regex
+  const formattedCity = city.charAt(0).toUpperCase() + city.slice(1);
+  const content = cityContent[city.toLowerCase()] || defaultCityContent;
   const formattedDescription = content.description.replace(/%city%/g, formattedCity);
 
   return (
@@ -31,7 +33,6 @@ const CityPage = () => {
         <TrustSignals />
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Main Content Column */}
           <div className="md:col-span-2 prose max-w-none">
             <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
@@ -44,7 +45,6 @@ const CityPage = () => {
             </div>
           </div>
 
-          {/* Contact Form Column */}
           <div className="md:col-span-1 space-y-8">
             <ContactForm />
           </div>
