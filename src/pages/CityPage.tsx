@@ -5,6 +5,7 @@ import TrustSignals from '../components/city/TrustSignals';
 import CityServices from '../components/city/CityServices';
 import ContactForm from '../components/city/ContactForm';
 import DocumentHead from '@/components/DocumentHead';
+import { normalizeCity } from '../utils/cityContentUtils';
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
@@ -13,12 +14,7 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
-  const normalizedCity = city.toLowerCase()
-    .replace(/å/g, 'a')
-    .replace(/ä/g, 'a')
-    .replace(/ö/g, 'o')
-    .replace(/[^a-z0-9]/g, '');
-
+  const normalizedCity = normalizeCity(city);
   const content = cityContent[normalizedCity];
   
   if (!content) {
