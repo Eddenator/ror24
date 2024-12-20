@@ -16,7 +16,7 @@ const CountyAccordion = ({ counties }: CountyAccordionProps) => {
       {counties.map(({ county, cities }) => (
         <AccordionItem key={county} value={county}>
           <AccordionTrigger className="text-lg font-semibold">
-            {county} ({cities.length} städer)
+            {county} ({cities.length} {cities.length === 1 ? 'stad' : 'städer'})
           </AccordionTrigger>
           <AccordionContent>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">

@@ -18,11 +18,16 @@ const Areas = () => {
   // Calculate total number of cities
   const totalCities = Object.values(counties).flat().length;
 
+  console.log('Total cities:', totalCities);
+  Object.entries(counties).forEach(([county, cities]) => {
+    console.log(`${county}: ${cities.length} städer`);
+  });
+
   return (
     <div className="min-h-screen">
       <PageHeader
         title="Våra Områden"
-        description={`Vi erbjuder service i över ${totalCities} städer`}
+        description={`Vi erbjuder service i ${totalCities} städer`}
       />
 
       <div className="container mx-auto px-4 py-12">
