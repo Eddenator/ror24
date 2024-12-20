@@ -63,7 +63,6 @@ const Footer = () => {
             </div>
             <div className="space-y-2 text-sm">
               <p>✓ Certifierad Glasmästare</p>
-              <p>✓ ISO 9001:2015</p>
               <p>✓ Auktoriserad Partner</p>
             </div>
           </div>
