@@ -11,6 +11,17 @@ interface CountyAccordionProps {
 }
 
 const CountyAccordion = ({ counties }: CountyAccordionProps) => {
+  const normalizeUrl = (city: string) => {
+    return city.toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/é/g, 'e')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .trim();
+  };
+
   return (
     <Accordion type="single" collapsible className="w-full">
       {counties.map(({ county, cities }) => (
@@ -23,11 +34,7 @@ const CountyAccordion = ({ counties }: CountyAccordionProps) => {
               {cities.map((city) => (
                 <Link
                   key={city}
-                  to={`/${city.toLowerCase()
-                    .replace(/å/g, 'a')
-                    .replace(/ä/g, 'a')
-                    .replace(/ö/g, 'o')
-                    .replace(/[^a-z0-9]/g, '')}`}
+                  to={`/${normalizeUrl(city)}`}
                   className="hover:text-primary transition-colors duration-200"
                 >
                   {city}
