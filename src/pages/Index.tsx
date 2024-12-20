@@ -4,10 +4,10 @@ const Index = () => {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Välkommen till Glas24</h1>
         <p className="text-lg mb-4">
-          Vår affärsidé är enkel: vi vill vara din helhetsleverantör av allt som rör glas. Från minsta reparation till stora specialbeställningar, vi ser till att du alltid kan få hjälp när du behöver det – oavsett plats i Sverige och oavsett tid på dygnet.
+          Vi är din pålitliga partner för alla typer av glasarbeten. Med vår expertis och erfarenhet kan vi hjälpa dig med allt från akuta glasreparationer till planerade fönsterbyten.
         </p>
         <p className="text-lg mb-4">
-          Som en del av 24-nätverket, med över 55 000 utförda jobb och 91% kundnöjdhet i ryggen, vet vi vad som krävs för att skapa trygghet och förtroende.
+          Vårt team av erfarna glasmästare finns tillgängliga dygnet runt för att säkerställa att du får den hjälp du behöver, när du behöver den.
         </p>
         <div className="mt-8">
           <h2 className="text-2xl font-semibold mb-4">Våra Tjänster</h2>
