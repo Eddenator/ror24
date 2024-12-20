@@ -9,24 +9,19 @@ export const generateSitemapUrls = () => {
     { url: 'https://glas24.se/omraden', priority: '0.8' },
   ];
 
-  const cityUrls = Object.values(counties)
-    .flat()
-    .map(city => ({
-      url: `https://glas24.se/${normalizeCity(city)}`,
-      priority: '0.8'
-    }));
+  const allCities = Object.values(counties).flat();
+  console.log(`Processing ${allCities.length} cities for sitemap...`);
 
-  // Log for debugging
-  console.log(`Generated ${cityUrls.length} city URLs`);
-  cityUrls.forEach(({ url }) => {
-    console.log(`Generated URL: ${url}`);
+  const cityUrls = allCities.map(city => {
+    const normalizedCity = normalizeCity(city);
+    const url = `https://glas24.se/${normalizedCity}`;
+    console.log(`Generated URL for ${city}: ${url}`);
+    return {
+      url,
+      priority: '0.8'
+    };
   });
 
+  console.log(`Successfully generated ${cityUrls.length} city URLs`);
   return [...baseUrls, ...cityUrls];
 };
-
-// Add debug logging
-console.log('Total number of URLs in sitemap:', generateSitemapUrls().length);
-Object.entries(counties).forEach(([county, cities]) => {
-  console.log(`${county}: ${cities.length} cities`);
-});

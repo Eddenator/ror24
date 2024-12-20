@@ -13,9 +13,9 @@ export const normalizeCity = (city: string): string => {
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
-    .replace(/[^a-z0-9-]/g, '-') // Replace invalid characters with hyphens
-    .replace(/--+/g, '-') // Replace multiple consecutive hyphens with single hyphen
-    .replace(/^-|-$/g, '') // Remove leading/trailing hyphens
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/--+/g, '-')
+    .replace(/^-|-$/g, '')
     .trim();
 };
 
@@ -29,7 +29,7 @@ export const createCitiesObject = (cities: string[]) => {
       return;
     }
     
-    console.log(`Normalizing city: "${city}" -> "${key}"`);
+    console.log(`Creating content for city: "${city}" with URL key: "${key}"`);
     cityContent[key] = createCityContent(city);
   });
   

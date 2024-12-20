@@ -22,7 +22,7 @@ const CityPage = () => {
   // Find the original city name from counties data
   const originalCity = Object.values(counties)
     .flat()
-    .find((c) => normalizeCity(c) === normalizedCity);
+    .find(c => normalizeCity(c) === normalizedCity);
 
   if (!content || !originalCity) {
     console.log('City not found:', city);
