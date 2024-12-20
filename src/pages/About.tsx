@@ -1,14 +1,13 @@
-import PageHeader from '../components/PageHeader';
+import DocumentHead from '@/components/DocumentHead';
 import { CheckCircle, Users, Clock, Award } from 'lucide-react';
 
 const About = () => {
   return (
     <div className="min-h-screen">
-      <PageHeader
-        title="Om Glas24.se"
-        description="Sveriges ledande glasmästare med service dygnet runt"
+      <DocumentHead 
+        title="Om Glas24 | Sveriges ledande glasmästare"
+        description="Glas24 är Sveriges mest tillgängliga glasmästarservice med över 750 städer i vårt nätverk. Jour dygnet runt med snabb utryckning."
       />
-
       <div className="page-container">
         <div className="max-w-3xl mx-auto mb-20">
           <p className="text-lg text-gray-600 leading-relaxed mb-8">

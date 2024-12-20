@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import SearchBar from '../components/areas/SearchBar';
 import CountyAccordion from '../components/areas/CountyAccordion';
 import { counties } from '../data/cities/counties';
+import DocumentHead from '@/components/DocumentHead';
 
 const Areas = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,6 +26,10 @@ const Areas = () => {
 
   return (
     <div className="min-h-screen">
+      <DocumentHead 
+        title="Våra områden | Glasmästare i hela Sverige"
+        description="Hitta din lokala glasmästare. Vi erbjuder professionell glasservice i över 750 städer i Sverige med jour dygnet runt."
+      />
       <PageHeader
         title="Våra Områden"
         description={`Vi erbjuder service i ${totalCities} städer`}

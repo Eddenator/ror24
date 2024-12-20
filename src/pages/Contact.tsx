@@ -1,9 +1,14 @@
+import DocumentHead from '@/components/DocumentHead';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
+      <DocumentHead 
+        title="Kontakta Glas24 | Dygnet runt glasservice"
+        description="Kontakta Glas24 för akut glasservice eller offertförfrågan. Ring 010-555 11 93 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
+      />
       <PageHeader
         title="Kontakta Oss"
         description="Vi finns här för dig dygnet runt"
