@@ -1,7 +1,7 @@
 import { counties } from '../data/cities/counties';
 import { normalizeCity } from './cityContentUtils';
 
-const URLS_PER_SITEMAP = 1000; // Increased to keep all URLs in one file for now
+const URLS_PER_SITEMAP = 1000;
 
 const generateBaseUrls = () => [
   { url: 'https://glas24.se', priority: '1.0' },
