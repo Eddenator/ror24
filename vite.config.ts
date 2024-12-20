@@ -18,25 +18,35 @@ export default defineConfig(({ mode }) => ({
     {
       name: 'generate-sitemap',
       closeBundle: () => {
-        const { sitemaps, index } = generateSitemaps();
-        
-        // Ensure dist directory exists
-        if (!fs.existsSync('dist')) {
-          fs.mkdirSync('dist');
+        console.log('Starting sitemap generation...');
+        try {
+          const { sitemaps, index } = generateSitemaps();
+          console.log(`Generated ${sitemaps.length} sitemaps`);
+          
+          // Ensure dist directory exists
+          if (!fs.existsSync('dist')) {
+            fs.mkdirSync('dist');
+            console.log('Created dist directory');
+          }
+          
+          // Write sitemap index
+          fs.writeFileSync('dist/sitemap.xml', index);
+          console.log('Written sitemap.xml');
+          
+          // Write individual sitemaps
+          sitemaps.forEach((content, i) => {
+            fs.writeFileSync(`dist/sitemap${i + 1}.xml`, content);
+            console.log(`Written sitemap${i + 1}.xml`);
+          });
+          
+          // Copy XSL file
+          fs.copyFileSync('public/sitemap.xsl', 'dist/sitemap.xsl');
+          console.log('Copied sitemap.xsl');
+          
+          console.log('Sitemap generation completed successfully');
+        } catch (error) {
+          console.error('Error generating sitemaps:', error);
         }
-        
-        // Write sitemap index
-        fs.writeFileSync('dist/sitemap.xml', index);
-        
-        // Write individual sitemaps
-        sitemaps.forEach((content, i) => {
-          fs.writeFileSync(`dist/sitemap${i + 1}.xml`, content);
-        });
-        
-        // Copy XSL file
-        fs.copyFileSync('public/sitemap.xsl', 'dist/sitemap.xsl');
-        
-        console.log('Generated sitemaps successfully');
       }
     }
   ].filter(Boolean),
