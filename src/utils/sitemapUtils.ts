@@ -5,17 +5,17 @@ const URLS_PER_SITEMAP = 100;
 
 const generateBaseUrls = () => [
   { url: 'https://glas24.se', priority: '1.0' },
+  { url: 'https://glas24.se/hem', priority: '0.9' },
   { url: 'https://glas24.se/om-oss', priority: '0.8' },
   { url: 'https://glas24.se/kontakt', priority: '0.8' },
-  { url: 'https://glas24.se/omraden', priority: '0.8' },
+  { url: 'https://glas24.se/omraden', priority: '0.9' }
 ];
 
 const generateCityUrls = () => {
-  const allCities = Object.values(counties).flat();
-  const uniqueCities = [...new Set(allCities)].sort();
-  return uniqueCities.map(city => ({
+  const allCities = counties["Alla städer"];
+  return allCities.map(city => ({
     url: `https://glas24.se/${normalizeCity(city)}`,
-    priority: '0.8'
+    priority: '0.7'
   }));
 };
 
@@ -31,10 +31,10 @@ ${sortedUrls.map(({ url, priority }) => `  <url>
 </urlset>`;
 };
 
-const generateSitemapIndex = (sitemapCount: number) => {
+const generateSitemapIndex = (count: number) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${Array.from({ length: sitemapCount }, (_, i) => `  <sitemap>
+${Array.from({ length: count }, (_, i) => `  <sitemap>
     <loc>https://glas24.se/sitemap${i + 1}.xml</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
   </sitemap>`).join('\n')}
@@ -42,19 +42,17 @@ ${Array.from({ length: sitemapCount }, (_, i) => `  <sitemap>
 };
 
 export const generateSitemaps = () => {
-  const baseUrls = generateBaseUrls();
-  const cityUrls = generateCityUrls();
-  const allUrls = [...baseUrls, ...cityUrls];
+  const allUrls = [...generateBaseUrls(), ...generateCityUrls()];
+  const sitemapCount = Math.ceil(allUrls.length / URLS_PER_SITEMAP);
   
-  // Split URLs into chunks
-  const sitemaps: string[] = [];
-  for (let i = 0; i < allUrls.length; i += URLS_PER_SITEMAP) {
-    const chunk = allUrls.slice(i, i + URLS_PER_SITEMAP);
-    sitemaps.push(generateSitemapContent(chunk));
-  }
-  
+  const sitemaps = Array.from({ length: sitemapCount }, (_, i) => {
+    const start = i * URLS_PER_SITEMAP;
+    const end = start + URLS_PER_SITEMAP;
+    return generateSitemapContent(allUrls.slice(start, end));
+  });
+
   return {
     sitemaps,
-    index: generateSitemapIndex(sitemaps.length)
+    index: generateSitemapIndex(sitemapCount)
   };
 };
