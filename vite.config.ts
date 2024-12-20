@@ -27,4 +27,8 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
+  // Add scripts section
+  scripts: {
+    "generate-sitemap": "tsx scripts/generate-sitemap.ts"
+  }
 }));
