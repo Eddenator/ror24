@@ -14,6 +14,7 @@ export const normalizeCity = (city: string): string => {
 };
 
 export const createCityContent = (city: string): CityContent => {
+  console.log(`Creating content for city: "${city}"`);
   return {
     ...defaultCityContent,
     heroImage: defaultCityContent.heroImage,
@@ -31,8 +32,6 @@ export const createCitiesObject = (cities: string[]) => {
       console.warn(`Warning: Empty key generated for city "${city}"`);
       return;
     }
-    
-    console.log(`Creating content for city: "${city}" with URL key: "${key}"`);
     cityContent[key] = createCityContent(city);
   });
   

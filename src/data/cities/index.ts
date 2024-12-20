@@ -11,5 +11,5 @@ export const cityContent = createCitiesObject(allCities);
 export { counties };
 
 // Add console logging to help debug city content generation
-console.log('Generated city content for cities:', Object.keys(cityContent));
+console.log('Generated city content for cities:', Object.keys(cityContent).length);
 console.log('Total number of cities:', allCities.length);

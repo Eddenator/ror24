@@ -7,12 +7,14 @@ import CityServices from '../components/city/CityServices';
 import ContactForm from '../components/city/ContactForm';
 import DocumentHead from '@/components/DocumentHead';
 import { normalizeCity } from '../utils/cityContentUtils';
+import { useToast } from '@/components/ui/use-toast';
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
+  const { toast } = useToast();
   
   if (!city) {
-    console.log('No city parameter provided');
+    console.error('No city parameter provided');
     return <Navigate to="/404" replace />;
   }
 
@@ -25,9 +27,16 @@ const CityPage = () => {
     .find(c => normalizeCity(c) === normalizedCity);
 
   if (!content || !originalCity) {
-    console.log('City not found:', city);
-    console.log('Normalized city:', normalizedCity);
-    console.log('Available cities:', Object.keys(cityContent));
+    console.error('City not found:', city);
+    console.error('Normalized city:', normalizedCity);
+    console.error('Available cities:', Object.keys(cityContent));
+    
+    toast({
+      variant: "destructive",
+      title: "Sidan hittades inte",
+      description: "Vi kunde inte hitta den begärda staden."
+    });
+    
     return <Navigate to="/404" replace />;
   }
 
