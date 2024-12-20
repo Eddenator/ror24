@@ -7,6 +7,10 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Pages with header image
+  const pagesWithHeaderImage = ['/', '/om-oss', '/omraden', '/kontakt'];
+  const hasHeaderImage = pagesWithHeaderImage.includes(location.pathname) || location.pathname.includes('/');
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -22,13 +26,17 @@ const Navigation = () => {
     { path: '/kontakt', label: 'Kontakt' },
   ];
 
+  const textColorClass = hasHeaderImage && !isScrolled 
+    ? 'text-white hover:text-white/80' 
+    : 'text-gray-600 hover:text-primary';
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="text-2xl font-bold">
+          <Link to="/" className={`text-2xl font-bold ${hasHeaderImage && !isScrolled ? 'text-white' : ''}`}>
             Glas24.se
           </Link>
 
@@ -40,8 +48,8 @@ const Navigation = () => {
                 to={link.path}
                 className={`transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-primary font-semibold'
-                    : 'text-gray-600 hover:text-primary'
+                    ? `${hasHeaderImage && !isScrolled ? 'text-white font-semibold' : 'text-primary font-semibold'}`
+                    : textColorClass
                 }`}
               >
                 {link.label}
@@ -58,7 +66,7 @@ const Navigation = () => {
 
           {/* Mobile Navigation Toggle */}
           <button
-            className="md:hidden p-2"
+            className={`md:hidden p-2 ${hasHeaderImage && !isScrolled ? 'text-white' : ''}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
