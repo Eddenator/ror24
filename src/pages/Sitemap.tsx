@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
+import { counties } from '../data/cities/counties';
 
 const Sitemap = () => {
   return (
@@ -10,7 +11,7 @@ const Sitemap = () => {
       />
 
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-xl font-semibold mb-4">Huvudsidor</h2>
@@ -31,21 +32,34 @@ const Sitemap = () => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold mb-4">Populära Städer</h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/stockholm" className="text-primary hover:underline">Stockholm</Link>
-                </li>
-                <li>
-                  <Link to="/goteborg" className="text-primary hover:underline">Göteborg</Link>
-                </li>
-                <li>
-                  <Link to="/malmo" className="text-primary hover:underline">Malmö</Link>
-                </li>
-                <li>
-                  <Link to="/uppsala" className="text-primary hover:underline">Uppsala</Link>
-                </li>
-              </ul>
+              <h2 className="text-xl font-semibold mb-4">Län och Städer</h2>
+              <div className="space-y-6">
+                {Object.entries(counties).map(([county, cities]) => (
+                  <div key={county}>
+                    <h3 className="font-medium mb-2">{county}</h3>
+                    <div className="grid grid-cols-2 gap-2">
+                      {cities.slice(0, 10).map((city) => (
+                        <Link
+                          key={city}
+                          to={`/${city.toLowerCase()
+                            .replace('å', 'a')
+                            .replace('ä', 'a')
+                            .replace('ö', 'o')
+                            .replace(/[^a-z0-9]/g, '')}`}
+                          className="text-primary hover:underline text-sm"
+                        >
+                          {city}
+                        </Link>
+                      ))}
+                      {cities.length > 10 && (
+                        <span className="text-sm text-gray-500">
+                          +{cities.length - 10} fler städer
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
