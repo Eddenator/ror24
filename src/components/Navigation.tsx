@@ -12,7 +12,23 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <Logo />
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
+            {/* Desktop menu */}
+            <div className="hidden md:flex space-x-8 mr-8">
+              <Link to="/" className="text-primary hover:text-[#FFD700] transition-colors">Hem</Link>
+              <Link to="/omraden" className="text-primary hover:text-[#FFD700] transition-colors">Områden</Link>
+              <Link to="/om-oss" className="text-primary hover:text-[#FFD700] transition-colors">Om Oss</Link>
+              <Link to="/kontakt" className="text-primary hover:text-[#FFD700] transition-colors">Kontakt</Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-primary mr-4"
+            >
+              {isOpen ? <X /> : <Menu />}
+            </button>
+
             {/* Phone number button */}
             <a 
               href="tel:010-555 11 93" 
@@ -21,22 +37,6 @@ const Navigation = () => {
               <Phone size={18} />
               010-555 11 93
             </a>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-primary"
-            >
-              {isOpen ? <X /> : <Menu />}
-            </button>
-
-            {/* Desktop menu */}
-            <div className="hidden md:flex space-x-8">
-              <Link to="/" className="text-primary hover:text-[#FFD700] transition-colors">Hem</Link>
-              <Link to="/omraden" className="text-primary hover:text-[#FFD700] transition-colors">Områden</Link>
-              <Link to="/om-oss" className="text-primary hover:text-[#FFD700] transition-colors">Om Oss</Link>
-              <Link to="/kontakt" className="text-primary hover:text-[#FFD700] transition-colors">Kontakt</Link>
-            </div>
           </div>
         </div>
 
