@@ -4,6 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { generateSitemaps } from "./src/utils/sitemapUtils";
 import fs from "fs";
+import type { Plugin } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -17,7 +18,7 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
     {
       name: 'generate-sitemap',
-      enforce: 'post',
+      enforce: 'post' as const,
       apply: 'build',
       closeBundle: async () => {
         console.log('Starting sitemap generation...');
@@ -48,7 +49,7 @@ export default defineConfig(({ mode }) => ({
           console.log('Sitemap generation completed successfully');
         } catch (error) {
           console.error('Error generating sitemaps:', error);
-          throw error; // Re-throw error to make build fail if sitemap generation fails
+          throw error;
         }
       }
     }
