@@ -5,11 +5,11 @@ const Logo = () => {
   return (
     <Link 
       to="/" 
-      className="flex items-center space-x-2 text-black hover:opacity-90 transition-opacity"
+      className="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity"
     >
-      <GlassWater size={28} className="text-[#FEF7CD]" />
+      <GlassWater size={28} className="text-[#FFD700]" />
       <span className="text-xl font-bold tracking-tight">
-        Glas<span className="text-[#FEF7CD]">24</span>.se
+        Glas<span className="text-[#FFD700]">24</span>.se
       </span>
     </Link>
   );
