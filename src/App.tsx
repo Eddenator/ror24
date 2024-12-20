@@ -27,7 +27,7 @@ const App = () => (
               <Route path="/om-oss" element={<About />} />
               <Route path="/kontakt" element={<Contact />} />
               <Route path="/omraden" element={<Areas />} />
-              <Route path="/omraden/:city" element={<CityPage />} />
+              <Route path="/:city" element={<CityPage />} />
             </Routes>
           </main>
           <Footer />

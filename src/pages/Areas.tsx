@@ -198,7 +198,7 @@ const Areas = () => {
                     {cities.map((city) => (
                       <Link
                         key={city}
-                        to={`/omraden/${city.toLowerCase()}`}
+                        to={`/${city.toLowerCase()}`}
                         className="hover:text-primary transition-colors duration-200"
                       >
                         {city}
