@@ -9,24 +9,23 @@ export const generateSitemapUrls = () => {
     { url: 'https://glas24.se/omraden', priority: '0.8' },
   ];
 
-  // Flatten all cities from all counties into a single array
-  const allCities = Object.values(counties).flat();
+  // Get all cities and remove duplicates
+  const allCities = [...new Set(Object.values(counties).flat())];
   
-  // Remove duplicates and sort alphabetically
-  const uniqueCities = [...new Set(allCities)].sort();
-  
-  console.log(`Total number of cities before deduplication: ${allCities.length}`);
-  console.log(`Number of unique cities: ${uniqueCities.length}`);
+  console.log(`Processing ${allCities.length} unique cities for sitemap`);
 
-  const cityUrls = uniqueCities.map(city => {
+  const cityUrls = allCities.map(city => {
     const normalizedCity = normalizeCity(city);
-    console.log(`Processing city: ${city} -> ${normalizedCity}`);
+    console.log(`Generating URL for city: ${city} -> ${normalizedCity}`);
     return {
       url: `https://glas24.se/${normalizedCity}`,
       priority: '0.8'
     };
   });
 
-  console.log(`Successfully generated ${cityUrls.length} city URLs`);
+  // Sort URLs alphabetically for consistency
+  cityUrls.sort((a, b) => a.url.localeCompare(b.url));
+
+  console.log(`Generated ${cityUrls.length} city URLs`);
   return [...baseUrls, ...cityUrls];
 };
