@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { generateSitemaps } from '../src/utils/sitemapUtils';
 
-const outputDir = path.resolve(__dirname, '../public');
+const outputDir = path.resolve(__dirname, '../dist');
 
 // Ensure the output directory exists
 if (!fs.existsSync(outputDir)) {
