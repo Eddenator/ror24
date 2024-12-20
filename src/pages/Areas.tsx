@@ -7,24 +7,28 @@ import { counties } from '../data/cities/counties';
 const Areas = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredCounties = Object.entries(counties).map(([county, cities]) => ({
+  // Convert counties object to array format expected by CountyAccordion
+  const countiesArray = Object.entries(counties).map(([county, cities]) => ({
     county,
     cities: cities.filter(city => 
       city.toLowerCase().includes(searchTerm.toLowerCase())
     )
   })).filter(({ cities }) => cities.length > 0);
 
+  // Calculate total number of cities
+  const totalCities = Object.values(counties).flat().length;
+
   return (
     <div className="min-h-screen">
       <PageHeader
         title="Våra Områden"
-        description="Vi erbjuder service i över 750 städer"
+        description={`Vi erbjuder service i över ${totalCities} städer`}
       />
 
       <div className="container mx-auto px-4 py-12">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <div className="max-w-3xl mx-auto">
-          <CountyAccordion counties={filteredCounties} />
+          <CountyAccordion counties={countiesArray} />
         </div>
       </div>
     </div>
