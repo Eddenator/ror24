@@ -1,101 +1,41 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
-
-  // Pages with header image
-  const pagesWithHeaderImage = ['/', '/om-oss', '/omraden', '/kontakt'];
-  const hasHeaderImage = pagesWithHeaderImage.includes(location.pathname) || location.pathname.includes('/');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { path: '/', label: 'Hem' },
-    { path: '/om-oss', label: 'Om oss' },
-    { path: '/omraden', label: 'Områden' },
-    { path: '/kontakt', label: 'Kontakt' },
-  ];
-
-  const textColorClass = 'text-gray-900 hover:text-gray-600';
 
   return (
-    <nav className={`w-full z-50 transition-all duration-300 bg-white shadow-md`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="text-2xl font-bold text-gray-900">
-            Glas24.se
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`transition-colors duration-300 ${
-                  location.pathname === link.path
-                    ? 'text-gray-900 font-semibold'
-                    : textColorClass
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href="tel:+46XXXXXXXXX"
-              className="glass-button flex items-center space-x-2"
-            >
-              <Phone size={18} />
-              <span>Ring Nu</span>
-            </a>
-          </div>
-
-          {/* Mobile Navigation Toggle */}
+        <div className="flex justify-between items-center h-16">
+          <Logo />
+          
+          {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-gray-900"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            className="md:hidden"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X /> : <Menu />}
           </button>
+
+          {/* Desktop menu */}
+          <div className="hidden md:flex space-x-8">
+            <Link to="/" className="hover:text-primary">Hem</Link>
+            <Link to="/omraden" className="hover:text-primary">Områden</Link>
+            <Link to="/om-oss" className="hover:text-primary">Om Oss</Link>
+            <Link to="/kontakt" className="hover:text-primary">Kontakt</Link>
+          </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg animate-fadeIn">
-            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`block py-2 transition-colors duration-300 ${
-                    location.pathname === link.path
-                      ? 'text-gray-900 font-semibold'
-                      : 'text-gray-900'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <a
-                href="tel:+46XXXXXXXXX"
-                className="glass-button text-center"
-                onClick={() => setIsOpen(false)}
-              >
-                Ring Nu
-              </a>
-            </div>
+          <div className="md:hidden py-4 space-y-4">
+            <Link to="/" className="block hover:text-primary">Hem</Link>
+            <Link to="/omraden" className="block hover:text-primary">Områden</Link>
+            <Link to="/om-oss" className="block hover:text-primary">Om Oss</Link>
+            <Link to="/kontakt" className="block hover:text-primary">Kontakt</Link>
           </div>
         )}
       </div>
