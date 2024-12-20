@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { normalizeCity } from '@/utils/cityContentUtils';
 
 interface CountyAccordionProps {
   counties: { county: string; cities: string[] }[];
@@ -24,7 +23,11 @@ const CountyAccordion = ({ counties }: CountyAccordionProps) => {
               {cities.map((city) => (
                 <Link
                   key={city}
-                  to={`/${normalizeCity(city)}`}
+                  to={`/${city.toLowerCase()
+                    .replace(/å/g, 'a')
+                    .replace(/ä/g, 'a')
+                    .replace(/ö/g, 'o')
+                    .replace(/[^a-z0-9]/g, '')}`}
                   className="hover:text-primary transition-colors duration-200"
                 >
                   {city}

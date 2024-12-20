@@ -1,6 +1,5 @@
 import { CityContent } from '../types/cityContent';
 import { defaultCityContent } from '../data/defaultCityContent';
-import { cityContent } from '../data/cityContent';
 
 export const normalizeCity = (city: string): string => {
   return city.toLowerCase()
@@ -8,26 +7,24 @@ export const normalizeCity = (city: string): string => {
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
+    .replace(/[^a-z0-9]/g, '-')
     .replace(/--+/g, '-')
     .replace(/^-|-$/g, '')
     .trim();
 };
 
 export const createCityContent = (city: string): CityContent => {
+  console.log(`Generating content for city: ${city}`);
+  
   return {
     ...defaultCityContent,
     description: defaultCityContent.description.replace(/%city%/g, city)
   };
 };
 
-export const getCityContent = (normalizedCity: string): CityContent | null => {
-  return cityContent[normalizedCity] || null;
-};
-
 export const createCitiesObject = (cities: string[]) => {
-  const cityContentObj: { [key: string]: CityContent } = {};
+  console.log(`Creating content for ${cities.length} cities`);
+  const cityContent: { [key: string]: CityContent } = {};
   
   cities.forEach(city => {
     const key = normalizeCity(city);
@@ -35,8 +32,9 @@ export const createCitiesObject = (cities: string[]) => {
       console.warn(`Warning: Empty key generated for city "${city}"`);
       return;
     }
-    cityContentObj[key] = createCityContent(city);
+    cityContent[key] = createCityContent(city);
   });
   
-  return cityContentObj;
+  console.log(`Successfully generated content for ${Object.keys(cityContent).length} cities`);
+  return cityContent;
 };
