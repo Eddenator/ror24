@@ -13,6 +13,9 @@ const CityPage = () => {
   // Get city-specific content or fall back to default
   const content = city ? cityContent[city.toLowerCase()] || defaultCityContent : defaultCityContent;
 
+  // Replace %city% with the actual city name in the description
+  const formattedDescription = content.description.replaceAll('%city%', formattedCity);
+
   return (
     <div className="min-h-screen bg-white">
       <DocumentHead 
@@ -32,7 +35,7 @@ const CityPage = () => {
           <div className="md:col-span-2 prose max-w-none">
             <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              {content.description.split('\n\n').map((paragraph, index) => (
+              {formattedDescription.split('\n\n').map((paragraph, index) => (
                 <p 
                   key={index} 
                   dangerouslySetInnerHTML={{ __html: paragraph }}
