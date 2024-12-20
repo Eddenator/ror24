@@ -9,7 +9,7 @@ const Navigation = () => {
 
   // Pages with header image
   const pagesWithHeaderImage = ['/', '/om-oss', '/omraden', '/kontakt'];
-  const hasHeaderImage = pagesWithHeaderImage.includes(location.pathname) || location.pathname.includes('/');
+  const hasHeaderImage = pagesWithHeaderImage.includes(location.pathname) || location.pathname.startsWith('/stockholm');
 
   useEffect(() => {
     const handleScroll = () => {
