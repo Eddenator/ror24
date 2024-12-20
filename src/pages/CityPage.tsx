@@ -1,51 +1,81 @@
-import { useParams, Navigate } from "react-router-dom";
-import { useEffect } from "react";
-import CityHero from "../components/city/CityHero";
-import CityServices from "../components/city/CityServices";
-import ContactForm from "../components/city/ContactForm";
-import TrustSignals from "../components/city/TrustSignals";
-import DocumentHead from "../components/DocumentHead";
-import { cityContent, defaultCityContent } from "../data/cityContent";
-import StickyCTA from "../components/StickyCTA";
+import { useParams, Navigate } from 'react-router-dom';
+import { cityContent } from '../data/cityContent';
+import { counties } from '../data/cities';
+import CityHero from '../components/city/CityHero';
+import TrustSignals from '../components/city/TrustSignals';
+import CityServices from '../components/city/CityServices';
+import ContactForm from '../components/city/ContactForm';
+import DocumentHead from '@/components/DocumentHead';
+import { normalizeCity } from '../utils/cityContentUtils';
+import { useToast } from '@/components/ui/use-toast';
 
 const CityPage = () => {
-  const { city } = useParams();
+  const { city } = useParams<{ city: string }>();
+  const { toast } = useToast();
   
   if (!city) {
+    console.error('No city parameter provided');
     return <Navigate to="/404" replace />;
   }
 
-  const normalizedCity = city.toLowerCase()
-    .replace(/å/g, 'a')
-    .replace(/ä/g, 'a')
-    .replace(/ö/g, 'o')
-    .replace(/é/g, 'e')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .trim();
+  const normalizedCity = normalizeCity(city);
+  const content = cityContent[normalizedCity];
+  
+  // Find the original city name from counties data
+  const originalCity = Object.values(counties)
+    .flat()
+    .find(c => normalizeCity(c) === normalizedCity);
 
-  const content = cityContent[normalizedCity] || null;
-
-  if (!content) {
+  if (!content || !originalCity) {
+    console.error('City not found:', city);
+    console.error('Normalized city:', normalizedCity);
+    
+    toast({
+      variant: "destructive",
+      title: "Sidan hittades inte",
+      description: "Vi kunde inte hitta den begärda staden."
+    });
+    
     return <Navigate to="/404" replace />;
   }
-
-  const description = content.description.replace(/%city%/g, content.city);
 
   return (
-    <div className="min-h-screen">
-      <DocumentHead
-        title={`Glasmästare i ${content.city} | Glas24`}
-        description={`Behöver du en glasmästare i ${content.city}? Vi på Glas24 hjälper dig med alla typer av glasarbeten. Ring oss på 010-555 11 93 för snabb hjälp!`}
+    <div className="min-h-screen bg-white">
+      <DocumentHead 
+        title={`Glasmästare ${originalCity} - Jour öppen 24/7 - På plats inom 2t`}
+        description={`Professionell glasmästare i ${originalCity}. Akut glasservice med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 93.`}
       />
-      <CityHero city={content.city} image={content.heroImage} />
+      <CityHero 
+        cityName={originalCity}
+        heroImage={content.heroImage}
+      />
+
       <div className="container mx-auto px-4 py-12">
-        <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: description }} />
+        <TrustSignals />
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="md:col-span-2 prose max-w-none">
+            <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {originalCity}</h2>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+              {content.description.split('\n\n').map((paragraph, index) => (
+                <p 
+                  key={index} 
+                  dangerouslySetInnerHTML={{ __html: paragraph.replace(/%city%/g, originalCity) }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="md:col-span-1 space-y-8">
+            <ContactForm />
+          </div>
+        </div>
+
+        <CityServices 
+          cityName={originalCity}
+          services={content.services}
+        />
       </div>
-      <CityServices city={content.city} services={content.services} />
-      <TrustSignals />
-      <ContactForm city={content.city} />
-      <StickyCTA />
     </div>
   );
 };
