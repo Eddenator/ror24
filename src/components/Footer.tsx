@@ -71,6 +71,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} Glas24.se - Alla rättigheter förbehållna</p>
+          <p className="mt-2 text-gray-400">Glas24.se - Ett samarbete med 24 Center Sverige AB 559262-4919</p>
         </div>
       </div>
     </footer>
