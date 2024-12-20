@@ -15,10 +15,12 @@ export const generateSitemapUrls = () => {
   // Remove duplicates and sort alphabetically
   const uniqueCities = [...new Set(allCities)].sort();
   
-  console.log(`Processing ${uniqueCities.length} unique cities for sitemap...`);
+  console.log(`Total number of cities before deduplication: ${allCities.length}`);
+  console.log(`Number of unique cities: ${uniqueCities.length}`);
 
   const cityUrls = uniqueCities.map(city => {
     const normalizedCity = normalizeCity(city);
+    console.log(`Processing city: ${city} -> ${normalizedCity}`);
     return {
       url: `https://glas24.se/${normalizedCity}`,
       priority: '0.8'
