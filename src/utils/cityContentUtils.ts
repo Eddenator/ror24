@@ -10,10 +10,11 @@ export const createCityContent = (city: string): CityContent => ({
 export const createCitiesObject = (cities: string[]) => {
   return cities.reduce((acc, city) => {
     const key = city.toLowerCase()
-      .replace('å', 'a')
-      .replace('ä', 'a')
-      .replace('ö', 'o')
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
       .replace(/[^a-z0-9]/g, '');
+    
     return {
       ...acc,
       [key]: createCityContent(city)

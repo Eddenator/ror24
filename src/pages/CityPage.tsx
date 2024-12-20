@@ -14,14 +14,16 @@ const CityPage = () => {
   }
 
   const normalizedCity = city.toLowerCase()
-    .replace('å', 'a')
-    .replace('ä', 'a')
-    .replace('ö', 'o')
+    .replace(/å/g, 'a')
+    .replace(/ä/g, 'a')
+    .replace(/ö/g, 'o')
     .replace(/[^a-z0-9]/g, '');
 
   const content = cityContent[normalizedCity];
   
   if (!content) {
+    console.log('City not found:', city, 'Normalized:', normalizedCity);
+    console.log('Available cities:', Object.keys(cityContent));
     return <Navigate to="/404" replace />;
   }
 
