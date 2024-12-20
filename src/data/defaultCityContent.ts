@@ -6,7 +6,7 @@ export const defaultCityContent: CityContent = {
 
 Alltid öppet – alltid tillgängliga Vi vet att olyckor inte har några kontorstider. Därför håller vi öppet 24/7, varje dag året runt. Ett samtal till oss – och vi är på väg för att hjälpa dig.
 
-Glas24 – En del av 24-nätverket Vi är stolta medlemmar i 24-nätverket, som har:
+**Glas24 – En del av 24-nätverket Vi är stolta medlemmar i 24-nätverket, som har:**
 
 55 000+ utförda jobb i ryggen 91% nöjda kunder som gärna rekommenderar oss vidare Med erfarenhet, tillgänglighet och pålitlighet i varje jobb ser vi till att du alltid kan känna dig trygg när du anlitar oss.
 
