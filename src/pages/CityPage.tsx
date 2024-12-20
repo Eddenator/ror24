@@ -32,13 +32,13 @@ const CityPage = () => {
         title={`Glasmästare i ${formattedCity} | Glas24`}
         description={`Professionell glasmästare i ${formattedCity}. Vi erbjuder akut glasservice, fönsterbyte och reparationer dygnet runt med kort väntetid.`}
       />
-      <CityHero city={formattedCity} image={content.heroImage} />
+      <CityHero cityName={formattedCity} heroImage={content.heroImage} />
       <div className="container mx-auto px-4 py-12">
         <div className="prose max-w-none">
           <p className="text-lg mb-8">{formattedDescription}</p>
         </div>
-        <CityServices services={content.services} city={formattedCity} />
-        <ContactForm city={formattedCity} />
+        <CityServices cityName={formattedCity} services={content.services} />
+        <ContactForm />
       </div>
     </div>
   );
