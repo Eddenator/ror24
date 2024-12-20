@@ -1,5 +1,6 @@
 import DocumentHead from '@/components/DocumentHead';
-import { CheckCircle, Users, Clock, Award } from 'lucide-react';
+import PageHeader from '@/components/PageHeader';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const About = () => {
   return (
@@ -8,70 +9,76 @@ const About = () => {
         title="Om Glas24 | Sveriges ledande glasmästare"
         description="Glas24 är Sveriges mest tillgängliga glasmästarservice med över 750 städer i vårt nätverk. Jour dygnet runt med snabb utryckning."
       />
+      <PageHeader
+        title="Om Oss"
+        description="Sveriges mest tillgängliga glasmästarservice"
+      />
+
       <div className="page-container">
-        <div className="max-w-3xl mx-auto mb-20">
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            Glas24.se är Sveriges mest tillgängliga glasmästarservice. Vi har byggt upp ett 
-            omfattande nätverk av erfarna glasmästare över hela landet för att kunna erbjuda 
-            snabb och professionell service när du behöver det som mest.
-          </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Med över X års erfarenhet i branschen har vi hjälpt tusentals kunder med allt 
-            från akuta glasreparationer till planerade glasprojekt. Vår styrka ligger i vår 
-            tillgänglighet och vårt engagemang för kvalitet i varje uppdrag.
-          </p>
-        </div>
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="prose max-w-none">
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Glas24 är en del av ett av Sveriges största nätverk av auktoriserade glasmästare, alltid redo att rycka in när du behöver hjälp. Med vår omfattande närvaro i över 750 städer står vi redo, oavsett om det är en akut jourutryckning mitt i natten eller ett planerat glasbyte.
+            </p>
+            
+            <h2 className="text-2xl font-semibold mb-4">Alltid öppet – alltid tillgängliga</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Vi vet att olyckor inte har några kontorstider. Därför håller vi öppet 24/7, varje dag året runt. Ett samtal till oss – och vi är på väg för att hjälpa dig.
+            </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          <div className="card">
-            <h3 className="text-2xl font-semibold mb-4">Vår Vision</h3>
-            <p className="text-gray-600">
-              Att vara Sveriges mest pålitliga och tillgängliga glasmästarservice, 
-              där kvalitet och kundnöjdhet står i centrum för allt vi gör.
+            <h2 className="text-2xl font-semibold mb-4">Glas24 – En del av 24-nätverket</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Vi är stolta medlemmar i 24-nätverket, som har:
+            </p>
+            <ul className="list-none space-y-2 mb-8">
+              <li className="flex items-center space-x-2">
+                <span className="text-yellow-400">✓</span>
+                <span>55 000+ utförda jobb i ryggen</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-yellow-400">✓</span>
+                <span>91% nöjda kunder som gärna rekommenderar oss vidare</span>
+              </li>
+            </ul>
+            <p className="text-lg text-gray-600 leading-relaxed mb-12">
+              Med erfarenhet, tillgänglighet och pålitlighet i varje jobb ser vi till att du alltid kan känna dig trygg när du anlitar oss.
             </p>
           </div>
-          <div className="card">
-            <h3 className="text-2xl font-semibold mb-4">Vårt Löfte</h3>
-            <p className="text-gray-600">
-              Vi lovar att alltid finnas tillgängliga när du behöver oss, med snabb 
-              responstid och professionellt utförande av alla uppdrag.
-            </p>
-          </div>
-        </div>
 
-        <div className="bg-secondary rounded-lg p-8 mb-20">
-          <h3 className="text-2xl font-semibold mb-6 text-center">
-            Våra Kärnvärden
-          </h3>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Clock,
-                title: "Tillgänglighet",
-                description: "Öppet dygnet runt, alla dagar"
-              },
-              {
-                icon: CheckCircle,
-                title: "Kvalitet",
-                description: "Högsta standard på material och arbete"
-              },
-              {
-                icon: Users,
-                title: "Kompetens",
-                description: "Erfarna och certifierade glasmästare"
-              },
-              {
-                icon: Award,
-                title: "Garanti",
-                description: "Trygghetsgaranti på alla arbeten"
-              }
-            ].map((value, index) => (
-              <div key={index} className="text-center">
-                <value.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
-                <h4 className="font-semibold mb-2">{value.title}</h4>
-                <p className="text-gray-600">{value.description}</p>
+          <div className="grid md:grid-cols-2 gap-8 bg-gray-50 p-8 rounded-lg">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-yellow-400" />
+                <div>
+                  <p className="font-semibold">Ring oss</p>
+                  <a href="tel:010-555 11 93" className="text-gray-600 hover:text-primary">010-555 11 93</a>
+                </div>
               </div>
-            ))}
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-yellow-400" />
+                <div>
+                  <p className="font-semibold">E-post</p>
+                  <a href="mailto:info@glas24.se" className="text-gray-600 hover:text-primary">info@glas24.se</a>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-yellow-400" />
+                <div>
+                  <p className="font-semibold">Adress</p>
+                  <p className="text-gray-600">Kungsgatan 4</p>
+                  <p className="text-gray-600">421 47 Göteborg</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock className="w-5 h-5 text-yellow-400" />
+                <div>
+                  <p className="font-semibold">Öppettider</p>
+                  <p className="text-gray-600">Öppet dygnet runt</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

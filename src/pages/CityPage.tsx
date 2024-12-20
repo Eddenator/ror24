@@ -12,23 +12,24 @@ const CityPage = () => {
   const { city } = useParams<{ city: string }>();
   
   if (!city) {
+    console.log('No city parameter provided');
     return <Navigate to="/404" replace />;
   }
 
   const normalizedCity = normalizeCity(city);
   const content = cityContent[normalizedCity];
   
-  if (!content) {
+  // Find the original city name from counties data
+  const originalCity = Object.values(counties)
+    .flat()
+    .find((c) => normalizeCity(c) === normalizedCity);
+
+  if (!content || !originalCity) {
     console.log('City not found:', city);
     console.log('Normalized city:', normalizedCity);
     console.log('Available cities:', Object.keys(cityContent));
     return <Navigate to="/404" replace />;
   }
-
-  // Find the original city name from counties data
-  const originalCity = Object.values(counties)
-    .flat()
-    .find((c) => normalizeCity(c) === normalizedCity) || city;
 
   return (
     <div className="min-h-screen bg-white">
@@ -51,7 +52,7 @@ const CityPage = () => {
               {content.description.split('\n\n').map((paragraph, index) => (
                 <p 
                   key={index} 
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                  dangerouslySetInnerHTML={{ __html: paragraph.replace(/%city%/g, originalCity) }}
                 />
               ))}
             </div>
