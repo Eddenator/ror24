@@ -12,6 +12,9 @@ const CityPage = () => {
   // Get city-specific content or fall back to default
   const content = city ? cityContent[city.toLowerCase()] || defaultCityContent : defaultCityContent;
 
+  // Replace all instances of %city% with the formatted city name
+  const formattedDescription = content.description.replace(/%city%/g, formattedCity);
+
   return (
     <div className="min-h-screen bg-white">
       <CityHero 
@@ -27,11 +30,10 @@ const CityPage = () => {
           <div className="md:col-span-2 prose max-w-none">
             <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              {content.description.split('\n\n').map((paragraph, index) => (
+              {formattedDescription.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
-            <p className="font-bold">Glas24 – En del av 24-nätverket Vi är stolta medlemmar i 24-nätverket, som har:</p>
           </div>
 
           {/* Contact Form Column */}
