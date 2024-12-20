@@ -6,7 +6,7 @@ interface PageHeaderProps {
 
 const PageHeader = ({ title, description, className = "" }: PageHeaderProps) => {
   return (
-    <div className={`py-20 bg-secondary ${className}`}>
+    <div className={`pt-32 pb-20 bg-secondary ${className}`}>
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn">
           {title}
