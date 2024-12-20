@@ -7,8 +7,9 @@ const allCities = Object.values(counties).flat();
 // Create city content for all cities
 export const cityContent = createCitiesObject(allCities);
 
-// Export counties for the Areas page
-export { counties as citiesByCounty };
+// Export counties for the Areas page and sitemap generation
+export { counties };
 
 // Add console logging to help debug city content generation
 console.log('Generated city content for cities:', Object.keys(cityContent));
+console.log('Total number of cities:', allCities.length);
