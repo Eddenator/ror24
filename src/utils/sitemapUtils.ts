@@ -30,7 +30,6 @@ const generateCityUrls = () => {
 
 const generateSitemapContent = (urls: { url: string; priority: string }[]) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(({ url, priority }) => `  <url>
     <loc>${url}</loc>
@@ -42,7 +41,6 @@ ${urls.map(({ url, priority }) => `  <url>
 
 const generateSitemapIndex = (count: number) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${Array.from({ length: count }, (_, i) => `  <sitemap>
     <loc>https://glas24.se/sitemap${i + 1}.xml</loc>
