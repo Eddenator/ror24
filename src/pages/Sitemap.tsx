@@ -1,7 +1,10 @@
-import { generateSitemapXml } from '../utils/sitemapUtils';
+import { generateSitemaps } from '../utils/sitemapUtils';
 
 const Sitemap = () => {
-  const xmlContent = generateSitemapXml();
+  const { sitemaps } = generateSitemaps();
+  
+  // Display the first sitemap content as an example
+  const xmlContent = sitemaps[0] || '';
   
   return (
     <pre className="whitespace-pre-wrap">
