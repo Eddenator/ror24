@@ -1,5 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { cityContent, defaultCityContent } from '../data/cityContent';
+import { cityContent } from '../data/cityContent';
 import CityHero from '../components/city/CityHero';
 import TrustSignals from '../components/city/TrustSignals';
 import CityServices from '../components/city/CityServices';
@@ -9,13 +9,23 @@ import DocumentHead from '@/components/DocumentHead';
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
   
-  // If city doesn't exist in cityContent, redirect to 404
-  if (!city || !cityContent[city.toLowerCase()]) {
+  if (!city) {
+    return <Navigate to="/404" replace />;
+  }
+
+  const normalizedCity = city.toLowerCase()
+    .replace('å', 'a')
+    .replace('ä', 'a')
+    .replace('ö', 'o')
+    .replace(/[^a-z0-9]/g, '');
+
+  const content = cityContent[normalizedCity];
+  
+  if (!content) {
     return <Navigate to="/404" replace />;
   }
 
   const formattedCity = city.charAt(0).toUpperCase() + city.slice(1);
-  const content = cityContent[city.toLowerCase()] || defaultCityContent;
   const formattedDescription = content.description.replace(/%city%/g, formattedCity);
 
   return (
