@@ -1,4 +1,4 @@
-import { counties } from '../data/cities';
+import { counties } from '../data/cities/counties';
 import { normalizeCity } from './cityContentUtils';
 
 const URLS_PER_SITEMAP = 1000;
@@ -12,8 +12,8 @@ const generateBaseUrls = () => [
 ];
 
 const generateCityUrls = () => {
-  // Get all cities from the counties object and flatten the array
-  const allCities = Object.values(counties).flat();
+  // Get all cities from the counties object
+  const allCities = counties["Alla städer"];
   
   // Remove duplicates and sort alphabetically
   const uniqueCities = [...new Set(allCities)].sort((a, b) => 
