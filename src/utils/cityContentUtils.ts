@@ -7,9 +7,10 @@ export const normalizeCity = (city: string): string => {
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
-    .replace(/[^a-z0-9]/g, '-')
-    .replace(/--+/g, '-')
-    .replace(/^-|-$/g, '')
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, '') // Remove all other special characters except hyphens
+    .replace(/--+/g, '-') // Replace multiple consecutive hyphens with a single hyphen
+    .replace(/^-|-$/g, '') // Remove leading and trailing hyphens
     .trim();
 };
 
