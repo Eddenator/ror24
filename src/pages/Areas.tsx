@@ -17,12 +17,13 @@ const Areas = () => {
   })).filter(({ cities }) => cities.length > 0);
 
   // Calculate total number of cities
-  const totalCities = Object.values(counties).flat().length;
+  const allCities = Object.values(counties).flat();
+  const uniqueCities = [...new Set(allCities)];
+  const totalCities = uniqueCities.length;
 
-  console.log('Total cities:', totalCities);
-  Object.entries(counties).forEach(([county, cities]) => {
-    console.log(`${county}: ${cities.length} städer`);
-  });
+  console.log('All cities:', allCities);
+  console.log('Unique cities:', uniqueCities);
+  console.log('Total unique cities:', totalCities);
 
   return (
     <div className="min-h-screen">
