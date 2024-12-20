@@ -13,8 +13,8 @@ const CityPage = () => {
   // Get city-specific content or fall back to default
   const content = city ? cityContent[city.toLowerCase()] || defaultCityContent : defaultCityContent;
 
-  // Replace %city% with the actual city name in the description
-  const formattedDescription = content.description.replaceAll('%city%', formattedCity);
+  // Replace %city% with the actual city name in the description using regex
+  const formattedDescription = content.description.replace(/%city%/g, formattedCity);
 
   return (
     <div className="min-h-screen bg-white">
