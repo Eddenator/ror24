@@ -16,6 +16,12 @@ export const generateSitemapUrls = () => {
       priority: '0.8'
     }));
 
+  // Log for debugging
+  console.log(`Generated ${cityUrls.length} city URLs`);
+  cityUrls.forEach(({ url }) => {
+    console.log(`Generated URL: ${url}`);
+  });
+
   return [...baseUrls, ...cityUrls];
 };
 

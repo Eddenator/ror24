@@ -21,14 +21,7 @@
 <priority>0.8</priority>
 </url>
 ${Object.values(counties).flat().map(city => `<url>
-<loc>https://glas24.se/${city.toLowerCase()
-    .replace(/å/g, 'a')
-    .replace(/ä/g, 'a')
-    .replace(/ö/g, 'o')
-    .replace(/é/g, 'e')
-    .replace(/[^a-z0-9-]/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-|-$/g, '')}</loc>
+<loc>https://glas24.se/${normalizeCity(city)}</loc>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>`).join('\n')}
