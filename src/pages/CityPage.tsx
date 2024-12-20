@@ -49,6 +49,21 @@ const CityPage = () => {
           </div>
         </div>
 
+        {/* Services Section - Now Full Width */}
+        <div className="bg-gray-50 rounded-lg p-8 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">
+            Våra Tjänster i {formattedCity}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {content.services.map((service, index) => (
+              <div key={index} className="flex items-center space-x-3 p-3 bg-white rounded-lg">
+                <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
+                <span>{service}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Two Column Layout */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Main Content Column (2/3) */}
@@ -58,21 +73,6 @@ const CityPage = () => {
               {content.description.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
-            </div>
-
-            {/* Services Grid */}
-            <div className="bg-gray-50 rounded-lg p-8 mt-8">
-              <h2 className="text-2xl font-semibold mb-6">
-                Våra Tjänster i {formattedCity}
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {content.services.map((service, index) => (
-                  <div key={index} className="flex items-center space-x-3 p-3 bg-white rounded-lg">
-                    <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
-                    <span>{service}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
