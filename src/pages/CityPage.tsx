@@ -29,7 +29,6 @@ const CityPage = () => {
   if (!content || !originalCity) {
     console.error('City not found:', city);
     console.error('Normalized city:', normalizedCity);
-    console.error('Available cities:', Object.keys(cityContent));
     
     toast({
       variant: "destructive",

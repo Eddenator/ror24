@@ -14,16 +14,29 @@ export const normalizeCity = (city: string): string => {
 };
 
 export const createCityContent = (city: string): CityContent => {
-  console.log(`Creating content for city: "${city}"`);
+  const heroImages = [
+    "photo-1472396961693-142e6e269027",
+    "photo-1466721591366-2d5fba72006d",
+    "photo-1493962853295-0fd70327578a",
+    "photo-1438565434616-3ef039228b15",
+    "photo-1469041797191-50ace28483c3"
+  ];
+  
+  // Välj en slumpmässig bild för varje stad
+  const randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
+  const heroImage = `https://images.unsplash.com/${randomImage}`;
+
+  console.log(`Generating content for city: ${city}`);
+  
   return {
-    ...defaultCityContent,
-    heroImage: defaultCityContent.heroImage,
+    heroImage,
     description: defaultCityContent.description.replace(/%city%/g, city),
     services: defaultCityContent.services
   };
 };
 
 export const createCitiesObject = (cities: string[]) => {
+  console.log(`Creating content for ${cities.length} cities`);
   const cityContent: { [key: string]: CityContent } = {};
   
   cities.forEach(city => {
@@ -35,5 +48,6 @@ export const createCitiesObject = (cities: string[]) => {
     cityContent[key] = createCityContent(city);
   });
   
+  console.log(`Successfully generated content for ${Object.keys(cityContent).length} cities`);
   return cityContent;
 };

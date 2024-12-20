@@ -9,17 +9,13 @@ const generateBaseUrls = () => [
 ];
 
 const generateCityUrls = () => {
-  // Get all cities from counties
   const allCities = Object.values(counties).flat();
-  
-  // Remove duplicates and sort alphabetically
   const uniqueCities = [...new Set(allCities)].sort();
   
   console.log(`Generating URLs for ${uniqueCities.length} unique cities`);
   
   return uniqueCities.map(city => {
     const normalizedCity = normalizeCity(city);
-    console.log(`Generated URL for city: ${city} -> ${normalizedCity}`);
     return {
       url: `https://glas24.se/${normalizedCity}`,
       priority: '0.8'
