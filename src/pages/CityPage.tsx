@@ -20,8 +20,8 @@ const CityPage = () => {
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white mt-20">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Glasmästare {formattedCity}</h1>
-            <p className="text-xl mb-4">Professionell glasservice i {formattedCity} - Jour dygnet runt</p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Professionell Glasmästare i {formattedCity}</h1>
+            <p className="text-xl mb-4">24/7 jourhavande glasmästare i {formattedCity}</p>
             <a href="tel:010-555 11 93" className="glass-button bg-yellow-400 text-black hover:bg-yellow-500">
               Ring 010-555 11 93
             </a>
@@ -59,6 +59,7 @@ const CityPage = () => {
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
+            <h2 className="text-2xl font-bold mt-8 mb-6">Glas24 – En del av 24-nätverket</h2>
           </div>
 
           {/* CTA Column (1/3) */}
