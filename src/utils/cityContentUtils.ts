@@ -1,3 +1,6 @@
+import { CityContent } from '../types/cityContent';
+import { defaultCityContent } from '../data/defaultCityContent';
+
 export const normalizeCity = (city: string): string => {
   return city.toLowerCase()
     .replace(/å/g, 'a')
@@ -10,15 +13,17 @@ export const normalizeCity = (city: string): string => {
     .trim();
 };
 
-export const createCityContent = (city: string) => {
+export const createCityContent = (city: string): CityContent => {
   return {
-    city,
-    normalizedName: normalizeCity(city)
+    ...defaultCityContent,
+    heroImage: defaultCityContent.heroImage,
+    description: defaultCityContent.description.replace(/%city%/g, city),
+    services: defaultCityContent.services
   };
 };
 
 export const createCitiesObject = (cities: string[]) => {
-  const cityContent: { [key: string]: any } = {};
+  const cityContent: { [key: string]: CityContent } = {};
   
   cities.forEach(city => {
     const key = normalizeCity(city);
