@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
       name: 'generate-sitemap',
       enforce: 'post' as const,
       apply: 'build' as const,
-      closeBundle: async () => {
+      async closeBundle() {
         console.log('Starting sitemap generation...');
         try {
           const { sitemaps, index } = generateSitemaps();
@@ -43,8 +43,10 @@ export default defineConfig(({ mode }) => ({
           });
           
           // Copy XSL file
-          fs.copyFileSync('public/sitemap.xsl', 'dist/sitemap.xsl');
-          console.log('Copied sitemap.xsl');
+          if (fs.existsSync('public/sitemap.xsl')) {
+            fs.copyFileSync('public/sitemap.xsl', 'dist/sitemap.xsl');
+            console.log('Copied sitemap.xsl');
+          }
           
           console.log('Sitemap generation completed successfully');
         } catch (error) {
