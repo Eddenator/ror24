@@ -5,9 +5,9 @@ const ContactForm = () => {
   useEffect(() => {
     // Initialize Marquiz after component mounts
     if (window.Marquiz) {
-      window.Marquiz.add(['Inline', {
+      window.Marquiz.add(['Button', {
         id: '67653b66469d4d00263e29f7',
-        buttonText: 'Start',
+        buttonText: 'Få offert ✉️',
         bgColor: '#efce36',
         textColor: '#ffffff',
         rounded: true,
@@ -16,9 +16,9 @@ const ContactForm = () => {
       }]);
     } else {
       document.addEventListener('marquizLoaded', function() {
-        window.Marquiz.add(['Inline', {
+        window.Marquiz?.add(['Button', {
           id: '67653b66469d4d00263e29f7',
-          buttonText: 'Start',
+          buttonText: 'Få offert ✉️',
           bgColor: '#efce36',
           textColor: '#ffffff',
           rounded: true,
