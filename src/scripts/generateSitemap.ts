@@ -1,13 +1,18 @@
 import fs from 'fs';
 import path from 'path';
-import { generateSitemapXml } from '../utils/sitemapUtils';
+import { generateSitemaps } from '../utils/sitemapUtils';
 
-const outputPath = path.resolve(__dirname, '../../public/sitemap.xml');
+const outputDir = path.resolve(__dirname, '../../public');
 
-// Generate sitemap content
-const sitemapContent = generateSitemapXml();
+// Generate all sitemaps
+const { sitemaps, index } = generateSitemaps();
 
-// Write to file
-fs.writeFileSync(outputPath, sitemapContent);
+// Write sitemap index
+fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), index);
 
-console.log(`Sitemap generated at ${outputPath}`);
+// Write individual sitemaps
+sitemaps.forEach((content, i) => {
+  fs.writeFileSync(path.join(outputDir, `sitemap${i + 1}.xml`), content);
+});
+
+console.log(`Generated sitemap index and ${sitemaps.length} sitemap files`);
