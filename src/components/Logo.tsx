@@ -1,4 +1,4 @@
-import { Window } from 'lucide-react';
+import { window } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Logo = () => {
@@ -7,7 +7,7 @@ const Logo = () => {
       to="/" 
       className="flex items-center space-x-2 text-primary hover:opacity-90 transition-opacity"
     >
-      <Window size={28} className="text-black" />
+      <window size={28} className="text-black" />
       <span className="text-xl font-bold tracking-tight">
         <span className="text-black">Glas</span>
         <span className="text-[#FFD700]">24</span>
