@@ -1,10 +1,17 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import Logo from "./Logo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // Stäng menyn när användaren navigerar till en ny sida
+  useEffect(() => {
+    setIsOpen(false);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
