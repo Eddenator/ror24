@@ -1,6 +1,7 @@
 import { CityContent } from '../types/cityContent';
 
 export const defaultCityContent: CityContent = {
+  city: "%city%", // This will be replaced with actual city name
   heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/glas.jpg",
   description: `Behöver du en glasmästare i %city%? Du har hittat rätt! Glas24 är en del av ett av Sveriges största nätverk av auktoriserade glasmästare, alltid redo att rycka in när du behöver hjälp. Vår filial i %city% tillsammans med våra partners står redo, oavsett om dete är en akut jourutryckning mitt i natten eller ett planerat glasbyte.
 
