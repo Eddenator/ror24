@@ -1,3 +1,4 @@
 /* /index.html 200
 /sitemap.xml /sitemap.xml 200
 /sitemap*.xml /sitemap$1.xml 200
+/sitemap.xsl /sitemap.xsl 200
