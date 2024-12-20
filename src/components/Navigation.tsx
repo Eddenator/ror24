@@ -26,9 +26,7 @@ const Navigation = () => {
     { path: '/kontakt', label: 'Kontakt' },
   ];
 
-  const textColorClass = hasHeaderImage && !isScrolled 
-    ? 'text-white hover:text-white/80' 
-    : 'text-gray-600 hover:text-primary';
+  const textColorClass = 'text-gray-900 hover:text-primary';
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
@@ -36,7 +34,7 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className={`text-2xl font-bold ${hasHeaderImage && !isScrolled ? 'text-white' : ''}`}>
+          <Link to="/" className="text-2xl font-bold text-gray-900">
             Glas24.se
           </Link>
 
@@ -48,7 +46,7 @@ const Navigation = () => {
                 to={link.path}
                 className={`transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? `${hasHeaderImage && !isScrolled ? 'text-white font-semibold' : 'text-primary font-semibold'}`
+                    ? 'text-primary font-semibold'
                     : textColorClass
                 }`}
               >
@@ -66,7 +64,7 @@ const Navigation = () => {
 
           {/* Mobile Navigation Toggle */}
           <button
-            className={`md:hidden p-2 ${hasHeaderImage && !isScrolled ? 'text-white' : ''}`}
+            className="md:hidden p-2 text-gray-900"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -85,7 +83,7 @@ const Navigation = () => {
                   className={`block py-2 transition-colors duration-300 ${
                     location.pathname === link.path
                       ? 'text-primary font-semibold'
-                      : 'text-gray-600'
+                      : 'text-gray-900'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
