@@ -1,34 +1,6 @@
-import { Phone } from "lucide-react";
-import { useEffect } from "react";
+import { Phone, Mail } from "lucide-react";
 
 const ContactForm = () => {
-  useEffect(() => {
-    // Initialize Marquiz after component mounts
-    if (window.Marquiz) {
-      window.Marquiz.add(['Button', {
-        id: '67653b66469d4d00263e29f7',
-        buttonText: 'Få offert ✉️',
-        bgColor: '#efce36',
-        textColor: '#ffffff',
-        rounded: true,
-        shadow: 'rgba(239, 206, 54, 0.5)',
-        blicked: true
-      }]);
-    } else {
-      document.addEventListener('marquizLoaded', function() {
-        window.Marquiz?.add(['Button', {
-          id: '67653b66469d4d00263e29f7',
-          buttonText: 'Få offert ✉️',
-          bgColor: '#efce36',
-          textColor: '#ffffff',
-          rounded: true,
-          shadow: 'rgba(239, 206, 54, 0.5)',
-          blicked: true
-        }]);
-      });
-    }
-  }, []);
-
   return (
     <div className="bg-gray-50 p-6 rounded-lg">
       <p className="text-lg mb-4 font-medium">
@@ -42,7 +14,14 @@ const ContactForm = () => {
         <span>Ring 010-555 11 93</span>
       </a>
       
-      <div data-marquiz-id="67653b66469d4d00263e29f7"></div>
+      <p className="text-lg mb-4 font-medium">Fyll ut kontaktformulär:</p>
+      <a
+        href="https://#popup:marquiz_67653b66469d4d00263e29f7"
+        className="glass-button bg-yellow-400 text-black hover:bg-yellow-500 w-full flex items-center justify-center space-x-2"
+      >
+        <Mail size={18} />
+        <span>Få offert ✉️</span>
+      </a>
     </div>
   );
 };
