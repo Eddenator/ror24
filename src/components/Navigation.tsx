@@ -26,15 +26,15 @@ const Navigation = () => {
     { path: '/kontakt', label: 'Kontakt' },
   ];
 
-  const textColorClass = 'text-gray-900 hover:text-primary';
+  const textColorClass = 'text-white hover:text-white/80';
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : hasHeaderImage ? 'bg-transparent' : 'bg-[#222222]'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="text-2xl font-bold text-gray-900">
+          <Link to="/" className="text-2xl font-bold text-white">
             Glas24.se
           </Link>
 
@@ -46,7 +46,7 @@ const Navigation = () => {
                 to={link.path}
                 className={`transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-primary font-semibold'
+                    ? 'text-white font-semibold'
                     : textColorClass
                 }`}
               >
@@ -64,7 +64,7 @@ const Navigation = () => {
 
           {/* Mobile Navigation Toggle */}
           <button
-            className="md:hidden p-2 text-gray-900"
+            className="md:hidden p-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -74,7 +74,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-20 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg animate-fadeIn">
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-[#222222]/95 backdrop-blur-md shadow-lg animate-fadeIn">
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
@@ -82,8 +82,8 @@ const Navigation = () => {
                   to={link.path}
                   className={`block py-2 transition-colors duration-300 ${
                     location.pathname === link.path
-                      ? 'text-primary font-semibold'
-                      : 'text-gray-900'
+                      ? 'text-white font-semibold'
+                      : 'text-white'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
