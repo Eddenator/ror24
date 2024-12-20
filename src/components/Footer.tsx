@@ -20,7 +20,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-2">
                 <MapPin size={18} />
-                Kungsgatan 44<br />
+                Kungsgatan 4<br />
                 421 47 Göteborg
               </div>
               <div className="flex items-center gap-2">
