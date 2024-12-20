@@ -1,13 +1,13 @@
-import { GlassWater } from 'lucide-react';
+import { Window } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Logo = () => {
   return (
     <Link 
       to="/" 
-      className="flex items-center space-x-2 text-white hover:opacity-90 transition-opacity"
+      className="flex items-center space-x-2 text-primary hover:opacity-90 transition-opacity"
     >
-      <GlassWater size={28} className="text-[#FFD700]" />
+      <Window size={28} className="text-primary" />
       <span className="text-xl font-bold tracking-tight">
         Glas<span className="text-[#FFD700]">24</span>.se
       </span>
