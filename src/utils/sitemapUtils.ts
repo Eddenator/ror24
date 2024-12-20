@@ -1,24 +1,31 @@
-import { counties } from '../data/cities/counties';
+import { counties } from '../data/cities';
 import { normalizeCity } from './cityContentUtils';
 
 const URLS_PER_SITEMAP = 1000;
 
 const generateBaseUrls = () => [
   { url: 'https://glas24.se', priority: '1.0' },
-  { url: 'https://glas24.se/hem', priority: '0.9' },
+  { url: 'https://glas24.se/hem', priority: '0.8' },
   { url: 'https://glas24.se/om-oss', priority: '0.8' },
   { url: 'https://glas24.se/kontakt', priority: '0.8' },
-  { url: 'https://glas24.se/omraden', priority: '0.9' }
+  { url: 'https://glas24.se/omraden', priority: '0.8' }
 ];
 
 const generateCityUrls = () => {
-  const allCities = counties["Alla städer"];
-  return allCities
-    .sort((a, b) => a.localeCompare(b, 'sv'))
-    .map(city => ({
-      url: `https://glas24.se/${normalizeCity(city)}`,
-      priority: '0.8'
-    }));
+  // Get all cities from the counties object and flatten the array
+  const allCities = Object.values(counties).flat();
+  
+  // Remove duplicates and sort alphabetically
+  const uniqueCities = [...new Set(allCities)].sort((a, b) => 
+    a.localeCompare(b, 'sv')
+  );
+
+  console.log(`Generating sitemap for ${uniqueCities.length} unique cities`);
+
+  return uniqueCities.map(city => ({
+    url: `https://glas24.se/${normalizeCity(city)}`,
+    priority: '0.8'
+  }));
 };
 
 const generateSitemapContent = (urls: { url: string; priority: string }[]) => {
@@ -47,6 +54,8 @@ ${Array.from({ length: count }, (_, i) => `  <sitemap>
 export const generateSitemaps = () => {
   const allUrls = [...generateBaseUrls(), ...generateCityUrls()];
   const sitemapCount = Math.ceil(allUrls.length / URLS_PER_SITEMAP);
+  
+  console.log(`Generating ${sitemapCount} sitemaps for ${allUrls.length} total URLs`);
   
   const sitemaps = Array.from({ length: sitemapCount }, (_, i) => {
     const start = i * URLS_PER_SITEMAP;
