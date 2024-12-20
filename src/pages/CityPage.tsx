@@ -1,6 +1,6 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { cityContent } from '../data/cityContent';
-import { citiesByCounty } from '../data/cities';
+import { counties } from '../data/cities';
 import CityHero from '../components/city/CityHero';
 import TrustSignals from '../components/city/TrustSignals';
 import CityServices from '../components/city/CityServices';
@@ -26,9 +26,9 @@ const CityPage = () => {
   }
 
   // Find the original city name from counties data
-  const originalCity = Object.values(citiesByCounty)
+  const originalCity = Object.values(counties)
     .flat()
-    .find((c): c is string => typeof c === 'string' && normalizeCity(c) === normalizedCity) || city;
+    .find((c) => normalizeCity(c) === normalizedCity) || city;
 
   return (
     <div className="min-h-screen bg-white">
