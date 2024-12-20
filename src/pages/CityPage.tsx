@@ -12,16 +12,18 @@ const CityPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Full-width Image */}
-      <div className="relative w-full h-[600px] mt-[-80px]">
+      <div className="relative w-full h-[600px]">
         <img 
           src={content.heroImage}
           alt={`Glasmästare i ${formattedCity}`}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <div className="text-center text-white mt-20">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">Professionell Glasmästare i {formattedCity}</h1>
-            <p className="text-xl mb-4">24/7 jourhavande glasmästare i {formattedCity}</p>
+          <div className="text-center text-white">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">
+              Glasmästare i {formattedCity}
+            </h1>
+            <p className="text-xl mb-4">Professionell glasservice dygnet runt</p>
             <a href="tel:010-555 11 93" className="glass-button bg-yellow-400 text-black hover:bg-yellow-500">
               Ring 010-555 11 93
             </a>
@@ -53,13 +55,13 @@ const CityPage = () => {
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Main Content Column (2/3) */}
           <div className="md:col-span-2 prose max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Professionell Glasmästare i {formattedCity}</h2>
+            <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
               {content.description.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
-            <h2 className="text-2xl font-bold mt-8 mb-6">Glas24 – En del av 24-nätverket</h2>
+            <p className="font-bold">Glas24 – En del av 24-nätverket Vi är stolta medlemmar i 24-nätverket, som har:</p>
           </div>
 
           {/* CTA Column (1/3) */}
