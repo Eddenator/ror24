@@ -3,6 +3,6 @@ import { defaultCityContent } from '../data/defaultCityContent';
 
 export const createCityContent = (city: string): CityContent => ({
   ...defaultCityContent,
-  heroImage: "https://images.unsplash.com/photo-1497366216548-37526070297c",
-  description: defaultCityContent.description.replace(/glasmästare(\?| i )/g, `glasmästare i ${city}$1`)
+  heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/glas.jpg",
+  description: defaultCityContent.description.replace(/%city%/g, city)
 });
