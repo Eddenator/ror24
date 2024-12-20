@@ -31,7 +31,10 @@ const CityPage = () => {
             <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {formattedCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
               {formattedDescription.split('\n\n').map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p 
+                  key={index} 
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
               ))}
             </div>
           </div>
