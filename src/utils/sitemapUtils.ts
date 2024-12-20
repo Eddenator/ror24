@@ -1,7 +1,7 @@
 import { counties } from '../data/cities/counties';
 import { normalizeCity } from './cityContentUtils';
 
-const URLS_PER_SITEMAP = 100; // Maximum URLs per sitemap file
+const URLS_PER_SITEMAP = 100;
 
 const generateBaseUrls = () => [
   { url: 'https://glas24.se', priority: '1.0' },
@@ -20,9 +20,10 @@ const generateCityUrls = () => {
 };
 
 const generateSitemapContent = (urls: { url: string; priority: string }[]) => {
+  const sortedUrls = urls.sort((a, b) => a.url.localeCompare(b.url));
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(({ url, priority }) => `  <url>
+${sortedUrls.map(({ url, priority }) => `  <url>
     <loc>${url}</loc>
     <changefreq>daily</changefreq>
     <priority>${priority}</priority>

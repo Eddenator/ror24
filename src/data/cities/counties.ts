@@ -1,6 +1,5 @@
 export const counties = {
   "Alla städer": [
-    // Original cities
     "Alingsås", "Borgholm", "Falkenberg", "Falun", "Kalmar", 
     "Karlskoga", "Karlskrona", "Kristianstad", "Landskrona", "Motala", 
     "Nyköping", "Piteå", "Sandviken", "Skellefteå", "Skövde", 
@@ -25,7 +24,6 @@ export const counties = {
     "Timrå", "Gislaved", "Anderstorp", "Hallstahammar", "Kävlinge", 
     "Lindesberg", "Sigtuna", "Åmål", "Säffle", "Alvesta", 
     "Klippan", "Sölvesborg", "Sollefteå", "Lycksele", "Tibro",
-    // Additional cities
     "Lycke", "Harestad", "Hålta", "Kareby", "Kode", "Kärna", "Marstrand",
     "Romelanda", "Ytterby", "Agnesberg", "Angered", "Askim", "Asperö",
     "Billdal", "Brännö", "Donsö", "Gunnilse", "Hisings Backa", "Hisings Kärra",
