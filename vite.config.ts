@@ -17,7 +17,9 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
     {
       name: 'generate-sitemap',
-      closeBundle: () => {
+      enforce: 'post',
+      apply: 'build',
+      closeBundle: async () => {
         console.log('Starting sitemap generation...');
         try {
           const { sitemaps, index } = generateSitemaps();
@@ -46,6 +48,7 @@ export default defineConfig(({ mode }) => ({
           console.log('Sitemap generation completed successfully');
         } catch (error) {
           console.error('Error generating sitemaps:', error);
+          throw error; // Re-throw error to make build fail if sitemap generation fails
         }
       }
     }
