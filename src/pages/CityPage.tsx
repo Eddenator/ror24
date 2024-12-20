@@ -1,82 +1,46 @@
-import { useParams, Navigate } from 'react-router-dom';
-import { cityContent } from '../data/cityContent';
-import { counties } from '../data/cities';
-import CityHero from '../components/city/CityHero';
-import TrustSignals from '../components/city/TrustSignals';
-import CityServices from '../components/city/CityServices';
-import ContactForm from '../components/city/ContactForm';
-import DocumentHead from '@/components/DocumentHead';
-import { normalizeCity } from '../utils/cityContentUtils';
-import { useToast } from '@/components/ui/use-toast';
+import { useParams, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import CityHero from "@/components/city/CityHero";
+import CityServices from "@/components/city/CityServices";
+import TrustSignals from "@/components/city/TrustSignals";
+import ContactForm from "@/components/city/ContactForm";
+import DocumentHead from "@/components/DocumentHead";
+import { getCityContent } from "@/utils/cityContentUtils";
+import { normalizeCity } from "@/utils/cityContentUtils";
 
 const CityPage = () => {
-  const { city } = useParams<{ city: string }>();
-  const { toast } = useToast();
+  const { city } = useParams();
   
   if (!city) {
-    console.error('No city parameter provided');
     return <Navigate to="/404" replace />;
   }
 
   const normalizedCity = normalizeCity(city);
-  const content = cityContent[normalizedCity];
-  
-  // Find the original city name from counties data
-  const originalCity = Object.values(counties)
-    .flat()
-    .find(c => normalizeCity(c) === normalizedCity);
+  const cityContent = getCityContent(normalizedCity);
 
-  if (!content || !originalCity) {
-    console.error('City not found:', city);
-    console.error('Normalized city:', normalizedCity);
-    
-    toast({
-      variant: "destructive",
-      title: "Sidan hittades inte",
-      description: "Vi kunde inte hitta den begärda staden."
-    });
-    
+  // If no content found for this city, redirect to 404
+  if (!cityContent) {
     return <Navigate to="/404" replace />;
   }
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
-      <DocumentHead 
-        title={`Glasmästare ${originalCity} - Jour öppen 24/7 - På plats inom 2t`}
-        description={`Professionell glasmästare i ${originalCity}. Akut glasservice med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 93.`}
+    <>
+      <DocumentHead
+        title={`${cityContent.title} | Glas24`}
+        description={cityContent.description}
       />
-      <CityHero 
-        cityName={originalCity}
-        heroImage={content.heroImage}
-      />
-
-      <div className="container mx-auto px-4 py-12">
+      <div className="flex flex-col gap-12 md:gap-24">
+        <CityHero cityContent={cityContent} />
+        <CityServices cityContent={cityContent} />
         <TrustSignals />
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="md:col-span-2 prose max-w-none">
-            <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {originalCity}</h2>
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              {content.description.split('\n\n').map((paragraph, index) => (
-                <p 
-                  key={index} 
-                  dangerouslySetInnerHTML={{ __html: paragraph.replace(/%city%/g, originalCity) }}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="md:col-span-1 space-y-8">
-            <ContactForm />
-          </div>
-        </div>
-
-        <CityServices 
-          cityName={originalCity}
-          services={content.services}
-        />
+        <ContactForm cityName={cityContent.city} />
       </div>
-    </div>
+    </>
   );
 };
 
