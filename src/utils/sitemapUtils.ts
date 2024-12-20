@@ -1,5 +1,4 @@
 import { counties } from '../data/cities/counties';
-import { normalizeCity } from './cityContentUtils';
 
 const URLS_PER_SITEMAP = 1000;
 
@@ -23,7 +22,13 @@ const generateCityUrls = () => {
   console.log(`Generating sitemap for ${uniqueCities.length} unique cities`);
 
   return uniqueCities.map(city => ({
-    url: `https://glas24.se/${normalizeCity(city)}`,
+    url: `https://glas24.se/${city.toLowerCase()
+      .replace(/å/g, 'a')
+      .replace(/ä/g, 'a')
+      .replace(/ö/g, 'o')
+      .replace(/[^a-z0-9]/g, '-')
+      .replace(/--+/g, '-')
+      .replace(/^-|-$/g, '')}`,
     priority: '0.8'
   }));
 };
