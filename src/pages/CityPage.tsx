@@ -5,8 +5,7 @@ import CityServices from "@/components/city/CityServices";
 import TrustSignals from "@/components/city/TrustSignals";
 import ContactForm from "@/components/city/ContactForm";
 import DocumentHead from "@/components/DocumentHead";
-import { getCityContent } from "@/utils/cityContentUtils";
-import { normalizeCity } from "@/utils/cityContentUtils";
+import { getCityContent, normalizeCity } from "@/utils/cityContentUtils";
 
 const CityPage = () => {
   const { city } = useParams();
@@ -16,10 +15,10 @@ const CityPage = () => {
   }
 
   const normalizedCity = normalizeCity(city);
-  const cityContent = getCityContent(normalizedCity);
+  const content = getCityContent(normalizedCity);
 
   // If no content found for this city, redirect to 404
-  if (!cityContent) {
+  if (!content) {
     return <Navigate to="/404" replace />;
   }
 
@@ -31,14 +30,20 @@ const CityPage = () => {
   return (
     <>
       <DocumentHead
-        title={`${cityContent.title} | Glas24`}
-        description={cityContent.description}
+        title={`Glasmästare i ${content.city} | Glas24`}
+        description={content.description}
       />
       <div className="flex flex-col gap-12 md:gap-24">
-        <CityHero cityContent={cityContent} />
-        <CityServices cityContent={cityContent} />
+        <CityHero 
+          cityName={content.city} 
+          heroImage={content.heroImage} 
+        />
+        <CityServices 
+          cityName={content.city} 
+          services={content.services} 
+        />
         <TrustSignals />
-        <ContactForm cityName={cityContent.city} />
+        <ContactForm />
       </div>
     </>
   );
