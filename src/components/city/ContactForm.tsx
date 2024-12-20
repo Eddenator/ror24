@@ -16,7 +16,8 @@ const ContactForm = () => {
       
       <p className="text-lg mb-4 font-medium">Fyll ut kontaktformulär:</p>
       <a
-        href="#popup:marquiz_67653b66469d4d00263e29f7"
+        href="#"
+        onClick={() => (window as any).Marquiz.showModal('67653b66469d4d00263e29f7')}
         className="glass-button bg-yellow-400 text-black hover:bg-yellow-500 w-full flex items-center justify-center space-x-2"
       >
         <Mail size={18} />
