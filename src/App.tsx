@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Areas from "./pages/Areas";
 import CityPage from "./pages/CityPage";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +24,8 @@ const App = () => (
           <Navigation />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/hem" element={<Home />} />
               <Route path="/om-oss" element={<About />} />
               <Route path="/kontakt" element={<Contact />} />
               <Route path="/omraden" element={<Areas />} />
