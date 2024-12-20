@@ -18,23 +18,25 @@ const CityPage = () => {
   const content = cityContent[normalizedCity];
   
   if (!content) {
-    console.log('City not found:', city, 'Normalized:', normalizedCity);
+    console.log('City not found:', city);
+    console.log('Normalized city:', normalizedCity);
     console.log('Available cities:', Object.keys(cityContent));
     return <Navigate to="/404" replace />;
   }
 
-  // Use the original city name for display, not the normalized version
-  const formattedCity = city.charAt(0).toUpperCase() + city.slice(1);
-  const formattedDescription = content.description.replace(/%city%/g, formattedCity);
+  // Find the original city name from counties data
+  const originalCity = Object.values(citiesByCounty)
+    .flat()
+    .find(c => normalizeCity(c) === normalizedCity) || city;
 
   return (
     <div className="min-h-screen bg-white">
       <DocumentHead 
-        title={`Glasmästare ${formattedCity} - Jour öppen 24/7 - På plats inom 2t`}
-        description={`Professionell glasmästare i ${formattedCity}. Akut glasservice med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 93.`}
+        title={`Glasmästare ${originalCity} - Jour öppen 24/7 - På plats inom 2t`}
+        description={`Professionell glasmästare i ${originalCity}. Akut glasservice med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 93.`}
       />
       <CityHero 
-        cityName={formattedCity}
+        cityName={originalCity}
         heroImage={content.heroImage}
       />
 
@@ -43,9 +45,9 @@ const CityPage = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="md:col-span-2 prose max-w-none">
-            <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {formattedCity}</h2>
+            <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {originalCity}</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              {formattedDescription.split('\n\n').map((paragraph, index) => (
+              {content.description.split('\n\n').map((paragraph, index) => (
                 <p 
                   key={index} 
                   dangerouslySetInnerHTML={{ __html: paragraph }}
@@ -60,7 +62,7 @@ const CityPage = () => {
         </div>
 
         <CityServices 
-          cityName={formattedCity}
+          cityName={originalCity}
           services={content.services}
         />
       </div>

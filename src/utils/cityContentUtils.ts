@@ -13,17 +13,24 @@ export const normalizeCity = (city: string): string => {
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
-    .replace(/[^a-z0-9]/g, '')
+    .replace(/[^a-z0-9-]/g, '') // Allow hyphens in normalized city names
+    .replace(/--+/g, '-') // Replace multiple hyphens with single hyphen
+    .replace(/^-|-$/g, '') // Remove leading/trailing hyphens
     .trim();
 };
 
 export const createCitiesObject = (cities: string[]) => {
-  return cities.reduce((acc, city) => {
+  const cityContent: { [key: string]: CityContent } = {};
+  
+  cities.forEach(city => {
     const key = normalizeCity(city);
-    if (!key) return acc; // Skip empty keys
-    return {
-      ...acc,
-      [key]: createCityContent(city)
-    };
-  }, {});
+    if (!key) return; // Skip empty keys
+    
+    // Log each city and its normalized key for debugging
+    console.log(`Normalizing city: "${city}" -> "${key}"`);
+    
+    cityContent[key] = createCityContent(city);
+  });
+  
+  return cityContent;
 };

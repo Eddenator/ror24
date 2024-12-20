@@ -1,18 +1,14 @@
 import { createCitiesObject } from '../../utils/cityContentUtils';
 import { counties } from './counties';
-import { otherCities } from './otherCities';
-import { stockholmRegionCities } from './stockholmRegion';
-import { stockholmSuburbsCities } from './stockholmSuburbs';
 
-// Flatten all cities from counties into a single array
+// Create a flat array of all cities from all counties
 const allCities = Object.values(counties).flat();
 
-// Merge all city content sources
-export const cityContent = {
-  ...createCitiesObject(allCities),
-  ...otherCities,
-  ...stockholmRegionCities,
-  ...stockholmSuburbsCities
-};
+// Create city content for all cities
+export const cityContent = createCitiesObject(allCities);
 
+// Export counties for the Areas page
 export const citiesByCounty = counties;
+
+// Add console logging to help debug city content generation
+console.log('Generated city content for cities:', Object.keys(cityContent));
