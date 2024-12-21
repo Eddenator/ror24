@@ -28,8 +28,8 @@ const Index = () => {
             Professionell glasservice dygnet runt
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4 animate-fadeIn">
-            <a href="tel:010-555 11 93" className="glass-button">
-              Ring 010-555 11 93
+            <a href="tel:010-555 11 94" className="glass-button">
+              Ring 010-555 11 94
             </a>
             <Link to="/omraden" className="glass-button bg-white/10 hover:bg-white/20">
               Hitta din stad

@@ -10,19 +10,19 @@ const Home = () => {
         description="Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar. Vi erbjuder professionell VVS-service i över 750 städer."
       />
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative container mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
-            Rörmokare i hela Sverige
+            Din Rörmokare i Sverige
           </h1>
           <p className="text-xl md:text-2xl mb-8 animate-fadeIn opacity-90">
-            Professionell VVS-service dygnet runt, året om
+            Professionell VVS-service dygnet runt
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4 animate-fadeIn">
-            <a href="tel:010-555 11 93" className="glass-button">
-              Ring Nu
+            <a href="tel:010-555 11 94" className="glass-button">
+              Ring 010-555 11 94
             </a>
             <Link to="/omraden" className="glass-button bg-white/10 hover:bg-white/20">
               Hitta din stad
