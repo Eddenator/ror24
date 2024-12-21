@@ -1,7 +1,7 @@
 import { CityContent } from '../types/cityContent';
 
 export const defaultCityContent: CityContent = {
-  heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/glas.jpg",
+  heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
   description: `Behöver du hjälp med något relaterat till rör/vvs i %city%? Då har du hamnat rätt! På Rör24.se är vi specialister på akuta rörproblem och planerade rörarbeten. Vi är en del av Sveriges största nätverk av rörmokare, och med vår jour är vi redo att rycka ut dygnet runt.
 
 Akut eller planerat? Vi hjälper dig – när som helst!
