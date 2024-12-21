@@ -4,7 +4,7 @@ const ContactForm = () => {
   return (
     <div className="bg-gray-50 p-6 rounded-lg">
       <p className="text-lg mb-4 font-medium">
-        Sveriges troligen största nätverk med auktoriserade glasmästare. Vi håller öppet 24/7. Ring oss för rådgivning
+        Sveriges troligen största nätverk med auktoriserade rörmokare. Vi håller öppet 24/7. Ring oss för rådgivning
       </p>
       <a
         href="tel:010-555 11 93"
