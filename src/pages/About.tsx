@@ -6,19 +6,19 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Om Glas24 | Sveriges ledande glasmästare"
-        description="Glas24 är Sveriges mest tillgängliga glasmästarservice med över 750 städer i vårt nätverk. Jour dygnet runt med snabb utryckning."
+        title="Om Rör24 | Sveriges ledande rörmokare"
+        description="Rör24 är Sveriges mest tillgängliga VVS-service med över 750 städer i vårt nätverk. Jour dygnet runt med snabb utryckning."
       />
       <PageHeader
         title="Om Oss"
-        description="Sveriges mest tillgängliga glasmästarservice"
+        description="Sveriges mest tillgängliga VVS-service"
       />
 
       <div className="page-container">
         <div className="max-w-3xl mx-auto mb-12">
           <div className="prose max-w-none">
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Glas24 är en del av ett av Sveriges största nätverk av auktoriserade glasmästare, alltid redo att rycka in när du behöver hjälp. Med vår omfattande närvaro i över 750 städer står vi redo, oavsett om det är en akut jourutryckning mitt i natten eller ett planerat glasbyte.
+              Rör24 är en del av ett av Sveriges största nätverk av auktoriserade rörmokare, alltid redo att rycka in när du behöver hjälp. Med vår omfattande närvaro i över 750 städer står vi redo, oavsett om det är en akut jourutryckning mitt i natten eller ett planerat VVS-arbete.
             </p>
             
             <h2 className="text-2xl font-semibold mb-4">Alltid öppet – alltid tillgängliga</h2>
@@ -26,7 +26,7 @@ const About = () => {
               Vi vet att olyckor inte har några kontorstider. Därför håller vi öppet 24/7, varje dag året runt. Ett samtal till oss – och vi är på väg för att hjälpa dig.
             </p>
 
-            <h2 className="text-2xl font-semibold mb-4">Glas24 – En del av 24-nätverket</h2>
+            <h2 className="text-2xl font-semibold mb-4">Rör24 – En del av 24-nätverket</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Vi är stolta medlemmar i 24-nätverket, som har:
             </p>
@@ -58,7 +58,7 @@ const About = () => {
                 <Mail className="w-5 h-5 text-yellow-400" />
                 <div>
                   <p className="font-semibold">E-post</p>
-                  <a href="mailto:info@glas24.se" className="text-gray-600 hover:text-primary">info@glas24.se</a>
+                  <a href="mailto:info@ror24.se" className="text-gray-600 hover:text-primary">info@ror24.se</a>
                 </div>
               </div>
             </div>

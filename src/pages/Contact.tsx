@@ -6,8 +6,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Kontakta Glas24 | Dygnet runt glasservice"
-        description="Kontakta Glas24 för akut glasservice eller offertförfrågan. Ring 010-555 11 93 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
+        title="Kontakta Rör24 | Dygnet runt VVS-service"
+        description="Kontakta Rör24 för akut VVS-service eller offertförfrågan. Ring 010-555 11 93 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
       />
       <PageHeader
         title="Kontakta Oss"
@@ -35,7 +35,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">E-post</h3>
-                    <p className="text-gray-600">info@glas24.se</p>
+                    <p className="text-gray-600">info@ror24.se</p>
                     <p className="text-sm text-gray-500">Svar inom 24 timmar</p>
                   </div>
                 </div>
@@ -54,7 +54,7 @@ const Contact = () => {
             {/* Contact Form Section */}
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="text-lg mb-4 font-medium">
-                Sveriges troligen största nätverk med auktoriserade glasmästare. Vi håller öppet 24/7. Ring oss för rådgivning
+                Sveriges troligen största nätverk med auktoriserade rörmokare. Vi håller öppet 24/7. Ring oss för rådgivning
               </p>
               <a
                 href="tel:010-555 11 93"
