@@ -38,11 +38,11 @@ const Navigation = () => {
 
             {/* Phone number button */}
             <a 
-              href="tel:010-555 11 93" 
+              href="tel:010-555 11 94" 
               className="hidden md:flex items-center gap-2 px-4 py-2 bg-[#FFD700] text-black rounded-md hover:bg-[#FFD700]/90 transition-colors"
             >
               <Phone size={18} />
-              010-555 11 93
+              010-555 11 94
             </a>
           </div>
         </div>
@@ -55,11 +55,11 @@ const Navigation = () => {
             <Link to="/om-oss" className="block text-primary hover:text-[#FFD700] transition-colors">Om Oss</Link>
             <Link to="/kontakt" className="block text-primary hover:text-[#FFD700] transition-colors">Kontakt</Link>
             <a 
-              href="tel:010-555 11 93" 
+              href="tel:010-555 11 94" 
               className="flex items-center gap-2 px-4 py-2 bg-[#FFD700] text-black rounded-md hover:bg-[#FFD700]/90 transition-colors w-fit"
             >
               <Phone size={18} />
-              010-555 11 93
+              010-555 11 94
             </a>
           </div>
         )}

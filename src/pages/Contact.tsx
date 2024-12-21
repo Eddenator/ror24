@@ -57,11 +57,11 @@ const Contact = () => {
                 Sveriges troligen största nätverk med auktoriserade rörmokare. Vi håller öppet 24/7. Ring oss för rådgivning
               </p>
               <a
-                href="tel:010-555 11 93"
+                href="tel:010-555 11 94"
                 className="glass-button bg-yellow-400 text-black hover:bg-yellow-500 w-full flex items-center justify-center space-x-2 mb-6"
               >
                 <Phone size={18} />
-                <span>Ring 010-555 11 93</span>
+                <span>Ring 010-555 11 94</span>
               </a>
               
               <p className="text-lg mb-4 font-medium">Fyll ut kontaktformulär:</p>

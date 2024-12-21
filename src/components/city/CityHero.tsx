@@ -21,11 +21,11 @@ const CityHero = ({ cityName, heroImage }: CityHeroProps) => {
           </h1>
           <p className="text-xl mb-4">Professionell VVS-service dygnet runt</p>
           <a 
-            href="tel:010-555 11 93" 
+            href="tel:010-555 11 94" 
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition-colors"
           >
             <Phone className="w-5 h-5" />
-            Ring 010-555 11 93
+            Ring 010-555 11 94
           </a>
         </div>
       </div>
