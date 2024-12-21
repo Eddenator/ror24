@@ -3,18 +3,16 @@ import { counties } from '../data/cities/counties';
 const URLS_PER_SITEMAP = 1000;
 
 const generateBaseUrls = () => [
-  { url: 'https://glas24.se', priority: '1.0', changefreq: 'daily' },
-  { url: 'https://glas24.se/hem', priority: '0.8', changefreq: 'daily' },
-  { url: 'https://glas24.se/om-oss', priority: '0.8', changefreq: 'weekly' },
-  { url: 'https://glas24.se/kontakt', priority: '0.8', changefreq: 'weekly' },
-  { url: 'https://glas24.se/omraden', priority: '0.8', changefreq: 'weekly' }
+  { url: 'https://ror24.se', priority: '1.0', changefreq: 'daily' },
+  { url: 'https://ror24.se/hem', priority: '0.8', changefreq: 'daily' },
+  { url: 'https://ror24.se/om-oss', priority: '0.8', changefreq: 'weekly' },
+  { url: 'https://ror24.se/kontakt', priority: '0.8', changefreq: 'weekly' },
+  { url: 'https://ror24.se/omraden', priority: '0.8', changefreq: 'weekly' }
 ];
 
 const generateCityUrls = () => {
-  // Get all cities from the counties object
   const allCities = counties["Alla städer"];
   
-  // Remove duplicates and sort alphabetically
   const uniqueCities = [...new Set(allCities)].sort((a, b) => 
     a.localeCompare(b, 'sv')
   );
@@ -22,7 +20,7 @@ const generateCityUrls = () => {
   console.log(`Generating sitemap for ${uniqueCities.length} unique cities`);
 
   return uniqueCities.map(city => ({
-    url: `https://glas24.se/${city.toLowerCase()
+    url: `https://ror24.se/${city.toLowerCase()
       .replace(/å/g, 'a')
       .replace(/ä/g, 'a')
       .replace(/ö/g, 'o')
@@ -52,7 +50,7 @@ const generateSitemapIndex = (count: number) => {
 <?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${Array.from({ length: count }, (_, i) => `  <sitemap>
-    <loc>https://glas24.se/sitemap${i + 1}.xml</loc>
+    <loc>https://ror24.se/sitemap${i + 1}.xml</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
   </sitemap>`).join('\n')}
 </sitemapindex>`;

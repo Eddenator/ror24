@@ -10,9 +10,9 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-yellow-400">Kontakta Oss</h3>
             <div className="space-y-3">
-              <a href="tel:010-555 11 93" className="flex items-center gap-2 hover:text-yellow-400">
+              <a href="tel:010-555 11 94" className="flex items-center gap-2 hover:text-yellow-400">
                 <Phone size={18} />
-                010-555 11 93
+                010-555 11 94
               </a>
               <a href="mailto:info@ror24.se" className="flex items-center gap-2 hover:text-yellow-400">
                 <Mail size={18} />
@@ -38,6 +38,7 @@ const Footer = () => {
               <li><Link to="/om-oss" className="hover:text-yellow-400">Om Oss</Link></li>
               <li><Link to="/omraden" className="hover:text-yellow-400">Områden</Link></li>
               <li><Link to="/kontakt" className="hover:text-yellow-400">Kontakt</Link></li>
+              <li><Link to="/integritetspolicy" className="hover:text-yellow-400">Integritetspolicy</Link></li>
             </ul>
           </div>
 
