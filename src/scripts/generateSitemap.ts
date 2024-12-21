@@ -1,7 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { generateSitemaps } from '../utils/sitemapUtils';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const outputDir = path.resolve(__dirname, '../../public');
 
 // Ensure the output directory exists
