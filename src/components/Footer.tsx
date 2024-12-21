@@ -14,9 +14,9 @@ const Footer = () => {
                 <Phone size={18} />
                 010-555 11 93
               </a>
-              <a href="mailto:info@glas24.se" className="flex items-center gap-2 hover:text-yellow-400">
+              <a href="mailto:info@ror24.se" className="flex items-center gap-2 hover:text-yellow-400">
                 <Mail size={18} />
-                info@glas24.se
+                info@ror24.se
               </a>
               <div className="flex items-center gap-2">
                 <MapPin size={18} />
@@ -45,11 +45,11 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-yellow-400">Våra Tjänster</h3>
             <ul className="space-y-2">
-              <li>Akut Glasreparation</li>
-              <li>Fönsterbyte</li>
-              <li>Glasmontering</li>
-              <li>Isolerglas</li>
-              <li>Säkerhetsglas</li>
+              <li>Akut VVS-service</li>
+              <li>Rörinspektion</li>
+              <li>Avloppsrensning</li>
+              <li>Värmepumpar</li>
+              <li>Vattenskador</li>
             </ul>
           </div>
 
@@ -62,15 +62,15 @@ const Footer = () => {
               <a href="#" className="hover:text-yellow-400"><Linkedin /></a>
             </div>
             <div className="space-y-2 text-sm">
-              <p>✓ Certifierad Glasmästare</p>
+              <p>✓ Certifierad Rörmokare</p>
               <p>✓ Auktoriserad Partner</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Glas24.se - Alla rättigheter förbehållna</p>
-          <p className="mt-2 text-gray-400">Glas24.se - Ett samarbete med 24 Center Sverige AB 559262-4919</p>
+          <p>&copy; {new Date().getFullYear()} Rör24.se - Alla rättigheter förbehållna</p>
+          <p className="mt-2 text-gray-400">Rör24.se - Ett samarbete med 24 Center Sverige AB 559262-4919</p>
         </div>
       </div>
     </footer>

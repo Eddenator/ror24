@@ -1,22 +1,27 @@
 import { ArrowRight, Clock, Shield, Map } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import DocumentHead from '@/components/DocumentHead';
 
 const Home = () => {
   return (
     <div className="min-h-screen">
+      <DocumentHead 
+        title="Rörmokare i Sverige | Rör24 - Jour dygnet runt"
+        description="Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar. Vi erbjuder professionell VVS-service i över 750 städer."
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/glas.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative container mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
-            Glasmästare i hela Sverige
+            Rörmokare i hela Sverige
           </h1>
           <p className="text-xl md:text-2xl mb-8 animate-fadeIn opacity-90">
-            Professionell glasservice dygnet runt, året om
+            Professionell VVS-service dygnet runt, året om
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4 animate-fadeIn">
-            <a href="tel:+46XXXXXXXXX" className="glass-button">
+            <a href="tel:010-555 11 93" className="glass-button">
               Ring Nu
             </a>
             <Link to="/omraden" className="glass-button bg-white/10 hover:bg-white/20">
@@ -60,7 +65,7 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Behöver du akut glasservice?
+            Behöver du akut VVS-service?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Vi finns tillgängliga i över 750 städer i Sverige
