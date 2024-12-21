@@ -3,11 +3,11 @@ import { counties } from '../data/cities/counties';
 const URLS_PER_SITEMAP = 1000;
 
 const generateBaseUrls = () => [
-  { url: 'https://glas24.se', priority: '1.0' },
-  { url: 'https://glas24.se/hem', priority: '0.8' },
-  { url: 'https://glas24.se/om-oss', priority: '0.8' },
-  { url: 'https://glas24.se/kontakt', priority: '0.8' },
-  { url: 'https://glas24.se/omraden', priority: '0.8' }
+  { url: 'https://glas24.se', priority: '1.0', changefreq: 'daily' },
+  { url: 'https://glas24.se/hem', priority: '0.8', changefreq: 'daily' },
+  { url: 'https://glas24.se/om-oss', priority: '0.8', changefreq: 'weekly' },
+  { url: 'https://glas24.se/kontakt', priority: '0.8', changefreq: 'weekly' },
+  { url: 'https://glas24.se/omraden', priority: '0.8', changefreq: 'weekly' }
 ];
 
 const generateCityUrls = () => {
@@ -29,18 +29,20 @@ const generateCityUrls = () => {
       .replace(/[^a-z0-9]/g, '-')
       .replace(/--+/g, '-')
       .replace(/^-|-$/g, '')}`,
-    priority: '0.8'
+    priority: '0.8',
+    changefreq: 'weekly'
   }));
 };
 
-const generateSitemapContent = (urls: { url: string; priority: string }[]) => {
+const generateSitemapContent = (urls: { url: string; priority: string; changefreq: string }[]) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(({ url, priority }) => `  <url>
+${urls.map(({ url, priority, changefreq }) => `  <url>
     <loc>${url}</loc>
-    <changefreq>daily</changefreq>
+    <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
+    <lastmod>${new Date().toISOString()}</lastmod>
   </url>`).join('\n')}
 </urlset>`;
 };
