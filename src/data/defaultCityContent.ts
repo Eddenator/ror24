@@ -13,7 +13,7 @@ export const defaultCityContent: CityContent = {
     <p>Att få problem med rören är aldrig kul – men med oss kan du släppa stressen! Här är varför du kan lita på oss:</p>
     <ul>
         <li><strong>Dygnet runt jour</strong> – Vi finns här för dig, oavsett om det är mitt i natten eller tidig morgon.</li>
-        <li><strong>55 000+ nöjda kunder</strong> – Erfarenhet som gör skillnad.</li>
+        <li><strong>24 nätverket har utfört 55 000 jobb</strong> – Erfarenhet som gör skillnad.</li>
         <li><strong>91% rekommenderar oss</strong> – Kvalitet och service i världsklass.</li>
         <li><strong>Lokala experter i %city%</strong> – Snabba på plats, alltid med rätt lösning.</li>
     </ul>
