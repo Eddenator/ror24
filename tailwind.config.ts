@@ -18,6 +18,30 @@ export default {
       },
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: '#333',
+            'h1, h2': {
+              color: '#1a1a1a',
+              marginTop: '2rem',
+              marginBottom: '1rem',
+            },
+            'ul, ol': {
+              paddingLeft: '1.5rem',
+            },
+            'li': {
+              marginTop: '0.5rem',
+              marginBottom: '0.5rem',
+            },
+            'section': {
+              marginTop: '2.5rem',
+              marginBottom: '2.5rem',
+            },
+          },
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -72,5 +96,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;

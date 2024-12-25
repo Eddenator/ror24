@@ -53,9 +53,9 @@ const CityPage = () => {
         <TrustSignals />
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="md:col-span-2 prose max-w-none">
+          <div className="md:col-span-2">
             <div 
-              className="space-y-6 text-lg leading-relaxed text-gray-700"
+              className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-p:text-gray-600 prose-strong:text-gray-900 prose-ul:space-y-2 prose-ol:space-y-2 prose-li:text-gray-600 space-y-8"
               dangerouslySetInnerHTML={{ 
                 __html: content.description.replace(/%city%/g, originalCity) 
               }}
