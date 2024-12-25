@@ -16,7 +16,7 @@ const TrustSignals = () => {
       <div className="text-center p-6 rounded-lg bg-gray-50">
         <Award className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
         <h3 className="text-xl font-semibold mb-2">Certifierade partners</h3>
-        <p className="text-gray-600">Vårt nätverk är auktoriserade glasmästare</p>
+        <p className="text-gray-600">Vårt nätverk består enbart av auktoriserade rörmokare</p>
       </div>
     </div>
   );
