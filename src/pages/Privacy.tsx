@@ -5,8 +5,8 @@ const Privacy = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Integritetspolicy | Rör24 VVS-service"
-        description="Läs om hur Rör24 hanterar dina personuppgifter och cookies. Vi värnar om din integritet och följer GDPR."
+        title="Integritetspolicy | Rör24"
+        description="Läs om hur Rör24 hanterar dina personuppgifter och cookies."
       />
       <PageHeader
         title="Integritetspolicy"
