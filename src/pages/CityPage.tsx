@@ -21,7 +21,6 @@ const CityPage = () => {
   const normalizedCity = normalizeCity(city);
   const content = cityContent[normalizedCity];
   
-  // Find the original city name from counties data
   const originalCity = Object.values(counties)
     .flat()
     .find(c => normalizeCity(c) === normalizedCity);
@@ -42,8 +41,8 @@ const CityPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <DocumentHead 
-        title={`Glasmästare ${originalCity} - Jour öppen 24/7 - På plats inom 2t`}
-        description={`Professionell glasmästare i ${originalCity}. Akut glasservice med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 93.`}
+        title={`Rörmokare ${originalCity} - Jour öppen 24/7 - På plats inom 2t`}
+        description={`Professionell rörmokare i ${originalCity}. Akut VVS-service med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 94.`}
       />
       <CityHero 
         cityName={originalCity}
@@ -55,15 +54,12 @@ const CityPage = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="md:col-span-2 prose max-w-none">
-            <h2 className="text-2xl font-bold mb-4">Jourhavande Rörmokare i {originalCity} – Dygnet runt med Rör24!</h2>
-            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              {content.description.split('\n\n').slice(1).map((paragraph, index) => (
-                <p 
-                  key={index} 
-                  dangerouslySetInnerHTML={{ __html: paragraph.replace(/%city%/g, originalCity) }}
-                />
-              ))}
-            </div>
+            <div 
+              className="space-y-6 text-lg leading-relaxed text-gray-700"
+              dangerouslySetInnerHTML={{ 
+                __html: content.description.replace(/%city%/g, originalCity) 
+              }}
+            />
           </div>
 
           <div className="md:col-span-1 space-y-8">
