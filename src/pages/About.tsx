@@ -51,7 +51,7 @@ const About = () => {
                 <Phone className="w-5 h-5 text-yellow-400" />
                 <div>
                   <p className="font-semibold">Ring oss</p>
-                  <a href="tel:010-555 11 93" className="text-gray-600 hover:text-primary">010-555 11 93</a>
+                  <a href="tel:010-555 11 94" className="text-gray-600 hover:text-primary">010-555 11 94</a>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
