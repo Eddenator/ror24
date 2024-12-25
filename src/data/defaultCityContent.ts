@@ -2,23 +2,40 @@ import { CityContent } from '../types/cityContent';
 
 export const defaultCityContent: CityContent = {
   heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
-  description: `Behöver du hjälp med något relaterat till rör/vvs i %city%? Då har du hamnat rätt! På Rör24.se är vi specialister på akuta rörproblem och planerade rörarbeten. Vi är en del av Sveriges största nätverk av rörmokare, och med vår jour är vi redo att rycka ut dygnet runt.
+  description: `Jourhavande Rörmokare i %city% – Dygnet runt med Rör24!
+Behöver du hjälp med något relaterat till VVS/rör? Rör24 är ett av Sveriges största nätverk med auktoriserade rörmokare. Vi har öppet 24/7 och betjänar hela sverige, inklusive %city%
 
-Akut eller planerat? Vi hjälper dig – när som helst!
-Problem med rören kommer aldrig lägligt. Det kan hända mitt under fredagsmyset eller precis innan jobbet på måndag morgon. Det är därför vi har öppet 24/7, året runt. Ett samtal till oss, och våra proffs är snabbt på plats för att hjälpa dig.
+Varför välja Rör24?
+Att få problem med rören är aldrig kul – men med oss kan du släppa stressen! Här är varför du kan lita på oss:
 
-<b>Rör24 – En del av 24-nätverket</b>
-Vi är stolta att vara en del av 24-nätverket som:
+Dygnet runt jour – Vi finns här för dig, oavsett om det är mitt i natten eller tidig morgon.
+55 000+ nöjda kunder – Erfarenhet som gör skillnad.
 
-Har över 55 000 avklarade uppdrag.
-91% nöjda kunder som rekommenderar oss till andra.
-Våra rörmokare är erfarna, pålitliga och tillgängliga när det gäller – så att du alltid känner dig trygg med att anlita oss.
+91% rekommenderar oss – Kvalitet och service i världsklass.
+Lokala experter i %city% – Snabba på plats, alltid med rätt lösning.
 
 Vad kan vi hjälpa dig med?
-Oavsett om det handlar om en akut vattenläcka, avloppsrensning eller att installera en ny blandare, så har vi både erfarenhet och verktygen för att lösa det.
+Vi har sett allt – och fixat det mesta! Här är några av tjänsterna vi erbjuder:
 
-Ring oss direkt – vi löser problemet!
-Så, står du där med ett trasigt rör eller ett avlopp som strejkar? Tveka inte att höra av dig till oss på Rör24.se. Vi är alltid redo att hjälpa dig – snabbt, smidigt och professionellt.`,
+✅ Akuta problem: Vattenläckor, trasiga rör eller översvämningar.
+✅ Avloppsrensning: Från små stopp till totalstopp i avloppet.
+✅ Installationer: Blandare, toaletter, diskmaskiner – vi installerar det smidigt.
+✅ Felsökning & reparation: Problem med värme eller vatten? Vi hittar och fixar det.
+
+Så funkar det
+Ring oss – Vi svarar alltid, 24 timmar om dygnet.
+Snabb utryckning – Våra rörmokare är snabbt på plats, redo att lösa problemet.
+Problem löst! – Professionellt, tryggt och med garanti på arbetet.
+%city%s mest pålitliga rörmokare
+När olyckan är framme, är det oss du ska ringa. Vi kombinerar 30+ års erfarenhet med modern utrustning och ett engagemang för att ge dig bästa möjliga service.
+
+Kontakta oss nu!
+Har du en vattenläcka eller stopp i avloppet? Vänta inte – vi är redo att hjälpa dig NU.
+
+📞 Ring oss direkt på 010-555 11 94
+
+
+Med Rör24 har du alltid en pålitlig rörmokare i %city% – snabbt, tryggt och proffsigt! 👨‍🔧`,
   services: [
     "Akut VVS-jour",
     "Avloppsrensning",
