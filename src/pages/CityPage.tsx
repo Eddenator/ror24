@@ -62,8 +62,10 @@ const CityPage = () => {
             />
           </div>
 
-          <div className="md:col-span-1 space-y-8">
-            <ContactForm />
+          <div className="md:col-span-1">
+            <div className="md:sticky md:top-24 space-y-8">
+              <ContactForm />
+            </div>
           </div>
         </div>
 
