@@ -72,7 +72,7 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Behöver du akut glasservice?
+            Behöver du hjälp med rör/vvs?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
             Vi finns tillgängliga i över 750 städer i Sverige
