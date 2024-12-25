@@ -55,9 +55,9 @@ const CityPage = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="md:col-span-2 prose max-w-none">
-            <h2 className="text-2xl font-bold mb-4">24/7 jourhavande glasmästare i {originalCity}</h2>
+            <h2 className="text-2xl font-bold mb-4">Jourhavande Rörmokare i {originalCity} – Dygnet runt med Rör24!</h2>
             <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-              {content.description.split('\n\n').map((paragraph, index) => (
+              {content.description.split('\n\n').slice(1).map((paragraph, index) => (
                 <p 
                   key={index} 
                   dangerouslySetInnerHTML={{ __html: paragraph.replace(/%city%/g, originalCity) }}
