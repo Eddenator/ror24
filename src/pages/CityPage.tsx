@@ -41,8 +41,8 @@ const CityPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <DocumentHead 
-        title={`Rörmokare ${originalCity} - Jour öppen 24/7 - På plats inom 2t`}
-        description={`Professionell rörmokare i ${originalCity}. Akut VVS-service med jour dygnet runt. Vi är på plats inom 2 timmar. Ring 010-555 11 94.`}
+        title={`Rörmokare ${originalCity} - VVS Jour är öppen 24/7 - Rör24`}
+        description={`Rörmokare i ${originalCity}. Vi kan vara på plats inom 2 timmar (genomsnitt). Endast auktoriserade rörmokare. Vi har öppet dygnet runt. Ring oss för en kostnadsfri offert!`}
       />
       <CityHero 
         cityName={originalCity}

@@ -28,8 +28,8 @@ const Areas = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Våra områden | Glasmästare i hela Sverige"
-        description="Hitta din lokala glasmästare. Vi erbjuder professionell glasservice i över 750 städer i Sverige med jour dygnet runt."
+        title="Våra områden | Rörmokare i hela Sverige - 750+ städer"
+        description="Hitta din lokala rörmokare. Vi erbjuder professionell VVS-service i över 750 städer i Sverige med jour dygnet runt. Snabb utryckning inom 2 timmar."
       />
       <PageHeader
         title="Våra Områden"

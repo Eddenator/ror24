@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Rörmokare i Sverige | Rör24 - Jour dygnet runt"
-        description="Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar. Vi erbjuder professionell VVS-service i över 750 städer."
+        title="Rörmokare med jour 24/7 | Rör24 - Snabb utryckning i hela Sverige"
+        description="Auktoriserade rörmokare med jour dygnet runt. Vi är på plats inom 2 timmar i över 750 städer. Fast pris och kostnadsfri offert. Ring 010-555 11 94."
       />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">

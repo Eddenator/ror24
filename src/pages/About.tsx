@@ -6,8 +6,8 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Om Rör24 | Sveriges ledande rörmokare"
-        description="Rör24 är Sveriges mest tillgängliga VVS-service med över 750 städer i vårt nätverk. Jour dygnet runt med snabb utryckning."
+        title="Om Rör24 | Sveriges ledande rörmokare med jour dygnet runt"
+        description="Rör24 är Sveriges mest tillgängliga VVS-service med över 750 städer i vårt nätverk. Vi erbjuder akut VVS-jour och planerade arbeten med snabb utryckning."
       />
       <PageHeader
         title="Om Oss"
