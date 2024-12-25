@@ -22,10 +22,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative container mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
-            Din Glasmästare i Sverige
+            Rör24 - Öppet 24/7
           </h1>
           <p className="text-xl md:text-2xl mb-8 animate-fadeIn opacity-90">
-            Professionell glasservice dygnet runt
+            Våra auktoriserade rörmokare betjänar hela Sverige
           </p>
           <div className="flex flex-col md:flex-row justify-center gap-4 animate-fadeIn">
             <a href="tel:010-555 11 94" className="glass-button">
