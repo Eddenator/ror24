@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -59,8 +59,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4 text-yellow-400">Följ Oss</h3>
             <div className="flex gap-4 mb-6">
               <a href="https://www.facebook.com/profile.php?id=61571236136429" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><Facebook /></a>
-              <a href="#" className="hover:text-yellow-400"><Instagram /></a>
-              <a href="#" className="hover:text-yellow-400"><Linkedin /></a>
+              <a href="https://www.linkedin.com/company/106096021/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400"><Linkedin /></a>
             </div>
             <div className="space-y-2 text-sm">
               <p>✓ Certifierad Rörmokare</p>
