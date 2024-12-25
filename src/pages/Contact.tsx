@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <DocumentHead 
         title="Kontakta Rör24 | Dygnet runt VVS-service"
-        description="Kontakta Rör24 för akut VVS-service eller offertförfrågan. Ring 010-555 11 93 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
+        description="Kontakta Rör24 för akut VVS-service eller offertförfrågan. Ring 010-555 11 94 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
       />
       <PageHeader
         title="Kontakta Oss"
@@ -26,7 +26,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Telefon</h3>
-                    <p className="text-gray-600">010-555 11 93</p>
+                    <p className="text-gray-600">010-555 11 94</p>
                     <p className="text-sm text-gray-500">Öppet dygnet runt</p>
                   </div>
                 </div>
