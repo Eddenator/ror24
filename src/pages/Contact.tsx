@@ -6,8 +6,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <DocumentHead 
-        title="Kontakta Rör24 | Dygnet runt VVS-service"
-        description="Kontakta Rör24 för akut VVS-service eller offertförfrågan. Ring 010-555 11 94 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
+        title="Kontakta Rör24 | VVS Jour 24/7 - Ring 010-555 11 94"
+        description="Behöver du en rörmokare? Vi har öppet dygnet runt. Ring 010-555 11 94 för akut hjälp eller kostnadsfri offert. Auktoriserade rörmokare i hela Sverige."
       />
       <PageHeader
         title="Kontakta Oss"
