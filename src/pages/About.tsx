@@ -1,4 +1,5 @@
 import DocumentHead from '@/components/DocumentHead';
+import PageHeader from '@/components/PageHeader';
 
 const About = () => {
   return (
@@ -7,10 +8,12 @@ const About = () => {
         title="Om Rör24 | Sveriges mest tillgängliga VVS-service"
         description="Rör24 erbjuder VVS-tjänster i över 750 städer med auktoriserade rörmokare. 55 000+ utförda jobb och 91% nöjda kunder. Jour dygnet runt, året om."
       />
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Välkommen till Rör24 – Sveriges mest tillgängliga VVS-service</h1>
-        <h2 className="text-2xl font-semibold mb-4">Auktoriserade rörmokare i över 750 städer, redo dygnet runt.</h2>
-
+      <PageHeader
+        title="Om Rör24"
+        description="Sveriges mest tillgängliga VVS-service"
+      />
+      
+      <div className="page-container max-w-4xl mx-auto">
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Vår vision – att förenkla ditt VVS-liv</h2>
           <p className="text-lg mb-6">
