@@ -19,6 +19,8 @@ export const defaultCityContent: CityContent = {
     </ul>
 </section>
 
+<img src="https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/436-ror24.jpg" alt="Rör24 VVS-tjänster" class="w-full rounded-lg my-8" />
+
 <section>
     <h2>Vad kan vi hjälpa dig med?</h2>
     <p>Vi har sett allt – och fixat det mesta! Här är några av tjänsterna vi erbjuder:</p>
