@@ -28,7 +28,7 @@ const App = () => (
           <Navigation />
           <main className="flex-grow">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Index />} />
               <Route path="/hem" element={<Home />} />
               <Route path="/om-oss" element={<About />} />
               <Route path="/kontakt" element={<Contact />} />
