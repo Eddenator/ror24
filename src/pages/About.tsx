@@ -1,8 +1,75 @@
 import DocumentHead from '@/components/DocumentHead';
 import PageHeader from '@/components/PageHeader';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { useEffect } from 'react';
 
 const About = () => {
+  useEffect(() => {
+    // Add JSON-LD schema to head
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Rör24",
+      "image": "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
+      "description": "Rör24 är Sveriges mest tillgängliga VVS-service med över 750 städer i vårt nätverk. Vi erbjuder akut VVS-jour och planerade arbeten med snabb utryckning.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kungsgatan 4",
+        "addressLocality": "Göteborg",
+        "postalCode": "421 47",
+        "addressCountry": "SE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "57.7089",
+        "longitude": "11.9746"
+      },
+      "url": "https://ror24.se/om-oss",
+      "telephone": "010-555 11 94",
+      "email": "info@ror24.se",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.facebook.com/ror24",
+        "https://www.linkedin.com/company/106096021/"
+      ],
+      "priceRange": "$$",
+      "areaServed": "Sverige",
+      "availableLanguage": "Swedish",
+      "foundingDate": "2013",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": "50+"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "55000"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <DocumentHead 
