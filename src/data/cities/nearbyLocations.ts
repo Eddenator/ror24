@@ -2,9 +2,6 @@ interface NearbyLocations {
   [city: string]: string[];
 }
 
-/**
- * Hämtar "närliggande orter" baserat på normaliserat stadsnamn.
- */
 export const getNearbyLocations = (city: string): string[] => {
   const normalizedCity = city
     .toLowerCase()
@@ -22,188 +19,76 @@ export const getNearbyLocations = (city: string): string[] => {
 };
 
 export const nearbyLocations: NearbyLocations = {
+  // Major cities and their surrounding areas
   stockholm: [
-    "Solna",
-    "Sundbyberg",
-    "Nacka",
-    "Lidingö",
-    "Danderyd",
-    "Sollentuna",
-    "Täby",
-    "Järfälla",
-    "Huddinge",
-    "Botkyrka"
+    "Solna", "Nacka", "Lidingö", "Huddinge", "Bromma", 
+    "Södertälje", "Vallentuna", "Upplands Väsby"
   ],
-  
   goteborg: [
-    "Mölndal",
-    "Partille",
-    "Kungälv",
-    "Kungsbacka",
-    "Lerum",
-    "Härryda",
-    "Ale",
-    "Öckerö"
+    "Mölndal", "Kungsbacka", "Kungälv", "Lerum", "Partille",
+    "Torslanda", "Kärna", "Ytterby"
   ],
-  
   malmo: [
-    "Lund",
-    "Trelleborg",
-    "Vellinge",
-    "Lomma",
-    "Staffanstorp",
-    "Svedala",
-    "Burlöv"
+    "Lund", "Trelleborg", "Staffanstorp", "Lomma", "Burlöv",
+    "Svedala", "Vellinge"
   ],
-
-  umea: [
-    "Holmsund",
-    "Obbola",
-    "Vännäs",
-    "Robertsfors",
-    "Sävar",
-    "Hörnefors"
-  ],
-  
-  karna: [
-    "Kungälv",
-    "Ytterby",
-    "Marstrand",
-    "Göteborg",
-    "Hisings Kärra"
-  ],
-
-  alingsas: [
-    "Vårgårda",
-    "Lerum",
-    "Floda",
-    "Göteborg"
-  ],
-
-  kungalv: [
-    "Kärna",
-    "Ytterby",
-    "Göteborg",
-    "Hisings Kärra",
-    "Marstrand"
-  ],
-
-  ytterby: [
-    "Kungälv",
-    "Kärna",
-    "Göteborg",
-    "Hisings Kärra"
-  ],
-
   uppsala: [
-    "Knivsta",
-    "Storvreta",
-    "Bälinge",
-    "Björklinge",
-    "Vattholma"
+    "Enköping", "Knivsta", "Bålsta", "Storvreta", "Sigtuna"
   ],
-
   vasteras: [
-    "Hallstahammar",
-    "Surahammar",
-    "Köping",
-    "Enköping",
-    "Sala"
+    "Köping", "Hallstahammar", "Sala", "Enköping", "Eskilstuna"
   ],
-
   orebro: [
-    "Kumla",
-    "Hallsberg",
-    "Lindesberg",
-    "Karlskoga",
-    "Nora"
+    "Kumla", "Hallsberg", "Lindesberg", "Karlskoga"
   ],
-
   linkoping: [
-    "Norrköping",
-    "Mjölby",
-    "Motala",
-    "Finspång",
-    "Åtvidaberg"
+    "Norrköping", "Mjölby", "Motala", "Finspång"
   ],
-
   helsingborg: [
-    "Landskrona",
-    "Höganäs",
-    "Ängelholm",
-    "Bjuv",
-    "Åstorp"
+    "Ängelholm", "Höganäs", "Landskrona", "Bjuv", "Åstorp"
   ],
-
   jonkoping: [
-    "Huskvarna",
-    "Nässjö",
-    "Vaggeryd",
-    "Mullsjö",
-    "Gränna"
+    "Nässjö", "Huskvarna", "Värnamo", "Tranås"
   ],
-
   norrkoping: [
-    "Linköping",
-    "Finspång",
-    "Söderköping",
-    "Valdemarsvik",
-    "Åby"
+    "Linköping", "Finspång", "Söderköping", "Nyköping"
   ],
-
-  lund: [
-    "Malmö",
-    "Staffanstorp",
-    "Lomma",
-    "Eslöv",
-    "Dalby"
+  umea: [
+    "Holmsund", "Sävar", "Vännäs", "Robertsfors"
   ],
-
-  gavle: [
-    "Sandviken",
-    "Storvik",
-    "Skutskär",
-    "Furuvik",
-    "Valbo"
-  ],
-
-  boras: [
-    "Ulricehamn",
-    "Bollebygd",
-    "Kinna",
-    "Dalsjöfors",
-    "Fristad"
-  ],
-
-  eskilstuna: [
-    "Torshälla",
-    "Strängnäs",
-    "Kungsör",
-    "Malmköping",
-    "Arboga"
-  ],
-
-  sodertalje: [
-    "Nykvarn",
-    "Salem",
-    "Järna",
-    "Tumba",
-    "Rönninge"
-  ],
-
-  karlstad: [
-    "Hammarö",
-    "Kil",
-    "Grums",
-    "Forshaga",
-    "Kristinehamn"
-  ],
-
   lulea: [
-    "Boden",
-    "Piteå",
-    "Älvsbyn",
-    "Råneå",
-    "Kalix"
-  ]
+    "Boden", "Piteå", "Kalix", "Älvsbyn"
+  ],
+  boras: [
+    "Ulricehamn", "Kinna", "Dalsjöfors", "Fristad"
+  ],
+  sodertalje: [
+    "Nykvarn", "Stockholm", "Järna", "Salem"
+  ],
+  eskilstuna: [
+    "Västerås", "Strängnäs", "Torshälla", "Kungsör"
+  ],
+  gavle: [
+    "Sandviken", "Söderhamn", "Skutskär", "Valbo"
+  ],
+  sundsvall: [
+    "Timrå", "Härnösand", "Matfors", "Njurunda"
+  ],
+  karlstad: [
+    "Kristinehamn", "Hammarö", "Kil", "Grums"
+  ],
+  // Smaller cities and their connections
+  alingsas: [
+    "Vårgårda", "Lerum", "Herrljunga", "Borås"
+  ],
+  kungalv: [
+    "Göteborg", "Kärna", "Ytterby", "Marstrand"
+  ],
+  karna: [
+    "Kungälv", "Ytterby", "Göteborg", "Marstrand"
+  ],
+  ytterby: [
+    "Kungälv", "Kärna", "Göteborg", "Marstrand"
+  ],
+  // ... Add more cities as needed
 };
