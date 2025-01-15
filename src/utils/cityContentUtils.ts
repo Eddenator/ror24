@@ -8,8 +8,6 @@ export const normalizeCity = (city: string): string => {
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
     .replace(/[^a-z0-9]/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-|-$/g, '')
     .trim();
 };
 

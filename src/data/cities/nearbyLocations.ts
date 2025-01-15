@@ -13,8 +13,6 @@ export const getNearbyLocations = (city: string): string[] => {
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
     .replace(/[^a-z0-9]/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-|-$/g, '')
     .trim();
 
   console.log('Normalized city:', normalizedCity);
@@ -24,46 +22,188 @@ export const getNearbyLocations = (city: string): string[] => {
 };
 
 export const nearbyLocations: NearbyLocations = {
-  // ===== START – STOCKHOLMSOMRÅDET =====
-  // Stockholm suburbs
-  alingsas: ["Vårgårda", "Lerum", "Floda", "Göteborg"],
-  vanersborg: ["Trollhättan", "Vargön", "Uddevalla", "Mellerud"],
-  boras: ["Ulricehamn", "Dalsjöfors", "Sandared", "Fristad"],
+  stockholm: [
+    "Solna",
+    "Sundbyberg",
+    "Nacka",
+    "Lidingö",
+    "Danderyd",
+    "Sollentuna",
+    "Täby",
+    "Järfälla",
+    "Huddinge",
+    "Botkyrka"
+  ],
+  
   goteborg: [
     "Mölndal",
     "Partille",
     "Kungälv",
+    "Kungsbacka",
     "Lerum",
-    "Hisings Backa",
-    "Hisings Kärra",
-    "Västra Frölunda",
-    "Angered",
-    "Hovås",
-    "Kungsbacka"
+    "Härryda",
+    "Ale",
+    "Öckerö"
   ],
-  molndal: ["Göteborg", "Partille", "Kungsbacka", "Mölnlycke"],
-  partille: ["Göteborg", "Mölndal", "Lerum", "Floda", "Jonsered"],
-  kungalv: ["Göteborg", "Kareby", "Ytterby", "Nödinge", "Surte"],
-  lerum: ["Göteborg", "Partille", "Floda", "Gråbo", "Stenkullen"],
-  angered: ["Göteborg", "Hisings Backa", "Gunnilse", "Bergsjön", "Partille"],
-  vastrafrolunda: ["Göteborg", "Mölndal", "Hovås", "Askim"],
-  hovas: ["Göteborg", "Askim", "Billdal", "Kungsbacka"],
-  kungsbacka: ["Göteborg", "Särö", "Vallda", "Kullavik", "Onsala", "Mölndal"],
-  hisingskarra: ["Göteborg", "Hisings Backa", "Kungälv"],
-  hisingbacka: ["Göteborg", "Angered", "Hisings Kärra"],
+  
+  malmo: [
+    "Lund",
+    "Trelleborg",
+    "Vellinge",
+    "Lomma",
+    "Staffanstorp",
+    "Svedala",
+    "Burlöv"
+  ],
 
-  // Stockholm suburbs
-  arsta: ["Stockholm", "Årsta havsbad", "Älvsjö", "Enskede"],
-  arstahamn: ["Årsta", "Haninge", "Nynäshamn"],
-  bagarmossen: ["Farsta", "Sköndal", "Skarpnäck"],
-  enskede: ["Farsta", "Årsta", "Stockholm"],
-  jarna: ["Södertälje", "Mörkö"],
-  tungelsta: ["Haninge", "Västerhaninge", "Nynäshamn", "Stockholm"],
+  umea: [
+    "Holmsund",
+    "Obbola",
+    "Vännäs",
+    "Robertsfors",
+    "Sävar",
+    "Hörnefors"
+  ],
+  
+  karna: [
+    "Kungälv",
+    "Ytterby",
+    "Marstrand",
+    "Göteborg",
+    "Hisings Kärra"
+  ],
 
-  // Grödinge and nearby
-  grodinge: ["Tumba", "Södertälje", "Botkyrka", "Salem", "Rönninge"],
-  tumba: ["Grödinge", "Tullinge", "Botkyrka", "Salem", "Stockholm"],
-  botkyrka: ["Tumba", "Grödinge", "Salem", "Södertälje", "Stockholm"],
-  salem: ["Rönninge", "Södertälje", "Tumba", "Grödinge"],
-  ronninge: ["Salem", "Tumba", "Grödinge", "Södertälje"]
+  alingsas: [
+    "Vårgårda",
+    "Lerum",
+    "Floda",
+    "Göteborg"
+  ],
+
+  kungalv: [
+    "Kärna",
+    "Ytterby",
+    "Göteborg",
+    "Hisings Kärra",
+    "Marstrand"
+  ],
+
+  ytterby: [
+    "Kungälv",
+    "Kärna",
+    "Göteborg",
+    "Hisings Kärra"
+  ],
+
+  uppsala: [
+    "Knivsta",
+    "Storvreta",
+    "Bälinge",
+    "Björklinge",
+    "Vattholma"
+  ],
+
+  vasteras: [
+    "Hallstahammar",
+    "Surahammar",
+    "Köping",
+    "Enköping",
+    "Sala"
+  ],
+
+  orebro: [
+    "Kumla",
+    "Hallsberg",
+    "Lindesberg",
+    "Karlskoga",
+    "Nora"
+  ],
+
+  linkoping: [
+    "Norrköping",
+    "Mjölby",
+    "Motala",
+    "Finspång",
+    "Åtvidaberg"
+  ],
+
+  helsingborg: [
+    "Landskrona",
+    "Höganäs",
+    "Ängelholm",
+    "Bjuv",
+    "Åstorp"
+  ],
+
+  jonkoping: [
+    "Huskvarna",
+    "Nässjö",
+    "Vaggeryd",
+    "Mullsjö",
+    "Gränna"
+  ],
+
+  norrkoping: [
+    "Linköping",
+    "Finspång",
+    "Söderköping",
+    "Valdemarsvik",
+    "Åby"
+  ],
+
+  lund: [
+    "Malmö",
+    "Staffanstorp",
+    "Lomma",
+    "Eslöv",
+    "Dalby"
+  ],
+
+  gavle: [
+    "Sandviken",
+    "Storvik",
+    "Skutskär",
+    "Furuvik",
+    "Valbo"
+  ],
+
+  boras: [
+    "Ulricehamn",
+    "Bollebygd",
+    "Kinna",
+    "Dalsjöfors",
+    "Fristad"
+  ],
+
+  eskilstuna: [
+    "Torshälla",
+    "Strängnäs",
+    "Kungsör",
+    "Malmköping",
+    "Arboga"
+  ],
+
+  sodertalje: [
+    "Nykvarn",
+    "Salem",
+    "Järna",
+    "Tumba",
+    "Rönninge"
+  ],
+
+  karlstad: [
+    "Hammarö",
+    "Kil",
+    "Grums",
+    "Forshaga",
+    "Kristinehamn"
+  ],
+
+  lulea: [
+    "Boden",
+    "Piteå",
+    "Älvsbyn",
+    "Råneå",
+    "Kalix"
+  ]
 };
