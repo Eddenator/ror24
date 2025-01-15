@@ -12,5 +12,8 @@ export const hallandRegion: NearbyLocations = {
   ],
   kungsbacka: [
     "Göteborg", "Varberg", "Onsala", "Fjärås", "Särö"
+  ],
+  laholm: [
+    "Halmstad", "Båstad", "Markaryd", "Knäred", "Våxtorp"
   ]
 };
