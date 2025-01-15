@@ -11,11 +11,19 @@ const CityServices = ({ cityName, services }: CityServicesProps) => {
       <h2 className="text-2xl font-semibold mb-6">
         Våra VVS-tjänster i {cityName}
       </h2>
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 gap-6">
         {services.map((service, index) => (
-          <div key={index} className="flex items-center space-x-3 p-3 bg-white rounded-lg">
-            <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0" />
-            <span>{service}</span>
+          <div 
+            key={index} 
+            className="flex items-start space-x-3 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          >
+            <CheckCircle className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="font-semibold mb-1">{service}</h3>
+              <p className="text-sm text-gray-600">
+                Vi erbjuder professionell {service.toLowerCase()} i {cityName} med snabb service och garanterat resultat.
+              </p>
+            </div>
           </div>
         ))}
       </div>
