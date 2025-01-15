@@ -19,7 +19,9 @@ export const createCityContent = (city: string): CityContent => {
   
   return {
     ...defaultCityContent,
-    description: defaultCityContent.description(city)
+    description: typeof defaultCityContent.description === 'function' 
+      ? defaultCityContent.description(city)
+      : defaultCityContent.description
   };
 };
 

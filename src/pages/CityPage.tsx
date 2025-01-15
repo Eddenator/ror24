@@ -38,6 +38,10 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
+  const description = typeof content.description === 'function' 
+    ? content.description(originalCity)
+    : content.description;
+
   return (
     <div className="min-h-screen bg-white">
       <DocumentHead 
@@ -57,7 +61,7 @@ const CityPage = () => {
             <div 
               className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-p:text-gray-600 prose-strong:text-gray-900 prose-ul:space-y-2 prose-ol:space-y-2 prose-li:text-gray-600 space-y-8"
               dangerouslySetInnerHTML={{ 
-                __html: content.description.replace(/%city%/g, originalCity) 
+                __html: description
               }}
             />
           </div>
