@@ -22,18 +22,40 @@ const generateServiceDescriptions = () => {
   return descriptions[Math.floor(Math.random() * descriptions.length)];
 };
 
-const generateIntroVariations = (city: string) => {
-  const intros = [
-    `Behöver du en pålitlig rörmokare i ${city}? Rör24 är det självklara valet med vårt omfattande nätverk av auktoriserade VVS-tekniker. Vi finns tillgängliga dygnet runt för att hjälpa dig med alla typer av VVS-problem.`,
-    `Välkommen till Rör24 i ${city}! Som en del av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi professionell VVS-service dygnet runt, året om.`,
-    `Letar du efter professionell VVS-service i ${city}? Rör24 står redo att hjälpa dig med alla dina rörmokarebehov. Som ett av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi service dygnet runt.`,
-    `När du behöver rörmokare i ${city} är Rör24 här för dig. Vi är stolta över att vara en del av Sveriges mest omfattande nätverk av auktoriserade VVS-tekniker, med jour 24/7 för alla typer av VVS-arbeten.`,
-    `Har du VVS-problem i ${city}? Rör24 är din lokala partner för all typ av VVS-service. Med vårt rikstäckande nätverk av certifierade rörmokare finns vi alltid nära till hands.`,
-    `Som din lokala VVS-expert i ${city} erbjuder Rör24 omfattande service dygnet runt. Vi är en del av Sveriges ledande nätverk av auktoriserade rörmokare.`,
-    `Rör24 i ${city} - din pålitliga partner för alla VVS-behov. Med vår omfattande erfarenhet och professionella service står vi redo att hjälpa dig, oavsett tid på dygnet.`
+const generatePageVariations = (city: string) => {
+  const variations = [
+    `<section>
+      <h1>Jourhavande Rörmokare i ${city} – Dygnet runt med Rör24!</h1>
+      <p>Behöver du en pålitlig rörmokare i ${city}? Rör24 är det självklara valet med vårt omfattande nätverk av auktoriserade VVS-tekniker. Vi finns tillgängliga dygnet runt för att hjälpa dig med alla typer av VVS-problem.</p>
+      <p>${generateServiceDescriptions().replace(/%city%/g, city)}</p>
+    </section>`,
+    
+    `<section>
+      <h1>VVS & Rörmokare i ${city} - Jour 24/7</h1>
+      <p>Välkommen till Rör24 i ${city}! Som en del av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi professionell VVS-service dygnet runt, året om.</p>
+      <p>Med vår omfattande erfarenhet och lokala närvaro i ${city} kan vi garantera snabb och pålitlig service för alla dina VVS-behov.</p>
+    </section>`,
+    
+    `<section>
+      <h1>Akut VVS-service i ${city} - Ring Rör24!</h1>
+      <p>Har du VVS-problem i ${city}? Rör24 är din lokala partner för all typ av VVS-service. Med vårt rikstäckande nätverk av certifierade rörmokare finns vi alltid nära till hands.</p>
+      <p>Vi erbjuder professionell VVS-service med jour dygnet runt i ${city} och närliggande områden.</p>
+    </section>`,
+    
+    `<section>
+      <h1>Rörmokare ${city} - Professionell VVS-service</h1>
+      <p>Behöver du hjälp med något relaterat till VVS/rör? Rör24 är ett av Sveriges största nätverk med auktoriserade rörmokare. Vi har öppet 24/7 och betjänar hela Sverige, inklusive ${city}.</p>
+      <p>Att få problem med rören är aldrig kul – men med oss kan du släppa stressen! Vi finns här för att hjälpa dig.</p>
+    </section>`,
+    
+    `<section>
+      <h1>Dygnet Runt VVS i ${city} - Rör24</h1>
+      <p>När du behöver rörmokare i ${city} är Rör24 här för dig. Vi är stolta över att vara en del av Sveriges mest omfattande nätverk av auktoriserade VVS-tekniker, med jour 24/7 för alla typer av VVS-arbeten.</p>
+      <p>Med lokal närvaro och gedigen erfarenhet löser vi alla typer av VVS-problem i ${city}.</p>
+    </section>`
   ];
-  
-  return intros[Math.floor(Math.random() * intros.length)];
+
+  return variations[Math.floor(Math.random() * variations.length)];
 };
 
 const generateServiceList = (city: string) => {
@@ -73,77 +95,69 @@ const generateServiceList = (city: string) => {
   return services[Math.floor(Math.random() * services.length)];
 };
 
-const generateNearbyLinks = (city: string) => {
+const generateWhyChooseUs = (city: string) => {
   const variations = [
-    `Bor du nära ${city}? Vi hjälper även kunder i närliggande områden.`,
-    `Vårt serviceområde sträcker sig utanför ${city} - vi hjälper gärna till i omkringliggande orter.`,
-    `Vi servar inte bara ${city}, utan även närliggande kommuner och områden.`,
-    `Befinner du dig i närheten av ${city}? Vi hjälper gärna till med dina VVS-behov.`,
-    `Vår service täcker ${city} med omnejd - tveka inte att höra av dig oavsett var du bor i området.`
-  ];
-  
-  return variations[Math.floor(Math.random() * variations.length)];
-};
-
-const generateCityIntro = (city: string) => {
-  const intros = [
-    `Behöver du en pålitlig rörmokare i ${city}? Rör24 är det självklara valet med vårt omfattande nätverk av auktoriserade VVS-tekniker. Vi finns tillgängliga dygnet runt för att hjälpa dig med alla typer av VVS-problem.`,
-    `Letar du efter professionell VVS-service i ${city}? Rör24 står redo att hjälpa dig med alla dina rörmokarebehov. Som ett av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi service dygnet runt.`,
-    `När du behöver rörmokare i ${city} är Rör24 här för dig. Vi är stolta över att vara en del av Sveriges mest omfattande nätverk av auktoriserade VVS-tekniker, med jour 24/7 för alla typer av VVS-arbeten.`
-  ];
-  
-  return intros[Math.floor(Math.random() * intros.length)];
-};
-
-export const defaultCityContent: CityContent = {
-  heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
-  description: (city: string) => `
-<section>
-    <h1>Jourhavande Rörmokare i ${city} – Dygnet runt med Rör24!</h1>
-    <p>${generateCityIntro(city)}</p>
-    <p>${generateServiceDescriptions().replace(/%city%/g, city)}</p>
-</section>
-
-<section>
-    <h2>Våra VVS-tjänster i ${city}</h2>
-    <div class="service-list">
-        ${generateServiceList(city).map(service => `<div class="service-item">${service}</div>`).join('')}
-    </div>
-</section>
-
-<section>
-    <h2>Varför välja Rör24 i ${city}?</h2>
-    <ul>
+    `<section>
+      <h2>Varför välja Rör24 i ${city}?</h2>
+      <ul>
         <li><strong>Dygnet runt jour</strong> – Vi finns här för dig, oavsett om det är mitt i natten eller tidig morgon.</li>
         <li><strong>55 000+ utförda jobb</strong> – 24 nätverket har utfört över 55 000 jourarbeten.</li>
         <li><strong>91% rekommenderar oss</strong> – Kvalitet och service i världsklass.</li>
         <li><strong>Lokala experter</strong> – Snabbt på plats i ${city}, alltid med rätt lösning.</li>
-    </ul>
-</section>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Därför ska du välja Rör24 i ${city}</h2>
+      <ul>
+        <li><strong>Alltid tillgängliga</strong> – Jour dygnet runt, alla dagar i veckan.</li>
+        <li><strong>Omfattande erfarenhet</strong> – Över 55 000 genomförda uppdrag.</li>
+        <li><strong>Högt kundbetyg</strong> – 91% av våra kunder rekommenderar oss.</li>
+        <li><strong>Lokal service</strong> – Snabb utryckning i ${city} med omnejd.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Fördelar med Rör24 i ${city}</h2>
+      <ul>
+        <li><strong>24/7 Tillgänglighet</strong> – Redo att hjälpa dig när som helst.</li>
+        <li><strong>Beprövad expertis</strong> – 55 000+ framgångsrika uppdrag.</li>
+        <li><strong>Nöjda kunder</strong> – 91% rekommendationsgrad.</li>
+        <li><strong>Lokalkännedom</strong> – Vi känner ${city} utan och innan.</li>
+      </ul>
+    </section>`
+  ];
 
-<img src="https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/436-ror24.jpg" alt="Rör24 VVS-tjänster i ${city}" class="w-full rounded-lg my-8" />
+  return variations[Math.floor(Math.random() * variations.length)];
+};
 
-<section>
-    <h2>Vad kan vi hjälpa dig med i ${city}?</h2>
-    <p>Oavsett VVS-problem har vi lösningen! Här är några av våra mest efterfrågade tjänster:</p>
-    <ul>
-        <li>✅ <strong>Akuta problem:</strong> Vattenläckor, trasiga rör eller översvämningar.</li>
-        <li>✅ <strong>Avloppsrensning:</strong> Från små stopp till totalstopp i avloppet.</li>
-        <li>✅ <strong>Installationer:</strong> Blandare, toaletter, diskmaskiner – vi installerar det smidigt.</li>
-        <li>✅ <strong>Felsökning & reparation:</strong> Problem med värme eller vatten? Vi hittar och fixar det.</li>
-    </ul>
-</section>
+export const defaultCityContent: CityContent = {
+  heroImage: "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
+  description: (city: string) => {
+    const pageVariation = generatePageVariations(city);
+    const whyChooseUs = generateWhyChooseUs(city);
+    
+    return `
+      ${pageVariation}
 
-<section>
-    <h2>Täckningsområde</h2>
-    <p>${generateNearbyLinks(city)}</p>
-</section>
+      <section>
+        <h2>Våra VVS-tjänster i ${city}</h2>
+        <div class="service-list">
+          ${generateServiceList(city).map(service => `<div class="service-item">${service}</div>`).join('')}
+        </div>
+      </section>
 
-<section>
-    <h2>Kontakta oss nu!</h2>
-    <p>Har du en vattenläcka eller stopp i avloppet i ${city}? Vänta inte – vi är redo att hjälpa dig <strong>NU</strong>.</p>
-    <p><strong>📞 Ring oss direkt på 010-555 11 94</strong></p>
-</section>`,
+      ${whyChooseUs}
+
+      <img src="https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/436-ror24.jpg" alt="Rör24 VVS-tjänster i ${city}" class="w-full rounded-lg my-8" />
+
+      <section>
+        <h2>Kontakta oss nu!</h2>
+        <p>Har du en vattenläcka eller stopp i avloppet i ${city}? Vänta inte – vi är redo att hjälpa dig <strong>NU</strong>.</p>
+        <p><strong>📞 Ring oss direkt på 010-555 11 94</strong></p>
+      </section>
+    `;
+  },
   services: [
     "Akut VVS-jour",
     "Avloppsrensning",
