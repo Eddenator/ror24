@@ -18,5 +18,14 @@ export const kalmarRegion: NearbyLocations = {
   ],
   farjestaden: [
     "Kalmar", "Borgholm", "Mörbylånga", "Nybro", "Oskarshamn"
+  ],
+  morbylanga: [
+    "Färjestaden", "Kalmar", "Borgholm", "Nybro", "Torsås"
+  ],
+  torsas: [
+    "Kalmar", "Emmaboda", "Karlskrona", "Nybro", "Bergkvara"
+  ],
+  monsteras: [
+    "Oskarshamn", "Kalmar", "Nybro", "Högsby", "Ålem"
   ]
 };

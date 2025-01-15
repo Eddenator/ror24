@@ -1,68 +1,58 @@
 import { NearbyLocations } from '../types';
 
 export const skaneRegion: NearbyLocations = {
-  malmo: [
-    "Lund", "Trelleborg", "Staffanstorp", "Lomma", "Burlöv",
-    "Svedala", "Vellinge"
-  ],
-  lund: [
-    "Malmö", "Staffanstorp", "Eslöv", "Lomma", "Kävlinge"
-  ],
-  helsingborg: [
-    "Landskrona", "Höganäs", "Ängelholm", "Bjuv", "Åstorp"
-  ],
-  kristianstad: [
-    "Hässleholm", "Åhus", "Bromölla", "Tollarp", "Sölvesborg"
-  ],
-  landskrona: [
-    "Helsingborg", "Eslöv", "Svalöv", "Kävlinge", "Lund"
-  ],
-  trelleborg: [
-    "Malmö", "Vellinge", "Svedala", "Skurup", "Ystad"
+  bastad: [
+    "Laholm", "Ängelholm", "Förslöv", "Torekov", "Grevie"
   ],
   angelholm: [
-    "Helsingborg", "Höganäs", "Båstad", "Ängelholm", "Klippan"
-  ],
-  eslov: [
-    "Lund", "Höör", "Landskrona", "Kävlinge", "Svalöv"
-  ],
-  hassleholm: [
-    "Kristianstad", "Osby", "Perstorp", "Höör", "Klippan"
+    "Helsingborg", "Båstad", "Höganäs", "Munka-Ljungby", "Ängelholm"
   ],
   hoganas: [
-    "Helsingborg", "Ängelholm", "Bjuv", "Åstorp", "Klippan"
+    "Helsingborg", "Ängelholm", "Viken", "Jonstorp", "Mölle"
   ],
-  ystad: [
-    "Simrishamn", "Tomelilla", "Skurup", "Sjöbo", "Trelleborg"
+  helsingborg: [
+    "Landskrona", "Höganäs", "Ängelholm", "Åstorp", "Bjuv"
   ],
-  lomma: [
-    "Malmö", "Lund", "Staffanstorp", "Burlöv", "Kävlinge"
+  kristianstad: [
+    "Hässleholm", "Östra Göinge", "Bromölla", "Degeberga", "Vittsjö"
   ],
-  svedala: [
-    "Malmö", "Trelleborg", "Vellinge", "Skurup", "Lund"
+  malmo: [
+    "Lund", "Burlöv", "Staffanstorp", "Vellinge", "Svedala"
   ],
-  kavlinge: [
-    "Lund", "Lomma", "Landskrona", "Eslöv", "Svalöv"
+  lund: [
+    "Malmö", "Staffanstorp", "Burlöv", "Kävlinge", "Dalby"
   ],
-  bjuv: [
-    "Helsingborg", "Åstorp", "Svalöv", "Klippan", "Höganäs"
+  kungsbacka: [
+    "Göteborg", "Varberg", "Onsala", "Fjärås", "Särö"
   ],
-  astorp: [
-    "Helsingborg", "Bjuv", "Klippan", "Ängelholm", "Höganäs"
+  varberg: [
+    "Falkenberg", "Kungsbacka", "Veddige", "Träslövsläge", "Tvååker"
   ],
-  klippan: [
-    "Åstorp", "Perstorp", "Svalöv", "Bjuv", "Ängelholm"
+  falkenberg: [
+    "Varberg", "Halmstad", "Ullared", "Getinge", "Glommen"
   ],
-  oxie: [
-    "Malmö", "Svedala", "Tygelsjö", "Bunkeflostrand", "Limhamn"
+  halmstad: [
+    "Falkenberg", "Laholm", "Oskarström", "Getinge", "Gullbrandstorp"
   ],
-  tygelsjö: [
-    "Malmö", "Oxie", "Limhamn", "Bunkeflostrand", "Vellinge"
+  laholm: [
+    "Halmstad", "Båstad", "Markaryd", "Knäred", "Våxtorp"
   ],
-  bunkeflostrand: [
-    "Malmö", "Limhamn", "Tygelsjö", "Oxie", "Vellinge"
+  getinge: [
+    "Halmstad", "Falkenberg", "Oskarström", "Harplinge", "Slöinge"
   ],
-  limhamn: [
-    "Malmö", "Bunkeflostrand", "Tygelsjö", "Oxie", "Vellinge"
+  oskarstrom: [
+    "Halmstad", "Getinge", "Torup", "Åled", "Simlångsdalen"
   ],
+  gullbrandstorp: [
+    "Halmstad", "Getinge", "Harplinge", "Haverdal", "Eldsberga"
+  ],
+  harplinge: [
+    "Halmstad", "Getinge", "Gullbrandstorp", "Haverdal", "Steninge"
+  ],
+  haverdal: [
+    "Halmstad", "Harplinge", "Gullbrandstorp", "Steninge", "Frösakull"
+  ],
+  sloinge: [
+    "Falkenberg", "Getinge", "Halmstad", "Årstad", "Morup"
+  ]
 };

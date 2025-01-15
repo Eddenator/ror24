@@ -1,49 +1,19 @@
 import { NearbyLocations } from '../types';
 
 export const smalandRegion: NearbyLocations = {
-  jonkoping: [
-    "Huskvarna", "Nässjö", "Värnamo", "Mullsjö", "Vaggeryd"
-  ],
-  kalmar: [
-    "Nybro", "Färjestaden", "Lindsdal", "Smedby", "Trekanten"
-  ],
   vaxjo: [
-    "Alvesta", "Lessebo", "Tingsryd", "Rottne", "Braås"
-  ],
-  varnamo: [
-    "Gislaved", "Skillingaryd", "Rydaholm", "Bredaryd", "Forsheda"
-  ],
-  nybro: [
-    "Kalmar", "Emmaboda", "Orrefors", "Trekanten", "Lindås"
-  ],
-  vastervik: [
-    "Oskarshamn", "Gamleby", "Ankarsrum", "Överum", "Vimmerby"
-  ],
-  oskarshamn: [
-    "Västervik", "Mönsterås", "Högsby", "Påskallavik", "Figeholm"
-  ],
-  nassjo: [
-    "Eksjö", "Vetlanda", "Jönköping", "Sävsjö", "Bodafors"
-  ],
-  vetlanda: [
-    "Nässjö", "Eksjö", "Sävsjö", "Korsberga", "Ekenässjön"
-  ],
-  eksjo: [
-    "Nässjö", "Vetlanda", "Aneby", "Mariannelund", "Hjältevad"
-  ],
-  almhult: [
-    "Älmhult", "Osby", "Markaryd", "Ljungby", "Diö"
-  ],
-  ljungby: [
-    "Värnamo", "Älmhult", "Markaryd", "Lagan", "Ryssby"
+    "Alvesta", "Nybro", "Emmaboda", "Lessebo", "Tingsryd"
   ],
   alvesta: [
-    "Växjö", "Moheda", "Vislanda", "Rydaholm", "Grimslöv"
+    "Växjö", "Ljungby", "Älmhult", "Tingsryd", "Moheda"
   ],
-  gislaved: [
-    "Värnamo", "Anderstorp", "Smålandsstenar", "Hestra", "Reftele"
+  almhult: [
+    "Växjö", "Alvesta", "Ljungby", "Osby", "Markaryd"
   ],
-  anderstorp: [
-    "Gislaved", "Smålandsstenar", "Hestra", "Reftele", "Skeppshult"
+  ljungby: [
+    "Växjö", "Alvesta", "Älmhult", "Markaryd", "Värnamo"
+  ],
+  markaryd: [
+    "Ljungby", "Älmhult", "Laholm", "Strömsnäsbruk", "Traryd"
   ]
 };
