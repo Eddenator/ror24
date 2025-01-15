@@ -23,79 +23,12 @@ export const getNearbyLocations = (city: string): string[] => {
   return nearbyLocations[normalizedCity] || [];
 };
 
-/**
- * Här börjar vårt stora nearbyLocations-objekt!
- * 
- * PART 1: Stockholmsområdet (+ omnejd).
- */
 export const nearbyLocations: NearbyLocations = {
   // ===== START – STOCKHOLMSOMRÅDET =====
-  stockholm: [
-    "Solna",
-    "Sundbyberg",
-    "Nacka",
-    "Lidingö",
-    "Huddinge",
-    "Kista",
-    "Bromma",
-    "Farsta",
-    "Årsta",
-    "Älvsjö",
-    "Tyresö",
-    "Haninge",
-    "Tumba",
-    "Tullinge",
-    "Tungelsta",
-    "Älta",
-    "Skärholmen",
-    "Skogås",
-    "Spånga",
-    "Järfälla",
-    "Upplands Väsby",
-    "Sollentuna",
-  ],
-  solna: ["Stockholm", "Sundbyberg", "Danderyd", "Bromma", "Sollentuna", "Kista"],
-  sundbyberg: ["Stockholm", "Solna", "Bromma", "Kista", "Danderyd"],
-  nacka: ["Stockholm", "Saltsjö-Boo", "Saltsjö-Duvnäs", "Saltsjöbaden", "Gustavsberg"],
-  lidingo: ["Stockholm", "Djursholm", "Danderyd", "Nacka"],
-  huddinge: ["Stockholm", "Farsta", "Skärholmen", "Tullinge", "Botkyrka"],
-  danderyd: ["Stockholm", "Sollentuna", "Solna", "Lidingö", "Täby"],
-  bromma: ["Stockholm", "Solna", "Sundbyberg", "Kista"],
-  farsta: ["Stockholm", "Huddinge", "Haninge", "Enskede", "Bagarmossen", "Sköndal"],
-  kista: ["Stockholm", "Sollentuna", "Husby", "Spånga", "Bromma"],
-  haninge: ["Stockholm", "Handen", "Västerhaninge", "Tungelsta", "Tyresö"],
-  jarfalla: ["Spånga", "Kista", "Sollentuna", "Viksjö", "Upplands Väsby", "Stockholm"],
-  upplandsvasby: ["Upplands Väsby", "Märsta", "Sigtuna", "Sollentuna", "Kista", "Stockholm"],
-  sollentuna: ["Kista", "Stockholm", "Danderyd", "Solna", "Upplands Väsby"],
-
-  saltsjoboo: ["Nacka", "Saltsjöbaden", "Gustavsberg", "Stockholm"],
-  saltsjoduvnas: ["Nacka", "Saltsjöbaden", "Stockholm"],
-  saltsjobaden: ["Nacka", "Saltsjö-Boo", "Älta", "Gustavsberg"],
-
-  // Kring Stockholm / Mellersta Sverige
-  enkoping: ["Bålsta", "Västerås", "Strängnäs", "Uppsala"],
-  norrtalje: ["Rimbo", "Hallstavik", "Stockholm", "Åkersberga"],
-  nykoping: ["Oxelösund", "Trosa", "Södertälje", "Katrineholm", "Flen"],
-  sodertalje: ["Nykvarn", "Järna", "Stockholm", "Botkyrka"],
-  vasterhaninge: ["Haninge", "Stockholm", "Tungelsta", "Nynäshamn"],
-  nynashamn: ["Ösmo", "Sorunda", "Tungelsta", "Stockholm"],
-
-  // Exempel: några av de orter i sitemappen som ligger i Stockholms län:
-  arsta: ["Stockholm", "Årsta havsbad", "Älvsjö", "Enskede"],
-  "arsta-havsbad": ["Årsta", "Haninge", "Nynäshamn"],
-  bagarmossen: ["Farsta", "Sköndal", "Skarpnäck", "Kärrtorp (ex.)"],
-  enskede: ["Farsta", "Gamla Enskede (ex.)", "Årsta", "Stockholm"],
-  jarna: ["Södertälje", "Mörkö", "Hölö (ex.)"],
-  tungelsta: ["Haninge", "Västerhaninge", "Nynäshamn", "Stockholm"],
-
-  // Add Grödinge and nearby locations
-  grodinge: ["Tumba", "Södertälje", "Botkyrka", "Salem", "Rönninge"],
-  tumba: ["Grödinge", "Tullinge", "Botkyrka", "Salem", "Stockholm"],
-  botkyrka: ["Tumba", "Grödinge", "Salem", "Södertälje", "Stockholm"],
-  salem: ["Rönninge", "Södertälje", "Tumba", "Grödinge"],
-  ronninge: ["Salem", "Tumba", "Grödinge", "Södertälje"],
-
-  // Göteborgsområdet
+  // Stockholm suburbs
+  alingsas: ["Vårgårda", "Lerum", "Floda", "Göteborg"],
+  vanersborg: ["Trollhättan", "Vargön", "Uddevalla", "Mellerud"],
+  boras: ["Ulricehamn", "Dalsjöfors", "Sandared", "Fristad"],
   goteborg: [
     "Mölndal",
     "Partille",
@@ -113,11 +46,24 @@ export const nearbyLocations: NearbyLocations = {
   kungalv: ["Göteborg", "Kareby", "Ytterby", "Nödinge", "Surte"],
   lerum: ["Göteborg", "Partille", "Floda", "Gråbo", "Stenkullen"],
   angered: ["Göteborg", "Hisings Backa", "Gunnilse", "Bergsjön", "Partille"],
-  "vastra-frolunda": ["Göteborg", "Mölndal", "Hovås", "Askim"],
+  vastrafrolunda: ["Göteborg", "Mölndal", "Hovås", "Askim"],
   hovas: ["Göteborg", "Askim", "Billdal", "Kungsbacka"],
   kungsbacka: ["Göteborg", "Särö", "Vallda", "Kullavik", "Onsala", "Mölndal"],
-  "hisings-backa": ["Göteborg", "Angered", "Hisings Kärra"],
-  "hisings-karra": ["Göteborg", "Hisings Backa", "Kungälv"],
+  hisingskarra: ["Göteborg", "Hisings Backa", "Kungälv"],
+  hisingbacka: ["Göteborg", "Angered", "Hisings Kärra"],
 
-  // ... fortsätter (Part 2) ...
+  // Stockholm suburbs
+  arsta: ["Stockholm", "Årsta havsbad", "Älvsjö", "Enskede"],
+  arstahamn: ["Årsta", "Haninge", "Nynäshamn"],
+  bagarmossen: ["Farsta", "Sköndal", "Skarpnäck"],
+  enskede: ["Farsta", "Årsta", "Stockholm"],
+  jarna: ["Södertälje", "Mörkö"],
+  tungelsta: ["Haninge", "Västerhaninge", "Nynäshamn", "Stockholm"],
+
+  // Grödinge and nearby
+  grodinge: ["Tumba", "Södertälje", "Botkyrka", "Salem", "Rönninge"],
+  tumba: ["Grödinge", "Tullinge", "Botkyrka", "Salem", "Stockholm"],
+  botkyrka: ["Tumba", "Grödinge", "Salem", "Södertälje", "Stockholm"],
+  salem: ["Rönninge", "Södertälje", "Tumba", "Grödinge"],
+  ronninge: ["Salem", "Tumba", "Grödinge", "Södertälje"]
 };

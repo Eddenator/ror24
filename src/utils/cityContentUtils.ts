@@ -7,8 +7,7 @@ export const normalizeCity = (city: string): string => {
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/é/g, 'e')
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
+    .replace(/[^a-z0-9]/g, '')
     .replace(/--+/g, '-')
     .replace(/^-|-$/g, '')
     .trim();
