@@ -35,9 +35,6 @@ export const stockholmRegion: NearbyLocations = {
   bromma: [
     "Stockholm", "Sundbyberg", "Solna", "Ekerö", "Järfälla"
   ],
-  sodertalje: [
-    "Stockholm", "Huddinge", "Botkyrka", "Salem", "Nykvarn"
-  ],
   jarfalla: [
     "Stockholm", "Sollentuna", "Upplands Väsby", "Vallentuna", "Bromma"
   ],
@@ -52,17 +49,5 @@ export const stockholmRegion: NearbyLocations = {
   ],
   danderyd: [
     "Stockholm", "Täby", "Sollentuna", "Lidingö", "Vaxholm"
-  ],
-  lidingo: [
-    "Stockholm", "Nacka", "Danderyd", "Värmdö", "Vaxholm"
-  ],
-  norrtalje: [
-    "Vallentuna", "Österåker", "Rimbo", "Uppsala", "Hallstavik"
-  ],
-  ekero: [
-    "Stockholm", "Bromma", "Solna", "Sundbyberg", "Järfälla"
-  ],
-  sodertalje: [
-    "Stockholm", "Huddinge", "Botkyrka", "Salem", "Nykvarn"
   ]
 };
