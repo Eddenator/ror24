@@ -2,36 +2,48 @@ import { NearbyLocations } from '../types';
 
 export const smalandRegion: NearbyLocations = {
   jonkoping: [
-    "Huskvarna", "Nässjö", "Värnamo", "Tranås"
+    "Huskvarna", "Nässjö", "Värnamo", "Mullsjö", "Vaggeryd"
   ],
   kalmar: [
-    "Nybro", "Färjestaden", "Lindsdal", "Smedby"
+    "Nybro", "Färjestaden", "Lindsdal", "Smedby", "Trekanten"
   ],
   vaxjo: [
-    "Alvesta", "Lessebo", "Rottne", "Braås"
+    "Alvesta", "Lessebo", "Tingsryd", "Rottne", "Braås"
   ],
   varnamo: [
-    "Gislaved", "Skillingaryd", "Rydaholm", "Bredaryd"
-  ],
-  nassjo: [
-    "Jönköping", "Eksjö", "Vetlanda", "Tranås"
-  ],
-  vetlanda: [
-    "Nässjö", "Eksjö", "Sävsjö", "Korsberga"
+    "Gislaved", "Skillingaryd", "Rydaholm", "Bredaryd", "Forsheda"
   ],
   nybro: [
-    "Kalmar", "Emmaboda", "Orrefors", "Alsterbro"
+    "Kalmar", "Emmaboda", "Orrefors", "Trekanten", "Lindås"
   ],
   vastervik: [
-    "Oskarshamn", "Gamleby", "Ankarsrum", "Överum"
+    "Oskarshamn", "Gamleby", "Ankarsrum", "Överum", "Vimmerby"
   ],
   oskarshamn: [
-    "Västervik", "Mönsterås", "Högsby", "Figeholm"
+    "Västervik", "Mönsterås", "Högsby", "Påskallavik", "Figeholm"
+  ],
+  nassjo: [
+    "Eksjö", "Vetlanda", "Jönköping", "Sävsjö", "Bodafors"
+  ],
+  vetlanda: [
+    "Nässjö", "Eksjö", "Sävsjö", "Korsberga", "Ekenässjön"
+  ],
+  eksjo: [
+    "Nässjö", "Vetlanda", "Aneby", "Mariannelund", "Hjältevad"
+  ],
+  almhult: [
+    "Älmhult", "Osby", "Markaryd", "Ljungby", "Diö"
   ],
   ljungby: [
-    "Värnamo", "Älmhult", "Markaryd", "Lagan"
+    "Värnamo", "Älmhult", "Markaryd", "Lagan", "Ryssby"
   ],
-  tranas: [
-    "Jönköping", "Nässjö", "Eksjö", "Ydre"
+  alvesta: [
+    "Växjö", "Moheda", "Vislanda", "Rydaholm", "Grimslöv"
+  ],
+  gislaved: [
+    "Värnamo", "Anderstorp", "Smålandsstenar", "Hestra", "Reftele"
+  ],
+  anderstorp: [
+    "Gislaved", "Smålandsstenar", "Hestra", "Reftele", "Skeppshult"
   ]
 };

@@ -2,36 +2,42 @@ import { NearbyLocations } from '../types';
 
 export const norrlandRegion: NearbyLocations = {
   umea: [
-    "Holmsund", "Sävar", "Vännäs", "Robertsfors"
+    "Holmsund", "Sävar", "Vännäs", "Robertsfors", "Nordmaling"
   ],
   lulea: [
-    "Boden", "Piteå", "Kalix", "Älvsbyn"
+    "Boden", "Piteå", "Kalix", "Älvsbyn", "Råneå"
   ],
   sundsvall: [
-    "Timrå", "Härnösand", "Matfors", "Njurunda"
+    "Timrå", "Härnösand", "Ånge", "Nordanstig", "Hudiksvall"
   ],
   ornskoldsvik: [
-    "Umeå", "Härnösand", "Sollefteå", "Kramfors"
+    "Kramfors", "Sollefteå", "Nordmaling", "Bjärta", "Husum"
   ],
   pitea: [
-    "Luleå", "Älvsbyn", "Boden", "Skellefteå"
+    "Luleå", "Älvsbyn", "Boden", "Arvidsjaur", "Jokkmokk"
   ],
   skelleftea: [
-    "Piteå", "Burträsk", "Boliden", "Byske"
-  ],
-  stromsund: [
-    "Östersund", "Hammerdal", "Gäddede", "Hoting"
+    "Piteå", "Robertsfors", "Norsjö", "Burträsk", "Boliden"
   ],
   boden: [
-    "Luleå", "Älvsbyn", "Harads", "Gunnarsbyn"
+    "Luleå", "Älvsbyn", "Piteå", "Kalix", "Överkalix"
   ],
   kiruna: [
-    "Gällivare", "Vittangi", "Karesuando", "Abisko"
+    "Gällivare", "Pajala", "Vittangi", "Abisko", "Jokkmokk"
   ],
   harnosand: [
-    "Sundsvall", "Kramfors", "Timrå", "Sollefteå"
+    "Sundsvall", "Kramfors", "Timrå", "Sollefteå", "Häggdånger"
   ],
-  ostersund: [
-    "Krokom", "Brunflo", "Lit", "Frösön"
+  timra: [
+    "Sundsvall", "Härnösand", "Ånge", "Matfors", "Indal"
+  ],
+  gallivare: [
+    "Kiruna", "Jokkmokk", "Porjus", "Malmberget", "Koskullskulle"
+  ],
+  solleftea: [
+    "Kramfors", "Härnösand", "Örnsköldsvik", "Långsele", "Junsele"
+  ],
+  lycksele: [
+    "Storuman", "Vilhelmina", "Åsele", "Malå", "Vindeln"
   ]
 };

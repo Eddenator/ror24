@@ -8,58 +8,61 @@ export const stockholmRegion: NearbyLocations = {
   lidingo: [
     "Stockholm", "Nacka", "Danderyd", "Värmdö", "Vaxholm"
   ],
+  vallentuna: [
+    "Stockholm", "Täby", "Upplands Väsby", "Österåker", "Norrtälje"
+  ],
+  upplandsvaby: [
+    "Stockholm", "Sollentuna", "Sigtuna", "Vallentuna", "Täby"
+  ],
+  norrtalje: [
+    "Vallentuna", "Österåker", "Rimbo", "Uppsala", "Hallstavik"
+  ],
+  ekero: [
+    "Stockholm", "Bromma", "Solna", "Sundbyberg", "Järfälla"
+  ],
+  sodertalje: [
+    "Stockholm", "Huddinge", "Botkyrka", "Salem", "Nykvarn"
+  ],
+  solna: [
+    "Stockholm", "Bromma", "Sundbyberg", "Hässelby", "Vällingby"
+  ],
+  nacka: [
+    "Stockholm", "Värmdö", "Tyresö", "Lidingö", "Huddinge"
+  ],
+  huddinge: [
+    "Stockholm", "Södertälje", "Botkyrka", "Haninge", "Nynäshamn"
+  ],
+  bromma: [
+    "Stockholm", "Sundbyberg", "Solna", "Ekerö", "Järfälla"
+  ],
+  sodertalje: [
+    "Stockholm", "Huddinge", "Botkyrka", "Salem", "Nykvarn"
+  ],
+  jarfalla: [
+    "Stockholm", "Sollentuna", "Upplands Väsby", "Vallentuna", "Bromma"
+  ],
+  upplandsvasby: [
+    "Stockholm", "Sollentuna", "Täby", "Vallentuna", "Järfälla"
+  ],
+  tyreso: [
+    "Stockholm", "Nacka", "Haninge", "Värmdö", "Sundbyberg"
+  ],
   vaxholm: [
     "Stockholm", "Österåker", "Värmdö", "Lidingö", "Täby"
   ],
-  osteraker: [
-    "Stockholm", "Vaxholm", "Täby", "Vallentuna", "Norrtälje"
-  ],
-  varmdo: [
-    "Stockholm", "Nacka", "Vaxholm", "Tyresö"
-  ],
-  taby: [
-    "Stockholm", "Vallentuna", "Österåker", "Danderyd", "Vaxholm"
-  ],
   danderyd: [
-    "Stockholm", "Täby", "Sollentuna", "Lidingö"
+    "Stockholm", "Täby", "Sollentuna", "Lidingö", "Vaxholm"
   ],
-  sollentuna: [
-    "Stockholm", "Upplands Väsby", "Täby", "Danderyd", "Järfälla"
-  ],
-  jarfalla: [
-    "Stockholm", "Sollentuna", "Upplands-Bro", "Upplands Väsby"
-  ],
-  upplandsbro: [
-    "Stockholm", "Järfälla", "Sigtuna", "Enköping"
-  ],
-  nacka: [
-    "Stockholm", "Värmdö", "Tyresö", "Lidingö"
-  ],
-  tyreso: [
-    "Stockholm", "Nacka", "Haninge", "Värmdö"
-  ],
-  haninge: [
-    "Stockholm", "Tyresö", "Nynäshamn", "Huddinge"
-  ],
-  huddinge: [
-    "Stockholm", "Haninge", "Botkyrka", "Södertälje"
-  ],
-  botkyrka: [
-    "Stockholm", "Huddinge", "Salem", "Södertälje"
-  ],
-  salem: [
-    "Stockholm", "Botkyrka", "Södertälje", "Nykvarn"
-  ],
-  vallentuna: [
-    "Stockholm", "Täby", "Upplands Väsby", "Åkersberga"
+  lidingo: [
+    "Stockholm", "Nacka", "Danderyd", "Värmdö", "Vaxholm"
   ],
   norrtalje: [
-    "Stockholm", "Rimbo", "Hallstavik", "Älmsta"
+    "Vallentuna", "Österåker", "Rimbo", "Uppsala", "Hallstavik"
   ],
-  nynashamn: [
-    "Stockholm", "Ösmo", "Sorunda", "Stora Vika"
+  ekero: [
+    "Stockholm", "Bromma", "Solna", "Sundbyberg", "Järfälla"
   ],
   sodertalje: [
-    "Stockholm", "Nykvarn", "Salem", "Järna"
+    "Stockholm", "Huddinge", "Botkyrka", "Salem", "Nykvarn"
   ]
 };

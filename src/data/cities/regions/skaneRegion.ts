@@ -6,45 +6,51 @@ export const skaneRegion: NearbyLocations = {
     "Svedala", "Vellinge"
   ],
   lund: [
-    "Malmö", "Staffanstorp", "Eslöv", "Lomma"
+    "Malmö", "Staffanstorp", "Eslöv", "Lomma", "Kävlinge"
   ],
   helsingborg: [
-    "Landskrona", "Höganäs", "Ängelholm", "Bjuv"
+    "Landskrona", "Höganäs", "Ängelholm", "Bjuv", "Åstorp"
   ],
   kristianstad: [
-    "Hässleholm", "Åhus", "Bromölla", "Tollarp"
+    "Hässleholm", "Åhus", "Bromölla", "Tollarp", "Sölvesborg"
   ],
   landskrona: [
-    "Helsingborg", "Eslöv", "Svalöv", "Lund"
+    "Helsingborg", "Eslöv", "Svalöv", "Kävlinge", "Lund"
   ],
   trelleborg: [
-    "Malmö", "Vellinge", "Svedala", "Skurup"
+    "Malmö", "Vellinge", "Svedala", "Skurup", "Ystad"
   ],
   angelholm: [
-    "Helsingborg", "Höganäs", "Båstad", "Munka-Ljungby"
+    "Helsingborg", "Höganäs", "Båstad", "Ängelholm", "Klippan"
   ],
   eslov: [
-    "Lund", "Höör", "Landskrona", "Kävlinge"
+    "Lund", "Höör", "Landskrona", "Kävlinge", "Svalöv"
   ],
   hassleholm: [
-    "Kristianstad", "Tyringe", "Vinslöv", "Bjärnum"
+    "Kristianstad", "Osby", "Perstorp", "Höör", "Klippan"
   ],
   hoganas: [
-    "Helsingborg", "Viken", "Jonstorp", "Lerberget"
-  ],
-  staffanstorp: [
-    "Malmö", "Lund", "Dalby", "Hjärup"
-  ],
-  lomma: [
-    "Malmö", "Lund", "Bjärred", "Arlöv"
-  ],
-  bastad: [
-    "Ängelholm", "Laholm", "Halmstad", "Höganäs", "Torekov"
-  ],
-  torekov: [
-    "Båstad", "Ängelholm", "Höganäs", "Laholm"
+    "Helsingborg", "Ängelholm", "Bjuv", "Åstorp", "Klippan"
   ],
   ystad: [
-    "Simrishamn", "Tomelilla", "Skurup", "Köpingebro"
+    "Simrishamn", "Tomelilla", "Skurup", "Sjöbo", "Trelleborg"
+  ],
+  lomma: [
+    "Malmö", "Lund", "Staffanstorp", "Burlöv", "Kävlinge"
+  ],
+  svedala: [
+    "Malmö", "Trelleborg", "Vellinge", "Skurup", "Lund"
+  ],
+  kavlinge: [
+    "Lund", "Lomma", "Landskrona", "Eslöv", "Svalöv"
+  ],
+  bjuv: [
+    "Helsingborg", "Åstorp", "Svalöv", "Klippan", "Höganäs"
+  ],
+  astorp: [
+    "Helsingborg", "Bjuv", "Klippan", "Ängelholm", "Höganäs"
+  ],
+  klippan: [
+    "Åstorp", "Perstorp", "Svalöv", "Bjuv", "Ängelholm"
   ]
 };

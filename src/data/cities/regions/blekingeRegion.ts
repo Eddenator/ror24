@@ -2,12 +2,15 @@ import { NearbyLocations } from '../types';
 
 export const blekingeRegion: NearbyLocations = {
   karlskrona: [
-    "Ronneby", "Nättraby", "Jämjö", "Lyckeby"
+    "Ronneby", "Nättraby", "Jämjö", "Lyckeby", "Karlshamn"
   ],
   ronneby: [
-    "Karlskrona", "Kallinge", "Bräkne-Hoby", "Johannishus"
+    "Karlskrona", "Karlshamn", "Kallinge", "Bräkne-Hoby", "Johannishus"
   ],
   karlshamn: [
-    "Ronneby", "Asarum", "Mörrum", "Sölvesborg"
+    "Ronneby", "Karlskrona", "Asarum", "Mörrum", "Sölvesborg"
+  ],
+  solversborg: [
+    "Karlshamn", "Bromölla", "Mjällby", "Hällevik", "Nogersund"
   ]
 };

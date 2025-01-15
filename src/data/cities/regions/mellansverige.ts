@@ -2,81 +2,72 @@ import { NearbyLocations } from '../types';
 
 export const mellansverige: NearbyLocations = {
   orebro: [
-    "Kumla", "Hallsberg", "Lindesberg", "Karlskoga"
+    "Kumla", "Hallsberg", "Lindesberg", "Karlskoga", "Nora"
   ],
   vasteras: [
-    "Köping", "Hallstahammar", "Sala", "Enköping"
+    "Köping", "Hallstahammar", "Sala", "Enköping", "Eskilstuna"
   ],
   uppsala: [
-    "Knivsta", "Storvreta", "Bälinge", "Björklinge"
+    "Knivsta", "Sigtuna", "Norrtälje", "Sala", "Enköping"
   ],
   linkoping: [
-    "Norrköping", "Mjölby", "Motala", "Finspång"
+    "Norrköping", "Mjölby", "Motala", "Åtvidaberg", "Finspång"
   ],
   norrkoping: [
-    "Linköping", "Finspång", "Söderköping", "Nyköping"
-  ],
-  gavle: [
-    "Sandviken", "Söderhamn", "Skutskär", "Valbo"
+    "Linköping", "Finspång", "Söderköping", "Nyköping", "Katrineholm"
   ],
   eskilstuna: [
-    "Västerås", "Strängnäs", "Torshälla", "Kungsör"
+    "Västerås", "Strängnäs", "Kungsör", "Katrineholm", "Flen"
+  ],
+  gavle: [
+    "Sandviken", "Söderhamn", "Älvkarleby", "Hofors", "Ockelbo"
   ],
   karlskoga: [
-    "Degerfors", "Kristinehamn", "Örebro", "Storfors"
+    "Örebro", "Degerfors", "Kristinehamn", "Nora", "Storfors"
   ],
   motala: [
-    "Linköping", "Vadstena", "Mjölby", "Skänninge"
+    "Linköping", "Vadstena", "Mjölby", "Askersund", "Hallsberg"
   ],
   nykoping: [
-    "Oxelösund", "Södertälje", "Trosa", "Gnesta"
+    "Oxelösund", "Trosa", "Norrköping", "Flen", "Gnesta"
   ],
   sandviken: [
-    "Gävle", "Hofors", "Storvik", "Valbo"
-  ],
-  skovde: [
-    "Falköping", "Mariestad", "Tibro", "Skara"
+    "Gävle", "Hofors", "Ockelbo", "Falun", "Bollnäs"
   ],
   enkoping: [
-    "Västerås", "Uppsala", "Bålsta", "Strängnäs"
+    "Uppsala", "Västerås", "Strängnäs", "Håbo", "Sala"
   ],
   katrineholm: [
-    "Flen", "Vingåker", "Norrköping", "Nyköping"
-  ],
-  mariestad: [
-    "Skövde", "Töreboda", "Lidköping", "Götene"
-  ],
-  hudiksvall: [
-    "Söderhamn", "Iggesund", "Delsbo", "Bergsjö"
-  ],
-  avesta: [
-    "Fagersta", "Hedemora", "Norberg", "Krylbo"
-  ],
-  ludvika: [
-    "Borlänge", "Smedjebacken", "Grängesberg", "Fredriksberg"
-  ],
-  strangnas: [
-    "Eskilstuna", "Mariefred", "Åkers styckebruk", "Stallarholmen"
-  ],
-  bollnas: [
-    "Söderhamn", "Edsbyn", "Arbrå", "Kilafors"
-  ],
-  mjolby: [
-    "Linköping", "Motala", "Boxholm", "Skänninge"
+    "Eskilstuna", "Vingåker", "Flen", "Norrköping", "Finspång"
   ],
   sala: [
-    "Västerås", "Heby", "Ransta", "Möklinta"
+    "Västerås", "Avesta", "Heby", "Uppsala", "Fagersta"
+  ],
+  fagersta: [
+    "Sala", "Norberg", "Skinnskatteberg", "Surahammar", "Avesta"
+  ],
+  avesta: [
+    "Hedemora", "Sala", "Norberg", "Fagersta", "Hofors"
+  ],
+  ludvika: [
+    "Smedjebacken", "Borlänge", "Vansbro", "Filipstad", "Fagersta"
+  ],
+  strangnas: [
+    "Eskilstuna", "Enköping", "Mariefred", "Gnesta", "Västerås"
+  ],
+  bollnas: [
+    "Söderhamn", "Ovanåker", "Ljusdal", "Hudiksvall", "Ockelbo"
+  ],
+  mjolby: [
+    "Linköping", "Motala", "Boxholm", "Ödeshög", "Vadstena"
   ],
   finspang: [
-    "Norrköping", "Linköping", "Skärblacka", "Rejmyre"
-  ],
-  mora: [
-    "Orsa", "Rättvik", "Älvdalen", "Malung"
+    "Norrköping", "Linköping", "Katrineholm", "Vingåker", "Motala"
   ],
   falun: [
-    "Borlänge", "Säter", "Gagnef", "Ludvika"
+    "Borlänge", "Säter", "Leksand", "Gagnef", "Hofors"
   ],
   borlange: [
-    "Falun", "Ludvika", "Säter", "Gagnef"
+    "Falun", "Säter", "Ludvika", "Gagnef", "Hedemora"
   ]
 };

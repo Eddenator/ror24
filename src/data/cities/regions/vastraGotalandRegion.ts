@@ -2,34 +2,52 @@ import { NearbyLocations } from '../types';
 
 export const vastraGotalandRegion: NearbyLocations = {
   goteborg: [
-    "Mölndal", "Kungsbacka", "Kungälv", "Lerum", "Partille",
-    "Torslanda", "Kärna", "Ytterby"
-  ],
-  alingsas: [
-    "Vårgårda", "Lerum", "Herrljunga", "Borås", "Partille"
+    "Mölndal", "Partille", "Kungälv", "Lerum", "Kungsbacka",
+    "Öckerö", "Torslanda"
   ],
   boras: [
-    "Ulricehamn", "Alingsås", "Kinna", "Dalsjöfors", "Fristad"
+    "Ulricehamn", "Bollebygd", "Mark", "Tranemo", "Svenljunga"
+  ],
+  trollhattan: [
+    "Vänersborg", "Lilla Edet", "Ale", "Grästorp", "Uddevalla"
   ],
   uddevalla: [
-    "Trollhättan", "Vänersborg", "Lysekil", "Stenungsund"
+    "Trollhättan", "Vänersborg", "Munkedal", "Orust", "Stenungsund"
+  ],
+  skovde: [
+    "Falköping", "Tibro", "Mariestad", "Tidaholm", "Hjo"
   ],
   kungalv: [
-    "Göteborg", "Ytterby", "Kärna", "Marstrand"
+    "Göteborg", "Stenungsund", "Ale", "Öckerö", "Tjörn"
   ],
   vanersborg: [
-    "Trollhättan", "Uddevalla", "Vargön", "Grästorp"
-  ],
-  kungsbacka: [
-    "Göteborg", "Varberg", "Onsala", "Särö"
+    "Trollhättan", "Uddevalla", "Mellerud", "Grästorp", "Lidköping"
   ],
   lidkoping: [
-    "Skara", "Mariestad", "Götene", "Vara"
+    "Skara", "Götene", "Vara", "Grästorp", "Mariestad"
   ],
-  torslanda: [
-    "Göteborg", "Öckerö", "Hisings Kärra", "Björlanda"
+  alingsas: [
+    "Lerum", "Vårgårda", "Bollebygd", "Herrljunga", "Essunga"
   ],
   stenungsund: [
-    "Kungälv", "Ljungskile", "Stora Höga", "Jörlanda"
+    "Kungälv", "Tjörn", "Uddevalla", "Lilla Edet", "Orust"
+  ],
+  lerum: [
+    "Göteborg", "Partille", "Alingsås", "Härryda", "Bollebygd"
+  ],
+  mariestad: [
+    "Töreboda", "Gullspång", "Götene", "Skövde", "Lidköping"
+  ],
+  falkoping: [
+    "Skövde", "Tidaholm", "Ulricehamn", "Mullsjö", "Herrljunga"
+  ],
+  ulricehamn: [
+    "Borås", "Falköping", "Tranemo", "Jönköping", "Mullsjö"
+  ],
+  skara: [
+    "Lidköping", "Falköping", "Vara", "Götene", "Skövde"
+  ],
+  torslanda: [
+    "Göteborg", "Öckerö", "Kungälv", "Hisingen", "Björlanda"
   ]
 };
