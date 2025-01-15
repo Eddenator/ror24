@@ -45,7 +45,7 @@ const CityPage = () => {
   }
 
   const nearbyLocations = getNearbyLocations(originalCity)
-    .filter(location => !location.includes("(ex.)"));
+    .filter(location => location && !location.includes("(ex.)"));
 
   const description = typeof content.description === 'function' 
     ? content.description(originalCity)
