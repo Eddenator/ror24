@@ -11,6 +11,9 @@ const CityServices = ({ cityName, services }: CityServicesProps) => {
       <h2 className="text-2xl font-semibold mb-6">
         Våra VVS-tjänster i {cityName}
       </h2>
+      <p className="text-gray-600 mb-6">
+        Som din lokala VVS-partner erbjuder vi ett komplett utbud av tjänster för både akuta och planerade behov.
+      </p>
       <div className="grid md:grid-cols-2 gap-6">
         {services.map((service, index) => (
           <div 
@@ -21,7 +24,7 @@ const CityServices = ({ cityName, services }: CityServicesProps) => {
             <div>
               <h3 className="font-semibold mb-1">{service}</h3>
               <p className="text-sm text-gray-600">
-                Vi erbjuder professionell {service.toLowerCase()} i {cityName} med snabb service och garanterat resultat.
+                Vi erbjuder professionell service med snabb tillgänglighet och garanterat resultat.
               </p>
             </div>
           </div>

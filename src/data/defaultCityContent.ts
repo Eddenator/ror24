@@ -39,34 +39,34 @@ const generateIntroVariations = (city: string) => {
 const generateServiceList = (city: string) => {
   const services = [
     [
-      `Akut VVS-jour i ${city} - Snabb utryckning vid akuta problem, dygnet runt`,
-      `Professionell avloppsrensning i ${city} - Effektiv åtgärd av alla typer av stopp`,
-      `Vattenläckage i ${city} - Snabb identifiering och reparation av läckor`,
-      `Blandarbyte i ${city} - Expert på installation av alla typer av blandare`,
-      `Rörinspektion i ${city} - Grundlig genomgång med modern kamerautrustning`,
-      `Värmesystemservice i ${city} - Optimering för maximal effektivitet`,
-      `Vattenskadehantering i ${city} - Omfattande expertis inom sanering`,
-      `Badrumsrenovering i ${city} - Komplett service från början till slut`
+      "Akut VVS-jour dygnet runt",
+      "Professionell avloppsrensning",
+      "Åtgärd av vattenläckage",
+      "Installation och byte av blandare",
+      "Rörinspektion med kamera",
+      "Service av värmesystem",
+      "Sanering av vattenskador",
+      "Kompletta badrumsrenoveringar"
     ],
     [
-      `VVS-jour ${city} - Tillgängliga 24/7 för akuta ärenden`,
-      `Stopp i avlopp ${city} - Snabb och effektiv rensning`,
-      `Läckagesökning ${city} - Modern teknik för precis lokalisering`,
-      `Installation av kranar ${city} - Alla typer av blandare och kranar`,
-      `Rörkamera ${city} - Noggrann inspektion av dolda rör`,
-      `Värmepumpsservice ${city} - Underhåll och optimering`,
-      `Fuktskador ${city} - Professionell hantering och åtgärd`,
-      `Badrumsfixare ${city} - Från mindre fix till total renovering`
+      "Jour för akuta VVS-ärenden",
+      "Effektiv stopp i avlopp",
+      "Läckagesökning och reparation",
+      "Montering av kranar och blandare",
+      "Kamerainspektion av rör",
+      "Värmepumpsservice",
+      "Hantering av fuktskador",
+      "Badrumsrenovering och underhåll"
     ],
     [
-      `Dygnet-runt jour i ${city} - Alltid redo för akuta VVS-problem`,
-      `Avloppsproblem i ${city} - Från köket till huvudledningen`,
-      `Läckageexperter i ${city} - Snabb och pålitlig service`,
-      `Kraninstallation i ${city} - Alla märken och modeller`,
-      `Rörbesiktning i ${city} - Förebyggande kontroll och underhåll`,
-      `Värmeoptimering i ${city} - Bättre komfort och lägre kostnader`,
-      `Vattenskador i ${city} - Snabb sanering och återställning`,
-      `Badrumsspecialister i ${city} - Kompletta badrumslösningar`
+      "Dygnet-runt VVS-service",
+      "Avloppsrensning och underhåll",
+      "Läckspårning och reparation",
+      "Installation av vattenkranar",
+      "Rörinspektioner",
+      "Optimering av värmesystem",
+      "Vattenskadehantering",
+      "Totalrenovering av badrum"
     ]
   ];
 
