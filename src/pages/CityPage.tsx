@@ -40,6 +40,7 @@ const CityPage = () => {
   }
 
   const nearbyLocations = getNearbyLocations(originalCity);
+  console.log('Nearby locations for', originalCity, ':', nearbyLocations);
 
   const description = typeof content.description === 'function' 
     ? content.description(originalCity)
@@ -72,15 +73,20 @@ const CityPage = () => {
               <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-4">Vi täcker även dessa närliggande områden:</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {nearbyLocations.map((location) => (
-                    <Link
-                      key={location}
-                      to={`/${normalizeCity(location)}`}
-                      className="text-primary hover:text-[#FFD700] transition-colors"
-                    >
-                      {location}
-                    </Link>
-                  ))}
+                  {nearbyLocations.map((location) => {
+                    // Filter out locations with "(ex.)" suffix
+                    if (location.includes("(ex.)")) return null;
+                    
+                    return (
+                      <Link
+                        key={location}
+                        to={`/${normalizeCity(location)}`}
+                        className="text-primary hover:text-[#FFD700] transition-colors"
+                      >
+                        {location}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             )}
