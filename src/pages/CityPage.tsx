@@ -1,4 +1,4 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { cityContent } from '../data/cityContent';
 import { counties } from '../data/cities';
 import CityHero from '../components/city/CityHero';
@@ -8,6 +8,7 @@ import ContactForm from '../components/city/ContactForm';
 import DocumentHead from '@/components/DocumentHead';
 import { normalizeCity } from '../utils/cityContentUtils';
 import { useToast } from '@/components/ui/use-toast';
+import { getNearbyLocations } from '../data/cities/nearbyLocations';
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
@@ -38,6 +39,8 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
+  const nearbyLocations = getNearbyLocations(originalCity);
+
   const description = typeof content.description === 'function' 
     ? content.description(originalCity)
     : content.description;
@@ -64,6 +67,23 @@ const CityPage = () => {
                 __html: description
               }}
             />
+
+            {nearbyLocations.length > 0 && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold mb-4">Vi täcker även dessa närliggande områden:</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {nearbyLocations.map((location) => (
+                    <Link
+                      key={location}
+                      to={`/${normalizeCity(location)}`}
+                      className="text-primary hover:text-[#FFD700] transition-colors"
+                    >
+                      {location}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="md:col-span-1">
