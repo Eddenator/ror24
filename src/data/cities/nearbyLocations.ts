@@ -19,7 +19,6 @@ export const getNearbyLocations = (city: string): string[] => {
 };
 
 export const nearbyLocations: NearbyLocations = {
-  // Major cities and their surrounding areas
   stockholm: [
     "Solna", "Nacka", "Lidingö", "Huddinge", "Bromma", 
     "Södertälje", "Vallentuna", "Upplands Väsby"
@@ -291,6 +290,68 @@ export const nearbyLocations: NearbyLocations = {
   ],
   ronneby: [
     "Karlskrona", "Kallinge", "Bräkne-Hoby", "Johannishus"
+  ],
+
+  // Adding missing cities and their nearby locations
+  bastad: [
+    "Ängelholm", "Laholm", "Halmstad", "Höganäs", "Torekov"
+  ],
+  vaxholm: [
+    "Stockholm", "Österåker", "Värmdö", "Lidingö", "Täby"
+  ],
+  torekov: [
+    "Båstad", "Ängelholm", "Höganäs", "Laholm"
+  ],
+  osteraker: [
+    "Stockholm", "Vaxholm", "Täby", "Vallentuna", "Norrtälje"
+  ],
+  varmdo: [
+    "Stockholm", "Nacka", "Vaxholm", "Tyresö"
+  ],
+  taby: [
+    "Stockholm", "Vallentuna", "Österåker", "Danderyd", "Vaxholm"
+  ],
+  danderyd: [
+    "Stockholm", "Täby", "Sollentuna", "Lidingö"
+  ],
+  sollentuna: [
+    "Stockholm", "Upplands Väsby", "Täby", "Danderyd", "Järfälla"
+  ],
+  jarfalla: [
+    "Stockholm", "Sollentuna", "Upplands-Bro", "Upplands Väsby"
+  ],
+  upplandsbro: [
+    "Stockholm", "Järfälla", "Sigtuna", "Enköping"
+  ],
+  nacka: [
+    "Stockholm", "Värmdö", "Tyresö", "Lidingö"
+  ],
+  tyreso: [
+    "Stockholm", "Nacka", "Haninge", "Värmdö"
+  ],
+  haninge: [
+    "Stockholm", "Tyresö", "Nynäshamn", "Huddinge"
+  ],
+  huddinge: [
+    "Stockholm", "Haninge", "Botkyrka", "Södertälje"
+  ],
+  botkyrka: [
+    "Stockholm", "Huddinge", "Salem", "Södertälje"
+  ],
+  salem: [
+    "Stockholm", "Botkyrka", "Södertälje", "Nykvarn"
+  ],
+  nykvarn: [
+    "Södertälje", "Salem", "Strängnäs", "Gnesta"
+  ],
+  gnesta: [
+    "Södertälje", "Nykvarn", "Trosa", "Flen"
+  ],
+  trosa: [
+    "Nyköping", "Södertälje", "Gnesta", "Vagnhärad"
+  ],
+  vagnharad: [
+    "Trosa", "Nyköping", "Södertälje", "Gnesta"
   ],
   mora: [
     "Orsa", "Rättvik", "Älvdalen", "Malung"
