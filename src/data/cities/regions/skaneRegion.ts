@@ -52,5 +52,17 @@ export const skaneRegion: NearbyLocations = {
   ],
   klippan: [
     "Åstorp", "Perstorp", "Svalöv", "Bjuv", "Ängelholm"
-  ]
+  ],
+  oxie: [
+    "Malmö", "Svedala", "Tygelsjö", "Bunkeflostrand", "Limhamn"
+  ],
+  tygelsjö: [
+    "Malmö", "Oxie", "Limhamn", "Bunkeflostrand", "Vellinge"
+  ],
+  bunkeflostrand: [
+    "Malmö", "Limhamn", "Tygelsjö", "Oxie", "Vellinge"
+  ],
+  limhamn: [
+    "Malmö", "Bunkeflostrand", "Tygelsjö", "Oxie", "Vellinge"
+  ],
 };
