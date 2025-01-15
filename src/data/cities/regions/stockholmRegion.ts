@@ -5,6 +5,9 @@ export const stockholmRegion: NearbyLocations = {
     "Solna", "Nacka", "Lidingö", "Huddinge", "Bromma", 
     "Södertälje", "Vallentuna", "Upplands Väsby"
   ],
+  lidingo: [
+    "Stockholm", "Nacka", "Danderyd", "Värmdö", "Vaxholm"
+  ],
   vaxholm: [
     "Stockholm", "Österåker", "Värmdö", "Lidingö", "Täby"
   ],
