@@ -9,19 +9,8 @@ import { hallandRegion } from './regions/hallandRegion';
 import { blekingeRegion } from './regions/blekingeRegion';
 import { normalizeCity } from '../../utils/cityContentUtils';
 
-export const getNearbyLocations = (city: string): string[] => {
-  const normalizedCity = normalizeCity(city);
-  
-  // Log for debugging
-  console.log('Getting nearby locations for:', city);
-  console.log('Normalized city:', normalizedCity);
-  console.log('Available locations:', Object.keys(nearbyLocations));
-  
-  return nearbyLocations[normalizedCity] || [];
-};
-
 // Combine all regional data
-export const nearbyLocations: NearbyLocations = {
+const rawLocations: NearbyLocations = {
   ...stockholmRegion,
   ...skaneRegion,
   ...vastraGotalandRegion,
@@ -33,10 +22,19 @@ export const nearbyLocations: NearbyLocations = {
 };
 
 // Normalize all keys in the combined object
-const normalizedLocations: NearbyLocations = {};
-Object.entries(nearbyLocations).forEach(([city, nearby]) => {
+export const nearbyLocations: NearbyLocations = {};
+Object.entries(rawLocations).forEach(([city, nearby]) => {
   const normalizedCity = normalizeCity(city);
-  normalizedLocations[normalizedCity] = nearby;
+  nearbyLocations[normalizedCity] = nearby;
 });
 
-export { normalizedLocations as nearbyLocations };
+export const getNearbyLocations = (city: string): string[] => {
+  const normalizedCity = normalizeCity(city);
+  
+  // Log for debugging
+  console.log('Getting nearby locations for:', city);
+  console.log('Normalized city:', normalizedCity);
+  console.log('Available locations:', Object.keys(nearbyLocations));
+  
+  return nearbyLocations[normalizedCity] || [];
+};
