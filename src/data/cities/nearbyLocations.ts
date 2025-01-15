@@ -1,4 +1,3 @@
-<lov-code>
 interface NearbyLocations {
   [city: string]: string[];
 }
@@ -294,4 +293,6 @@ export const nearbyLocations: NearbyLocations = {
     "Karlskrona", "Kallinge", "Bräkne-Hoby", "Johannishus"
   ],
   mora: [
-    "Orsa", "Rättvik",
+    "Orsa", "Rättvik", "Älvdalen", "Malung"
+  ]
+};
