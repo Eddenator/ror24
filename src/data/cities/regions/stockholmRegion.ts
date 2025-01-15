@@ -3,7 +3,11 @@ import { NearbyLocations } from '../types';
 export const stockholmRegion: NearbyLocations = {
   stockholm: [
     "Solna", "Nacka", "Lidingö", "Huddinge", "Bromma", 
-    "Södertälje", "Vallentuna", "Upplands Väsby"
+    "Södertälje", "Vallentuna", "Upplands Väsby", "Steningehöjden"
+  ],
+  steningehojden: [
+    "Stockholm", "Märsta", "Upplands Väsby", "Sigtuna", "Rosersberg",
+    "Vallentuna", "Täby", "Sollentuna"
   ],
   lidingo: [
     "Stockholm", "Nacka", "Danderyd", "Värmdö", "Vaxholm"
@@ -37,9 +41,6 @@ export const stockholmRegion: NearbyLocations = {
   ],
   jarfalla: [
     "Stockholm", "Sollentuna", "Upplands Väsby", "Vallentuna", "Bromma"
-  ],
-  upplandsvasby: [
-    "Stockholm", "Sollentuna", "Täby", "Vallentuna", "Järfälla"
   ],
   tyreso: [
     "Stockholm", "Nacka", "Haninge", "Värmdö", "Sundbyberg"

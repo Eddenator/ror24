@@ -7,6 +7,7 @@ import { norrlandRegion } from './regions/norrlandRegion';
 import { mellansverige } from './regions/mellansverige';
 import { hallandRegion } from './regions/hallandRegion';
 import { blekingeRegion } from './regions/blekingeRegion';
+import { kalmarRegion } from './regions/kalmarRegion';
 import { normalizeCity } from '../../utils/cityContentUtils';
 
 // Combine all regional data
@@ -18,7 +19,8 @@ const rawLocations: NearbyLocations = {
   ...norrlandRegion,
   ...mellansverige,
   ...hallandRegion,
-  ...blekingeRegion
+  ...blekingeRegion,
+  ...kalmarRegion
 };
 
 // Normalize all keys in the combined object
