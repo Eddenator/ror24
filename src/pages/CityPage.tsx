@@ -9,6 +9,7 @@ import DocumentHead from '@/components/DocumentHead';
 import { normalizeCity } from '../utils/cityContentUtils';
 import { useToast } from '@/components/ui/use-toast';
 import { getNearbyLocations } from '../data/cities/nearbyLocations';
+import { useEffect } from 'react';
 
 const CityPage = () => {
   const { city } = useParams<{ city: string }>();
@@ -26,16 +27,20 @@ const CityPage = () => {
     .flat()
     .find(c => normalizeCity(c) === normalizedCity);
 
+  useEffect(() => {
+    if (!content || !originalCity) {
+      console.error('City not found:', city);
+      console.error('Normalized city:', normalizedCity);
+      
+      toast({
+        variant: "destructive",
+        title: "Sidan hittades inte",
+        description: "Vi kunde inte hitta den begärda staden."
+      });
+    }
+  }, [content, originalCity, city, normalizedCity, toast]);
+
   if (!content || !originalCity) {
-    console.error('City not found:', city);
-    console.error('Normalized city:', normalizedCity);
-    
-    toast({
-      variant: "destructive",
-      title: "Sidan hittades inte",
-      description: "Vi kunde inte hitta den begärda staden."
-    });
-    
     return <Navigate to="/404" replace />;
   }
 
