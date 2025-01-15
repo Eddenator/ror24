@@ -82,7 +82,7 @@ export const nearbyLocations: NearbyLocations = {
 
   // Exempel: några av de orter i sitemappen som ligger i Stockholms län:
   arsta: ["Stockholm", "Årsta havsbad", "Älvsjö", "Enskede"],
-  arsta-havsbad: ["Årsta", "Haninge", "Nynäshamn"],
+  "arsta-havsbad": ["Årsta", "Haninge", "Nynäshamn"],
   bagarmossen: ["Farsta", "Sköndal", "Skarpnäck", "Kärrtorp (ex.)"],
   enskede: ["Farsta", "Gamla Enskede (ex.)", "Årsta", "Stockholm"],
   jarna: ["Södertälje", "Mörkö", "Hölö (ex.)"],
@@ -94,6 +94,30 @@ export const nearbyLocations: NearbyLocations = {
   botkyrka: ["Tumba", "Grödinge", "Salem", "Södertälje", "Stockholm"],
   salem: ["Rönninge", "Södertälje", "Tumba", "Grödinge"],
   ronninge: ["Salem", "Tumba", "Grödinge", "Södertälje"],
+
+  // Göteborgsområdet
+  goteborg: [
+    "Mölndal",
+    "Partille",
+    "Kungälv",
+    "Lerum",
+    "Hisings Backa",
+    "Hisings Kärra",
+    "Västra Frölunda",
+    "Angered",
+    "Hovås",
+    "Kungsbacka"
+  ],
+  molndal: ["Göteborg", "Partille", "Kungsbacka", "Mölnlycke"],
+  partille: ["Göteborg", "Mölndal", "Lerum", "Floda", "Jonsered"],
+  kungalv: ["Göteborg", "Kareby", "Ytterby", "Nödinge", "Surte"],
+  lerum: ["Göteborg", "Partille", "Floda", "Gråbo", "Stenkullen"],
+  angered: ["Göteborg", "Hisings Backa", "Gunnilse", "Bergsjön", "Partille"],
+  "vastra-frolunda": ["Göteborg", "Mölndal", "Hovås", "Askim"],
+  hovas: ["Göteborg", "Askim", "Billdal", "Kungsbacka"],
+  kungsbacka: ["Göteborg", "Särö", "Vallda", "Kullavik", "Onsala", "Mölndal"],
+  "hisings-backa": ["Göteborg", "Angered", "Hisings Kärra"],
+  "hisings-karra": ["Göteborg", "Hisings Backa", "Kungälv"],
 
   // ... fortsätter (Part 2) ...
 };
