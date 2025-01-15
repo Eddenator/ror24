@@ -11,31 +11,78 @@ const generateServiceDescriptions = () => {
     "För akuta VVS-problem i %city% finns vi tillgängliga dygnet runt. Ring oss så är vi snabbt på plats!",
     "Våra rörmokare i %city% har den lokalkännedom och expertis som krävs för att hantera alla typer av VVS-arbeten.",
     "I %city% står vi för kvalitet och pålitlighet. När problem uppstår med rören kan du lita på vår expertis.",
-    "Med gedigen erfarenhet av VVS-arbeten i %city% vet vi exakt vad som krävs för att lösa dina problem."
+    "Med gedigen erfarenhet av VVS-arbeten i %city% vet vi exakt vad som krävs för att lösa dina problem.",
+    "Letar du efter en professionell VVS-firma i %city%? Vi erbjuder omfattande service för både privatpersoner och företag.",
+    "Som auktoriserad VVS-installatör i %city% garanterar vi högsta kvalitet på alla våra tjänster.",
+    "Behöver du akut hjälp med rören i %city%? Vårt team av erfarna rörmokare står redo dygnet runt.",
+    "Vi är stolta över att vara %city%s mest pålitliga VVS-partner, med fokus på kvalitet och kundnöjdhet.",
+    "I %city% erbjuder vi komplett VVS-service med garanti på alla arbeten vi utför."
   ];
   
   return descriptions[Math.floor(Math.random() * descriptions.length)];
 };
 
+const generateIntroVariations = (city: string) => {
+  const intros = [
+    `Behöver du en pålitlig rörmokare i ${city}? Rör24 är det självklara valet med vårt omfattande nätverk av auktoriserade VVS-tekniker. Vi finns tillgängliga dygnet runt för att hjälpa dig med alla typer av VVS-problem.`,
+    `Välkommen till Rör24 i ${city}! Som en del av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi professionell VVS-service dygnet runt, året om.`,
+    `Letar du efter professionell VVS-service i ${city}? Rör24 står redo att hjälpa dig med alla dina rörmokarebehov. Som ett av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi service dygnet runt.`,
+    `När du behöver rörmokare i ${city} är Rör24 här för dig. Vi är stolta över att vara en del av Sveriges mest omfattande nätverk av auktoriserade VVS-tekniker, med jour 24/7 för alla typer av VVS-arbeten.`,
+    `Har du VVS-problem i ${city}? Rör24 är din lokala partner för all typ av VVS-service. Med vårt rikstäckande nätverk av certifierade rörmokare finns vi alltid nära till hands.`,
+    `Som din lokala VVS-expert i ${city} erbjuder Rör24 omfattande service dygnet runt. Vi är en del av Sveriges ledande nätverk av auktoriserade rörmokare.`,
+    `Rör24 i ${city} - din pålitliga partner för alla VVS-behov. Med vår omfattande erfarenhet och professionella service står vi redo att hjälpa dig, oavsett tid på dygnet.`
+  ];
+  
+  return intros[Math.floor(Math.random() * intros.length)];
+};
+
 const generateServiceList = (city: string) => {
-  const serviceDescriptions = [
-    `Akut VVS-jour i ${city} - Vi rycker ut dygnet runt för att hjälpa dig med akuta problem`,
-    `Professionell avloppsrensning i ${city} - Från små stopp till omfattande rensningar`,
-    `Experthjälp med vattenläckage i ${city} - Snabb identifiering och åtgärd av läckor`,
-    `Installation av blandare i ${city} - Montering och service av alla typer av blandare`,
-    `Rörinspektion i ${city} - Modern teknik för att hitta dolda problem`,
-    `Service av värmesystem i ${city} - Optimering och underhåll för bättre effektivitet`,
-    `Åtgärd av vattenskador i ${city} - Omfattande expertis inom vattensanering`,
-    `Badrumsrenovering i ${city} - Från planering till färdig installation`
+  const services = [
+    [
+      `Akut VVS-jour i ${city} - Snabb utryckning vid akuta problem, dygnet runt`,
+      `Professionell avloppsrensning i ${city} - Effektiv åtgärd av alla typer av stopp`,
+      `Vattenläckage i ${city} - Snabb identifiering och reparation av läckor`,
+      `Blandarbyte i ${city} - Expert på installation av alla typer av blandare`,
+      `Rörinspektion i ${city} - Grundlig genomgång med modern kamerautrustning`,
+      `Värmesystemservice i ${city} - Optimering för maximal effektivitet`,
+      `Vattenskadehantering i ${city} - Omfattande expertis inom sanering`,
+      `Badrumsrenovering i ${city} - Komplett service från början till slut`
+    ],
+    [
+      `VVS-jour ${city} - Tillgängliga 24/7 för akuta ärenden`,
+      `Stopp i avlopp ${city} - Snabb och effektiv rensning`,
+      `Läckagesökning ${city} - Modern teknik för precis lokalisering`,
+      `Installation av kranar ${city} - Alla typer av blandare och kranar`,
+      `Rörkamera ${city} - Noggrann inspektion av dolda rör`,
+      `Värmepumpsservice ${city} - Underhåll och optimering`,
+      `Fuktskador ${city} - Professionell hantering och åtgärd`,
+      `Badrumsfixare ${city} - Från mindre fix till total renovering`
+    ],
+    [
+      `Dygnet-runt jour i ${city} - Alltid redo för akuta VVS-problem`,
+      `Avloppsproblem i ${city} - Från köket till huvudledningen`,
+      `Läckageexperter i ${city} - Snabb och pålitlig service`,
+      `Kraninstallation i ${city} - Alla märken och modeller`,
+      `Rörbesiktning i ${city} - Förebyggande kontroll och underhåll`,
+      `Värmeoptimering i ${city} - Bättre komfort och lägre kostnader`,
+      `Vattenskador i ${city} - Snabb sanering och återställning`,
+      `Badrumsspecialister i ${city} - Kompletta badrumslösningar`
+    ]
   ];
 
-  return serviceDescriptions;
+  return services[Math.floor(Math.random() * services.length)];
 };
 
 const generateNearbyLinks = (city: string) => {
-  // This is a placeholder. In a real implementation, you would need to
-  // implement logic to find actually nearby cities based on geographical data
-  return `Bor du nära ${city}? Vi hjälper även kunder i närliggande områden.`;
+  const variations = [
+    `Bor du nära ${city}? Vi hjälper även kunder i närliggande områden.`,
+    `Vårt serviceområde sträcker sig utanför ${city} - vi hjälper gärna till i omkringliggande orter.`,
+    `Vi servar inte bara ${city}, utan även närliggande kommuner och områden.`,
+    `Befinner du dig i närheten av ${city}? Vi hjälper gärna till med dina VVS-behov.`,
+    `Vår service täcker ${city} med omnejd - tveka inte att höra av dig oavsett var du bor i området.`
+  ];
+  
+  return variations[Math.floor(Math.random() * variations.length)];
 };
 
 const generateCityIntro = (city: string) => {
