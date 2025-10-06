@@ -154,6 +154,126 @@ const generateWhyChooseUs = (city: string) => {
         <li><strong>Nöjda kunder</strong> – 91% rekommendationsgrad.</li>
         <li><strong>Lokalkännedom</strong> – Vi känner ${city} utan och innan.</li>
       </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Dina fördelar med Rör24 i ${city}</h2>
+      <ul>
+        <li><strong>Snabb responstid</strong> – Vi strävar efter att vara på plats inom 2 timmar.</li>
+        <li><strong>Certifierade tekniker</strong> – Alla våra rörmokare är auktoriserade.</li>
+        <li><strong>Transparent prissättning</strong> – Kostnadsfri offert utan dolda avgifter.</li>
+        <li><strong>Lokal närvaro</strong> – Vi känner ${city} och kan snabbt nå dig.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Det här får du med Rör24 i ${city}</h2>
+      <ul>
+        <li><strong>Erfarna specialister</strong> – Över 55 000 lyckade VVS-uppdrag.</li>
+        <li><strong>Kvalitetsgaranti</strong> – Vi står bakom alla våra installationer.</li>
+        <li><strong>Öppen dygnet runt</strong> – Ring oss när som helst, året runt.</li>
+        <li><strong>Nära dig</strong> – Lokala rörmokare i ${city}-området.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Varför är Rör24 rätt val i ${city}?</h2>
+      <ul>
+        <li><strong>Snabb utryckning</strong> – Vi prioriterar akuta ärenden i ${city}.</li>
+        <li><strong>Professionell utrustning</strong> – Modern teknik för bästa resultat.</li>
+        <li><strong>Tydlig kommunikation</strong> – Vi håller dig informerad genom hela processen.</li>
+        <li><strong>Hög kundnöjdhet</strong> – 91% av våra kunder rekommenderar oss vidare.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Så här hjälper vi dig i ${city}</h2>
+      <ul>
+        <li><strong>Akut hjälp</strong> – Jour dygnet runt för alla akuta VVS-problem.</li>
+        <li><strong>Planerade arbeten</strong> – Renovering och installation efter din tidsplan.</li>
+        <li><strong>Kostnadsfri rådgivning</strong> – Vi hjälper dig hitta rätt lösning.</li>
+        <li><strong>Garanterad kvalitet</strong> – Alla arbeten utförs enligt branschstandard.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Rör24 - din VVS-partner i ${city}</h2>
+      <ul>
+        <li><strong>Lokal förankring</strong> – Vi känner området och kan snabbt nå fram.</li>
+        <li><strong>Bred kompetens</strong> – Vi hanterar allt från akuta läckor till totalrenoveringar.</li>
+        <li><strong>Pålitlig service</strong> – Vi kommer när vi säger och håller våra löften.</li>
+        <li><strong>Konkurrensmässiga priser</strong> – Alltid kostnadsfri offert innan arbete påbörjas.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Därför är vi ${city}s bästa val för VVS</h2>
+      <ul>
+        <li><strong>Omedelbar tillgänglighet</strong> – Ring när som helst, vi svarar alltid.</li>
+        <li><strong>Gedigen erfarenhet</strong> – Över 55 000 genomförda VVS-projekt.</li>
+        <li><strong>Nöjd-kund-garanti</strong> – Vi är inte nöjda förrän du är nöjd.</li>
+        <li><strong>Kort väg</strong> – Lokala rörmokare som snabbt tar sig till ${city}.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Vad gör Rör24 unikt i ${city}?</h2>
+      <ul>
+        <li><strong>24-timmars tillgänglighet</strong> – Vi finns här när du behöver oss.</li>
+        <li><strong>Erfarna yrkesmän</strong> – Auktoriserade rörmokare med lång erfarenhet.</li>
+        <li><strong>Hög kvalitetsstandard</strong> – Vi använder endast kvalitetsmaterial.</li>
+        <li><strong>Flexibel schemaläggning</strong> – Vi anpassar oss efter dina behov i ${city}.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Välj professionell VVS-service i ${city}</h2>
+      <ul>
+        <li><strong>Alltid öppet</strong> – Jour varje dag, alla tider på året.</li>
+        <li><strong>Certifierad kompetens</strong> – Alla våra tekniker är fullständigt utbildade.</li>
+        <li><strong>Tydliga priser</strong> – Inga dolda kostnader eller överraskningar.</li>
+        <li><strong>Lokal service</strong> – Vi opererar i hela ${city} med omnejd.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Vi är ${city}s VVS-specialister</h2>
+      <ul>
+        <li><strong>Snabb respons</strong> – Vi prioriterar akuta VVS-problem.</li>
+        <li><strong>Modern utrustning</strong> – Senaste tekniken för effektiva lösningar.</li>
+        <li><strong>Miljömedvetet</strong> – Vi rekommenderar hållbara och energieffektiva lösningar.</li>
+        <li><strong>Beprövad metodik</strong> – 55 000+ lyckade uppdrag talar för sig själva.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Fördelar med att välja oss i ${city}</h2>
+      <ul>
+        <li><strong>Jour varje dag</strong> – Vi finns tillgängliga dygnet runt, året om.</li>
+        <li><strong>Kvalitetssäkring</strong> – Alla arbeten genomförs enligt gällande standard.</li>
+        <li><strong>Kundnöjdhet</strong> – 91% av våra kunder skulle rekommendera oss.</li>
+        <li><strong>Närhet</strong> – Korta avstånd innebär snabbare hjälp i ${city}.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Rör24 i ${city} - ditt självklara val</h2>
+      <ul>
+        <li><strong>Total tillgänglighet</strong> – Ring oss vilken tid som helst.</li>
+        <li><strong>Professionella lösningar</strong> – Vi löser alla typer av VVS-problem.</li>
+        <li><strong>Transparent process</strong> – Du vet alltid vad som händer och vad det kostar.</li>
+        <li><strong>Lokal expertis</strong> – Vi känner ${city} och dess infrastruktur väl.</li>
+      </ul>
+    </section>`,
+    
+    `<section>
+      <h2>Därför litar ${city}-bor på Rör24</h2>
+      <ul>
+        <li><strong>Alltid tillgängliga</strong> – Jourtelefon öppen 24 timmar om dygnet.</li>
+        <li><strong>Bevisat förtroende</strong> – Över 55 000 nöjda kunder.</li>
+        <li><strong>Hög servicegrad</strong> – 91% rekommendationsgrad från våra kunder.</li>
+        <li><strong>Snabb service</strong> – Vi strävar efter utryckning inom 2 timmar i ${city}.</li>
+      </ul>
     </section>`
   ];
 
@@ -191,6 +311,126 @@ const generateServiceList = (city: string) => {
       "Optimering av värmesystem",
       "Vattenskadehantering",
       "Totalrenovering av badrum"
+    ],
+    [
+      "24/7 VVS-jour och support",
+      "Snabb avloppsrensning",
+      "Effektiv läckageåtgärd",
+      "Blandarinstallation och service",
+      "Videoinspektering av rörledningar",
+      "Värmesystemsoptimering",
+      "Professionell vattensanering",
+      "Badrumstotalrenovering"
+    ],
+    [
+      "Akuta VVS-insatser dygnet runt",
+      "Avancerad avloppsrensning",
+      "Precision läcksökning",
+      "Kvalitetsblandare och installation",
+      "Modern rörinspektion",
+      "Effektiv värmeservice",
+      "Komplett vattenskadehantering",
+      "Exklusiv badrumsrenovering"
+    ],
+    [
+      "VVS-jour för alla ärenden",
+      "Grundlig avloppsservice",
+      "Snabb läckagereparation",
+      "Installation av kranar",
+      "Kamerabaserad rördiagnostik",
+      "Service för värmeanläggningar",
+      "Sanering efter vattenskada",
+      "Helhetslösning badrumsrenovering"
+    ],
+    [
+      "Dygnet runt akutservice",
+      "Professionell spolning av avlopp",
+      "Avancerad läckagedetektering",
+      "Montering av moderna blandare",
+      "Detaljerad rörinspektion",
+      "Underhåll av värmesystem",
+      "Akut vattenskadeåtgärd",
+      "Premiumrenovering av badrum"
+    ],
+    [
+      "24-timmarsjour för VVS",
+      "Effektiv rensning av stopp",
+      "Läckspårning med värmekamera",
+      "Installation av energisnåla blandare",
+      "Videoinspektering med rapport",
+      "Optimering av uppvärmning",
+      "Fukt och vattensanering",
+      "Komplett badrumsuppgradering"
+    ],
+    [
+      "Alltid öppen VVS-jour",
+      "Snabb åtgärd vid avloppsstopp",
+      "Professionell läckageåtgärd",
+      "Kvalitetssäkrad blandarinstallation",
+      "Digital rördiagnostik",
+      "Service av värmepumpar",
+      "Hantering av omfattande vattenskador",
+      "Stilren badrumsrenovering"
+    ],
+    [
+      "Akut VVS-support 24/7",
+      "Avancerad rensning och spolning",
+      "Exakt läckageidentifiering",
+      "Installation av designblandare",
+      "Kameraspolning och inspektion",
+      "Värmeoptimering och service",
+      "Professionell sanering",
+      "Modern badrumsdesign och renovering"
+    ],
+    [
+      "VVS-jourtelefon öppen alltid",
+      "Mekanisk och kemisk avloppsrensning",
+      "Termografisk läcksökning",
+      "Hållbara blandarinstallationer",
+      "HD-kamerainspektion av rör",
+      "Effektivisering av värmesystem",
+      "Totalåtgärd vid vattenskada",
+      "Lyxrenovering av våtrum"
+    ],
+    [
+      "Jour för alla VVS-behov",
+      "Högeffektiv avloppsservice",
+      "Icke-invasiv läcksökning",
+      "Installation av premiumkranar",
+      "Professionell rörkontroll",
+      "Maximerad värmeeffekt",
+      "Snabb vattenskadeinsats",
+      "Totalrenovering våtutrymmen"
+    ],
+    [
+      "VVS-akuthjälp dygnet runt",
+      "Omfattande avloppsunderhåll",
+      "Läckageåtgärd med garanti",
+      "Säker blandarmontering",
+      "Detaljerad röranalys",
+      "Effektiv värmeservice",
+      "Komplett fuktsanering",
+      "Heltäckande badrumsrenovering"
+    ],
+    [
+      "Jourhavande VVS-tekniker 24/7",
+      "Professionell avloppsdiagnostik",
+      "Precision vid läckagereparation",
+      "Installation av toppmoderna blandare",
+      "Avancerad kamerainspektion",
+      "Optimal värmesystemsdrift",
+      "Akut sanering vid översvämning",
+      "Fullständig badrumsförnyelse"
+    ],
+    [
+      "VVS-service alla tider",
+      "Kraftfull avloppsrensning",
+      "Snabb läckagelokalinsering",
+      "Energieffektiva blandarinstallationer",
+      "Rörinspektion med HD-video",
+      "Service för alla värmesystem",
+      "Omfattande vattenskadeåtgärder",
+      "Exklusiv badrumstransformation"
     ]
   ];
 
