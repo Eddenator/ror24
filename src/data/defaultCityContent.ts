@@ -6,18 +6,183 @@ const hashString = (str: string): number => {
   for (let i = 0; i < str.length; i++) {
     const char = str.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32bit integer
+    hash = hash & hash;
   }
   return Math.abs(hash);
 };
 
 // Välj variation baserat på stad (deterministiskt)
-const selectVariation = <T>(city: string, variations: T[]): T => {
-  const hash = hashString(city);
+const selectVariation = <T>(city: string, variations: T[], seedModifier: number = 0): T => {
+  const hash = hashString(city + seedModifier);
   return variations[hash % variations.length];
 };
 
+// Generera 100+ H1-variationer programmatiskt
+const generateH1 = (city: string): string => {
+  const templates = [
+    "Jourhavande Rörmokare i CITY – Dygnet runt med Rör24!",
+    "VVS & Rörmokare i CITY - Jour 24/7",
+    "Akut VVS-service i CITY - Ring Rör24!",
+    "Rörmokare CITY - Professionell VVS-service",
+    "Dygnet Runt VVS i CITY - Rör24",
+    "Erfarna Rörmokare i CITY",
+    "VVS-service CITY - Tillgängliga Dygnet Runt",
+    "Professionell VVS-hjälp i CITY",
+    "CITYs Pålitliga VVS-partner",
+    "Auktoriserad VVS-service i CITY",
+    "Akut VVS-hjälp i CITY",
+    "VVS-experter i CITY",
+    "Rörmokare på Jour i CITY",
+    "Komplett VVS-service i CITY",
+    "Din VVS-partner i CITY",
+    "Snabb VVS-service i CITY",
+    "Kvalificerad VVS-hjälp i CITY",
+    "Trygg VVS-service i CITY",
+    "Lokal VVS-service i CITY",
+    "Professionell Rörmokare i CITY",
+    "Certifierad VVS-service i CITY",
+    "Jourrörmokare CITY - Alltid tillgängliga",
+    "VVS-specialister i CITY",
+    "Rörmokartjänster i CITY - Rör24",
+    "VVS-jour CITY - Snabb utryckning",
+    "Pålitliga Rörmokare i CITY",
+    "VVS-installation i CITY",
+    "Akutrörmokare CITY - Ring Nu",
+    "VVS-tekniker i CITY",
+    "Rörmokeri i CITY - Rör24",
+    "VVS-hjälp CITY - Dygnet runt",
+    "Rörmokare Jour CITY",
+    "Professionell VVS i CITY",
+    "VVS-företag CITY - Rör24",
+    "Rörmokare Nära Dig i CITY",
+    "VVS-lösningar i CITY",
+    "Bästa Rörmokaren i CITY",
+    "VVS-akuten CITY",
+    "Rörmokare 24/7 i CITY",
+    "VVS-installation och Service i CITY",
+    "Erfaren Rörmokare CITY",
+    "VVS-service Nära CITY",
+    "Din Lokala Rörmokare i CITY",
+    "VVS-professionell i CITY",
+    "Rörmokare Akut CITY",
+    "VVS-support i CITY",
+    "Kvalitetsrörmokare CITY",
+    "VVS-team i CITY",
+    "Snabbrörmokare CITY",
+    "Auktoriserad Rörmokare i CITY",
+    "VVS-service 24/7 i CITY",
+    "Rörmokare Med Garanti i CITY",
+    "VVS-expert CITY - Din Partner",
+    "Lokala VVS-proffs i CITY",
+    "Rörmokare i CITY - Snabba Åtgärder",
+    "VVS-assistans CITY - Alltid Nära",
+    "Din Rörmokare i CITY",
+    "VVS-service För Hem och Företag i CITY",
+    "Rörmokare För Alla Behov i CITY",
+    "VVS-total i CITY",
+    "Rörmokare Med Erfarenhet i CITY",
+    "VVS-byrån CITY",
+    "Jourservice VVS i CITY",
+    "Rörmokare På Plats i CITY",
+    "VVS-centrum CITY",
+    "Ditt VVS-team i CITY",
+    "Rörmokare Öppet Dygnet Runt i CITY",
+    "VVS-stationen CITY",
+    "Proffs På VVS i CITY",
+    "Rörmokare Som Bryr Sig i CITY",
+    "VVS-huset CITY",
+    "Auktoriserad VVS CITY",
+    "Rörmokare Mitt i CITY",
+    "VVS-kompetens i CITY",
+    "Din Pålitliga Rörmokare i CITY",
+    "VVS-gruppen CITY",
+    "Miljövänlig VVS i CITY",
+    "Rörmokare Med Passion i CITY",
+    "Total VVS-lösning i CITY",
+    "Rörmokare För Fastigheter i CITY",
+    "Modern VVS-teknik i CITY",
+    "Rörmokare Nära När Du Behöver i CITY",
+    "VVS-experten CITY - 24/7",
+    "Rörmokare För Villor i CITY",
+    "Företagets VVS-partner i CITY",
+    "Kvalificerade Rörmokare i CITY",
+    "VVS-service Med Garanti i CITY",
+    "Snabb Rörmokare i CITY",
+    "Din Trygghet VVS CITY",
+    "Erfarna VVS-tekniker i CITY",
+    "Rörmokare För Alla Fastigheter i CITY",
+    "Premium VVS-service i CITY",
+    "Rörmokare Som Levererar i CITY",
+    "Helhets-VVS i CITY",
+    "Rörmokare Året Runt i CITY",
+    "Smart VVS-lösning i CITY",
+    "Din Favorit-Rörmokare i CITY",
+    "VVS-specialist Nära Dig i CITY",
+    "Fullservice Rörmokare i CITY"
+  ];
+  
+  const intros = [
+    "Behöver du en pålitlig rörmokare i CITY? Rör24 är det självklara valet med vårt omfattande nätverk av auktoriserade VVS-tekniker.",
+    "Välkommen till Rör24 i CITY! Som en del av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi professionell VVS-service dygnet runt.",
+    "Har du VVS-problem i CITY? Rör24 är din lokala partner för all typ av VVS-service.",
+    "Vi är ett av Sveriges största nätverk med auktoriserade rörmokare. Vi har öppet 24/7 och finns här för dig i CITY.",
+    "När du behöver rörmokare i CITY är Rör24 här för dig. Vi är stolta över att vara en del av Sveriges mest omfattande nätverk.",
+    "I CITY erbjuder vi komplett VVS-service med garanti på alla arbeten. Vårt team står redo dygnet runt.",
+    "Som din lokala VVS-partner i CITY erbjuder vi snabb och pålitlig service när du behöver det som mest.",
+    "Med gedigen erfarenhet av VVS-arbeten i CITY vet vi exakt vad som krävs för att lösa dina problem.",
+    "Vi har hjälpt hundratals nöjda kunder i CITY med deras VVS-behov. Låt oss hjälpa dig också.",
+    "Som auktoriserad VVS-installatör i CITY garanterar vi högsta kvalitet på alla våra tjänster.",
+    "Står du inför ett akut VVS-problem i CITY? Våra erfarna rörmokare rycker ut dygnet runt.",
+    "Med lokal förankring i CITY och rikstäckande nätverk kan vi erbjuda marknadens bästa VVS-service.",
+    "Vattenskada eller stopp i avloppet? I CITY står våra erfarna rörmokare redo att hjälpa dig - dygnet runt.",
+    "Som din lokala VVS-partner i CITY erbjuder vi allt från akut jour till planerade installationer.",
+    "Med Rör24 i CITY får du tillgång till erfarna rörmokare som kan hantera alla typer av VVS-arbeten.",
+    "När du behöver professionell VVS-hjälp i CITY är vi bara ett samtal bort. Vi finns alltid nära.",
+    "I CITY erbjuder vi professionell VVS-service med fokus på kvalitet och kundnöjdhet.",
+    "Med vår jour i CITY kan du känna dig trygg. Vi är alltid redo att rycka ut när du behöver oss.",
+    "Som etablerad VVS-partner i CITY erbjuder vi snabb och professionell service. Vi finns alltid nära till hands.",
+    "Med Rör24 i CITY får du tillgång till marknadens mest erfarna rörmokare. Vi garanterar snabb service.",
+    "Vi är din pålitliga partner för alla VVS-behov i CITY. Med över 55 000 utförda uppdrag vet vi exakt hur vi löser problem.",
+    "Akuta VVS-problem? I CITY finns vi på plats snabbt med gedigen erfarenhet och modern utrustning.",
+    "Letar du efter en kompetent rörmokare i CITY? Rör24 levererar professionell VVS-service med fokus på kvalitet.",
+    "Från akuta läckor till planerade renoveringar - vi hanterar alla VVS-uppdrag i CITY.",
+    "Behöver du akut VVS-hjälp i CITY? Vi har öppet dygnet runt och strävar efter att vara på plats inom 2 timmar.",
+    "Med lokal närvaro i CITY och toppmodern utrustning löser vi alla VVS-problem effektivt.",
+    "Professionell VVS-installation för hem och företag i CITY. Vi erbjuder både akutåtgärder och planerade installationer.",
+    "Vattenläcka? Stopp i avloppet? Vi rycker ut omedelbart i CITY-området med erfarna rörmokare 24/7.",
+    "Auktoriserade VVS-tekniker med spetskompetens finns nära dig i CITY.",
+    "Traditionellt hantverk möter modern teknik. I CITY levererar vi VVS-tjänster i världsklass.",
+    "Oavsett tid på dygnet finns vi här för dig i CITY. Snabb utryckning och garanterad kvalitet.",
+    "Akuta VVS-situationer kräver snabb handling. I CITY har vi jourberedskap dygnet runt.",
+    "Kvalitet är vår signum. I CITY utför vi alla typer av VVS-arbeten med högsta precision.",
+    "Som ett av Sveriges mest erfarna VVS-företag erbjuder vi kompletta lösningar i CITY.",
+    "Lokala rörmokare med kort utryckningstid i CITY. Vi prioriterar din trygghet.",
+    "Skräddarsydda VVS-lösningar för fastighetsägare och privatpersoner i CITY.",
+    "Sök inte längre - Rör24 är ditt självklara val i CITY med mångårig erfarenhet.",
+    "När varje minut räknas finns VVS-akuten i CITY här för dig med snabb diagnos.",
+    "Ingen annandag eller helg för oss - vi finns alltid tillgängliga för dig i CITY.",
+    "Komplett VVS-service under ett tak i CITY med certifierade yrkesmän.",
+    "Med decennier av samlad erfarenhet löser våra rörmokare i CITY även de mest komplexa problemen.",
+    "Regional närvaro med lokal service. Vi täcker hela CITY med omnejd.",
+    "Varför välja oss? För att vi känner CITY, vi bryr oss och levererar mer än vi lovar.",
+    "Auktoriserade VVS-proffs med passion för yrket finns i CITY.",
+    "Akuta VVS-problem tolererar ingen väntan. I CITY prioriterar vi snabb respons dygnet runt.",
+    "Behöver du VVS-support i CITY? Vår kundservice är alltid öppen.",
+    "Kvalitet går före kvantitet. I CITY fokuserar vi på att leverera perfekt utfört arbete.",
+    "Vårt dedicerade VVS-team i CITY består av specialister inom alla områden.",
+    "Tid är pengar, särskilt vid VVS-akuter. I CITY är vi kända för snabb respons.",
+    "Letar du efter en auktoriserad rörmokare i CITY? Våra certifierade tekniker har kompetensen."
+  ];
+  
+  const template = selectVariation(city, templates, 0);
+  const intro = selectVariation(city, intros, 1);
+  
+  return `<section><h1>${template.replace(/CITY/g, city)}</h1><p>${intro.replace(/CITY/g, city)}</p></section>`;
+};
+
 const generatePageVariations = (city: string) => {
+  return generateH1(city);
+};
   const variations = [
     `<section>
       <h1>Jourhavande Rörmokare i ${city} – Dygnet runt med Rör24!</h1>
