@@ -8,7 +8,7 @@ import ContactForm from '../components/city/ContactForm';
 import DocumentHead from '@/components/DocumentHead';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { normalizeCity } from '../utils/cityContentUtils';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 import { getNearbyLocations } from '../data/cities/nearbyLocations';
 import { useEffect } from 'react';
 
@@ -164,7 +164,7 @@ const CityPage = () => {
                     <Link
                       key={location}
                       to={`/${normalizeCity(location)}`}
-                      className="text-primary hover:text-[#FFD700] transition-colors"
+                      className="text-primary hover:text-warning transition-colors underline-offset-4 hover:underline"
                     >
                       {location}
                     </Link>

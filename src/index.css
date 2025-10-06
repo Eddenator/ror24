@@ -10,6 +10,12 @@
     --input: 0 0% 90%;
     --ring: 0 0% 90%;
     --radius: 0.5rem;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
+    --warning: 45 100% 51%;
+    --warning-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
   }
 
   * {

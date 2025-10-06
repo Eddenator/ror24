@@ -54,16 +54,24 @@ export default {
           300: "#ffffff20",
         },
         primary: {
-          DEFAULT: "#1a1a1a",
-          foreground: "#ffffff",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#f5f5f5",
-          foreground: "#1a1a1a",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#e6e6e6",
-          foreground: "#1a1a1a",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
       },
       borderRadius: {

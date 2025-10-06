@@ -23,7 +23,8 @@ const CityHero = ({ cityName, heroImage }: CityHeroProps) => {
           <p className="text-xl mb-4">Professionell VVS-service dygnet runt</p>
           <a 
             href="tel:010-55511194" 
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-yellow-400 text-black rounded-md hover:bg-yellow-500 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-warning text-warning-foreground rounded-md hover:bg-warning/90 transition-colors font-semibold"
+            aria-label="Ring oss på 010-555 11 94"
           >
             <Phone className="w-5 h-5" />
             Ring 010-555 11 94
