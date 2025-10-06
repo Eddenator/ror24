@@ -1,5 +1,22 @@
 import { CityContent } from '../types/cityContent';
 
+// Deterministisk hash-funktion baserad på stadsnamn
+const hashString = (str: string): number => {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return Math.abs(hash);
+};
+
+// Välj variation baserat på stad (deterministiskt)
+const selectVariation = <T>(city: string, variations: T[]): T => {
+  const hash = hashString(city);
+  return variations[hash % variations.length];
+};
+
 const generatePageVariations = (city: string) => {
   const variations = [
     `<section>
@@ -104,8 +121,7 @@ const generatePageVariations = (city: string) => {
     </section>`
   ];
 
-  // Get a random variation
-  return variations[Math.floor(Math.random() * variations.length)];
+  return selectVariation(city, variations);
 };
 
 const generateWhyChooseUs = (city: string) => {
@@ -141,10 +157,10 @@ const generateWhyChooseUs = (city: string) => {
     </section>`
   ];
 
-  return variations[Math.floor(Math.random() * variations.length)];
+  return selectVariation(city, variations);
 };
 
-const generateServiceList = () => {
+const generateServiceList = (city: string) => {
   const serviceVariations = [
     [
       "Akut VVS-jour dygnet runt",
@@ -178,7 +194,7 @@ const generateServiceList = () => {
     ]
   ];
 
-  return serviceVariations[Math.floor(Math.random() * serviceVariations.length)];
+  return selectVariation(city, serviceVariations);
 };
 
 export const defaultCityContent: CityContent = {
@@ -186,7 +202,7 @@ export const defaultCityContent: CityContent = {
   description: (city: string) => {
     const pageVariation = generatePageVariations(city);
     const whyChooseUs = generateWhyChooseUs(city);
-    const services = generateServiceList();
+    const services = generateServiceList(city);
     
     return `
       ${pageVariation}
