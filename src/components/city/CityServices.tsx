@@ -185,12 +185,26 @@ const serviceDescriptions = {
   ]
 };
 
+// Deterministisk hash-funktion baserad på stad + tjänst
+const hashServiceDescription = (cityName: string, service: string): number => {
+  const str = cityName + service;
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
+};
+
 const CityServices = ({ cityName, services }: CityServicesProps) => {
-  // Function to get a random description for a service
-  const getRandomDescription = (service: string) => {
+  // Function to get a deterministic description for a service
+  const getServiceDescription = (service: string) => {
     const descriptions = serviceDescriptions[service as keyof typeof serviceDescriptions] || [];
-    return descriptions[Math.floor(Math.random() * descriptions.length)] || 
-           "Professionell service med garanterad kvalitet";
+    if (descriptions.length === 0) return "Professionell service med garanterad kvalitet";
+    
+    const hash = hashServiceDescription(cityName, service);
+    return descriptions[hash % descriptions.length];
   };
 
   return (
@@ -211,7 +225,7 @@ const CityServices = ({ cityName, services }: CityServicesProps) => {
             <div>
               <h3 className="font-semibold mb-1">{service}</h3>
               <p className="text-sm text-gray-600">
-                {getRandomDescription(service)}
+                {getServiceDescription(service)}
               </p>
             </div>
           </div>

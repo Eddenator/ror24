@@ -1,0 +1,20 @@
+# Rör24 - VVS och Rörmokare i Sverige
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ror24.se/sitemap.xml
+Sitemap: https://ror24.se/sitemap1.xml
+
+# Crawl-delay för att inte överbelasta servern
+Crawl-delay: 1
+
+# Block admin/backend paths if any
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all bots to access city pages and main pages
+Allow: /hem
+Allow: /om-oss
+Allow: /kontakt
+Allow: /omraden

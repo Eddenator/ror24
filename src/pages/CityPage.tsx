@@ -6,6 +6,7 @@ import TrustSignals from '../components/city/TrustSignals';
 import CityServices from '../components/city/CityServices';
 import ContactForm from '../components/city/ContactForm';
 import DocumentHead from '@/components/DocumentHead';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { normalizeCity } from '../utils/cityContentUtils';
 import { useToast } from '@/components/ui/use-toast';
 import { getNearbyLocations } from '../data/cities/nearbyLocations';
@@ -51,18 +52,99 @@ const CityPage = () => {
     ? content.description(originalCity)
     : content.description;
 
+  const canonicalUrl = `https://ror24.se/${normalizedCity}`;
+  const pageTitle = `Rörmokare ${originalCity} - VVS Jour är öppen 24/7 - Rör24`;
+  const pageDescription = `Rörmokare i ${originalCity}. Vi kan vara på plats inom 2 timmar (genomsnitt). Endast auktoriserade rörmokare. Vi har öppet dygnet runt. Ring oss för en kostnadsfri offert!`;
+
+  // Structured data för LocalBusiness och Service
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": `${canonicalUrl}#organization`,
+        "name": `Rör24 - Rörmokare ${originalCity}`,
+        "image": content.heroImage,
+        "description": pageDescription,
+        "url": canonicalUrl,
+        "telephone": "010-555 11 94",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": originalCity,
+          "addressCountry": "SE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "addressLocality": originalCity
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": originalCity
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": `${canonicalUrl}#service`,
+        "serviceType": "VVS-tjänster och Rörmokare",
+        "provider": {
+          "@id": `${canonicalUrl}#organization`
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": originalCity
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "VVS-tjänster",
+          "itemListElement": content.services.map((service, index) => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": service
+            }
+          }))
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <DocumentHead 
-        title={`Rörmokare ${originalCity} - VVS Jour är öppen 24/7 - Rör24`}
-        description={`Rörmokare i ${originalCity}. Vi kan vara på plats inom 2 timmar (genomsnitt). Endast auktoriserade rörmokare. Vi har öppet dygnet runt. Ring oss för en kostnadsfri offert!`}
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalUrl}
+        ogImage={content.heroImage}
+        structuredData={structuredData}
       />
       <CityHero 
         cityName={originalCity}
         heroImage={content.heroImage}
       />
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-4">
+        <Breadcrumbs items={[
+          { label: 'Våra områden', href: '/omraden' },
+          { label: originalCity }
+        ]} />
+      </div>
+
+      <div className="container mx-auto px-4 py-8">
         <TrustSignals />
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
