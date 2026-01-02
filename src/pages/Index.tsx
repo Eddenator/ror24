@@ -1,13 +1,7 @@
-import { ArrowRight, Clock, Shield, Map } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import StickyCTA from '@/components/StickyCTA';
-import DocumentHead from '@/components/DocumentHead';
+import { ArrowRight, Clock, Shield, Map } from "lucide-react";
+import { Link } from "react-router-dom";
+import DocumentHead from "@/components/DocumentHead";
+import heroImage from "@/assets/hero-plumbers.jpg";
 
 const Index = () => {
   const canonicalUrl = "https://ror24.se/";
@@ -59,7 +53,11 @@ const Index = () => {
       />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg')] bg-cover bg-center" />
+        <img
+          src={heroImage}
+          alt="Rör24 - Professionella rörmokare i Sverige"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative container mx-auto px-4 text-center text-white">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
