@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://script.marquiz.io" />
     <link rel="preconnect" href="https://quiz.marquiz.io" />
     <title>Rörmokare i Sverige | Rör24 - Jour dygnet runt</title>
-    <meta name="description" content="Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar. Vi erbjuder professionell VVS-service i över 750 städer." />
+    <meta
+      name="description"
+      content="Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar. Vi erbjuder professionell VVS-service i över 750 städer."
+    />
     <meta name="author" content="Rör24" />
     <meta property="og:image" content="/og-image.png" />
+
     <!-- Marquiz script start -->
     <script>
-    (function(w, d, s, o){
-      var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.io/v2.js';j.onload = function() {
-        if (document.readyState !== 'loading') Marquiz.init(o);
-        else document.addEventListener("DOMContentLoaded", function() {
-          Marquiz.init(o);
-        });
-      };
-      d.head.insertBefore(j, d.head.firstElementChild);
-    })(window, document, 'script', {
-        host: '//quiz.marquiz.io',
-        region: 'us',
-        id: '676c2caba883b70026888c76',
+      (function (w, d, s, o) {
+        var j = d.createElement(s);
+        j.async = true;
+        j.src = "//script.marquiz.io/v2.js";
+        j.onload = function () {
+          if (document.readyState !== "loading") Marquiz.init(o);
+          else
+            document.addEventListener("DOMContentLoaded", function () {
+              Marquiz.init(o);
+            });
+        };
+        d.head.insertBefore(j, d.head.firstElementChild);
+      })(window, document, "script", {
+        host: "//quiz.marquiz.io",
+        region: "us",
+        id: "676c2caba883b70026888c76",
         autoOpen: false,
-        autoOpenFreq: 'once',
+        autoOpenFreq: "once",
         openOnExit: false,
-        disableOnMobile: false
-      }
-    );
+        disableOnMobile: false,
+      });
     </script>
     <!-- Marquiz script end -->
   </head>
 
   <body>
     <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

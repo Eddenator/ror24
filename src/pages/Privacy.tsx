@@ -2,11 +2,14 @@ import DocumentHead from '@/components/DocumentHead';
 import PageHeader from '@/components/PageHeader';
 
 const Privacy = () => {
+  const canonicalUrl = "https://ror24.se/integritetspolicy";
+
   return (
     <div className="min-h-screen">
       <DocumentHead 
         title="Integritetspolicy | Rör24 - Din integritet är viktig"
         description="Läs om hur Rör24 hanterar dina personuppgifter och cookies. Vi värnar om din integritet och följer GDPR."
+        canonicalUrl={canonicalUrl}
       />
       <PageHeader
         title="Integritetspolicy"

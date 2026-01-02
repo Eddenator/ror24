@@ -8,6 +8,8 @@ import DocumentHead from '@/components/DocumentHead';
 const Areas = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
+  const canonicalUrl = "https://ror24.se/omraden";
+
   // Convert counties object to array format expected by CountyAccordion
   const countiesArray = Object.entries(counties).map(([county, cities]) => ({
     county,
@@ -30,6 +32,7 @@ const Areas = () => {
       <DocumentHead 
         title="Våra områden | Rörmokare i hela Sverige - 750+ städer"
         description="Hitta din lokala rörmokare. Vi erbjuder professionell VVS-service i över 750 städer i Sverige med jour dygnet runt. Snabb utryckning inom 2 timmar."
+        canonicalUrl={canonicalUrl}
       />
       <PageHeader
         title="Våra Områden"

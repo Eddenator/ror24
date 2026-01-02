@@ -1,4 +1,4 @@
-/* /index.html 200
 /sitemap.xml /sitemap.xml 200
-/sitemap*.xml /sitemap$1.xml 200
+/sitemap*.xml /sitemap:splat.xml 200
 /sitemap.xsl /sitemap.xsl 200
+/* /index.html 200

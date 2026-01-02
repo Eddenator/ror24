@@ -3,11 +3,14 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 
 const Contact = () => {
+  const canonicalUrl = "https://ror24.se/kontakt";
+
   return (
     <div className="min-h-screen">
       <DocumentHead 
         title="Kontakta Rör24 | Dygnet runt VVS-service"
         description="Kontakta Rör24 för akut VVS-service eller offertförfrågan. Ring 010-555 11 94 för omedelbar hjälp. Öppet dygnet runt, alla dagar."
+        canonicalUrl={canonicalUrl}
       />
       <PageHeader
         title="Kontakta Oss"
