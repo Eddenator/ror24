@@ -34,6 +34,7 @@ const App = () => (
               <Route path="/kontakt" element={<Contact />} />
               <Route path="/omraden" element={<Areas />} />
               <Route path="/integritetspolicy" element={<Privacy />} />
+              <Route path="/404" element={<NotFound />} />
               <Route path="/:city" element={<CityPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

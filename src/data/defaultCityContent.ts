@@ -173,78 +173,77 @@ const generateH1 = (city: string): string => {
     "Tid är pengar, särskilt vid VVS-akuter. I CITY är vi kända för snabb respons.",
     "Letar du efter en auktoriserad rörmokare i CITY? Våra certifierade tekniker har kompetensen."
   ];
-  
   const template = selectVariation(city, templates, 0);
   const intro = selectVariation(city, intros, 1);
   
-  return `<section><h1>${template.replace(/CITY/g, city)}</h1><p>${intro.replace(/CITY/g, city)}</p></section>`;
+  return `<section><h2>${template.replace(/CITY/g, city)}</h2><p>${intro.replace(/CITY/g, city)}</p></section>`;
 };
 
 const generatePageVariations = (city: string) => {
   const variations = [
     `<section>
-      <h1>Jourhavande Rörmokare i ${city} – Dygnet runt med Rör24!</h1>
+      <h2>Jourhavande Rörmokare i ${city} – Dygnet runt med Rör24!</h2>
       <p>Behöver du en pålitlig rörmokare i ${city}? Rör24 är det självklara valet med vårt omfattande nätverk av auktoriserade VVS-tekniker. Vi finns tillgängliga dygnet runt för att hjälpa dig med alla typer av VVS-problem.</p>
     </section>`,
     
     `<section>
-      <h1>VVS & Rörmokare i ${city} - Jour 24/7</h1>
+      <h2>VVS & Rörmokare i ${city} - Jour 24/7</h2>
       <p>Välkommen till Rör24 i ${city}! Som en del av Sveriges största nätverk av auktoriserade rörmokare erbjuder vi professionell VVS-service dygnet runt, året om.</p>
       <p>Med vår omfattande erfarenhet och lokala närvaro i ${city} kan vi garantera snabb och pålitlig service för alla dina VVS-behov.</p>
     </section>`,
     
     `<section>
-      <h1>Akut VVS-service i ${city} - Ring Rör24!</h1>
+      <h2>Akut VVS-service i ${city} - Ring Rör24!</h2>
       <p>Har du VVS-problem i ${city}? Rör24 är din lokala partner för all typ av VVS-service. Med vårt rikstäckande nätverk av certifierade rörmokare finns vi alltid nära till hands.</p>
     </section>`,
     
     `<section>
-      <h1>Rörmokare ${city} - Professionell VVS-service</h1>
+      <h2>Rörmokare ${city} - Professionell VVS-service</h2>
       <p>Behöver du hjälp med något relaterat till VVS/rör? Vi är ett av Sveriges största nätverk med auktoriserade rörmokare. Vi har öppet 24/7 och finns här för dig i ${city}.</p>
     </section>`,
     
     `<section>
-      <h1>Dygnet Runt VVS i ${city} - Rör24</h1>
+      <h2>Dygnet Runt VVS i ${city} - Rör24</h2>
       <p>När du behöver rörmokare i ${city} är Rör24 här för dig. Vi är stolta över att vara en del av Sveriges mest omfattande nätverk av auktoriserade VVS-tekniker.</p>
     </section>`,
 
     `<section>
-      <h1>Erfarna Rörmokare i ${city}</h1>
+      <h2>Erfarna Rörmokare i ${city}</h2>
       <p>I ${city} erbjuder vi komplett VVS-service med garanti på alla arbeten. Vårt team av erfarna rörmokare står redo att hjälpa dig, oavsett tid på dygnet.</p>
     </section>`,
 
     `<section>
-      <h1>VVS-service ${city} - Tillgängliga Dygnet Runt</h1>
+      <h2>VVS-service ${city} - Tillgängliga Dygnet Runt</h2>
       <p>Som din lokala VVS-partner i ${city} erbjuder vi snabb och pålitlig service när du behöver det som mest. Ring oss för omedelbar hjälp!</p>
     </section>`,
 
     `<section>
-      <h1>Professionell VVS-hjälp i ${city}</h1>
+      <h2>Professionell VVS-hjälp i ${city}</h2>
       <p>Med gedigen erfarenhet av VVS-arbeten i ${city} vet vi exakt vad som krävs för att lösa dina problem. Kontakta oss för snabb och professionell hjälp.</p>
     </section>`,
 
     `<section>
-      <h1>${city}s Pålitliga VVS-partner</h1>
+      <h2>${city}s Pålitliga VVS-partner</h2>
       <p>Vi har hjälpt hundratals nöjda kunder i ${city} med deras VVS-behov. Låt oss hjälpa dig också med vår jour som är öppen dygnet runt.</p>
     </section>`,
 
     `<section>
-      <h1>Auktoriserad VVS-service i ${city}</h1>
+      <h2>Auktoriserad VVS-service i ${city}</h2>
       <p>Som auktoriserad VVS-installatör i ${city} garanterar vi högsta kvalitet på alla våra tjänster. Vi finns här för dig - dygnet runt, året om.</p>
     </section>`,
 
     `<section>
-      <h1>Akut VVS-hjälp i ${city}</h1>
+      <h2>Akut VVS-hjälp i ${city}</h2>
       <p>Står du inför ett akut VVS-problem i ${city}? Våra erfarna rörmokare rycker ut dygnet runt för att hjälpa dig när du behöver det som mest.</p>
     </section>`,
 
     `<section>
-      <h1>VVS-experter i ${city}</h1>
+      <h2>VVS-experter i ${city}</h2>
       <p>Med lokal förankring i ${city} och ett rikstäckande nätverk i ryggen kan vi erbjuda marknadens bästa VVS-service, oavsett tid på dygnet.</p>
     </section>`,
 
     `<section>
-      <h1>Rörmokare på Jour i ${city}</h1>
+      <h2>Rörmokare på Jour i ${city}</h2>
       <p>Vattenskada eller stopp i avloppet? I ${city} står våra erfarna rörmokare redo att hjälpa dig med alla typer av VVS-problem - dygnet runt.</p>
     </section>`
   ];

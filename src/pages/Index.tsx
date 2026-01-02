@@ -8,63 +8,54 @@ import {
 } from "@/components/ui/accordion";
 import StickyCTA from '@/components/StickyCTA';
 import DocumentHead from '@/components/DocumentHead';
-import { useEffect } from 'react';
 
 const Index = () => {
-  useEffect(() => {
-    // Add JSON-LD schema to head
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "Plumber",
-      "name": "Rör24",
-      "image": "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
-      "description": "Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "SE",
-        "addressRegion": "Sverige"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "59.3293",
-        "longitude": "18.0686"
-      },
-      "url": "https://ror24.se",
-      "telephone": "010-555 11 94",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "priceRange": "$$",
-      "areaServed": "Sverige",
-      "availableLanguage": "Swedish"
-    };
+  const canonicalUrl = "https://ror24.se/";
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Rör24",
+    "image": "https://s3.eu-west-1.amazonaws.com/storage.quickbutik.com/stores/28340q/files/ror24.jpg",
+    "description": "Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SE",
+      "addressRegion": "Sverige"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "59.3293",
+      "longitude": "18.0686"
+    },
+    "url": "https://ror24.se",
+    "telephone": "010-555 11 94",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "$$",
+    "areaServed": "Sverige",
+    "availableLanguage": "Swedish"
+  };
 
   return (
     <div className="min-h-screen">
       <DocumentHead 
         title="Rörmokare i Sverige | Rör24 - Jour dygnet runt"
         description="Sveriges ledande rörmokare med jour 24/7. Snabb utryckning inom 2 timmar. Vi erbjuder professionell VVS-service i över 750 städer."
+        canonicalUrl={canonicalUrl}
+        structuredData={structuredData}
       />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">

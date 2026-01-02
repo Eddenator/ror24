@@ -17,9 +17,9 @@ const CityHero = ({ cityName, heroImage }: CityHeroProps) => {
       />
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
         <div className="text-center text-white">
-          <p className="text-3xl md:text-4xl font-bold mb-2">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">
             Rörmokare i {cityName}
-          </p>
+          </h1>
           <p className="text-xl mb-4">Professionell VVS-service dygnet runt</p>
           <a 
             href="tel:010-55511194" 
